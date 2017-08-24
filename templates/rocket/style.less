@@ -1,0 +1,47 @@
+@import "variables.less";
+
+body{
+	width: 100%;
+	margin-right: 0px;
+}
+
+header{
+	color: white;
+	padding-top: 10px;
+	background: black;
+	.busqueda{
+		font-family: 'Poppins', sans-serif;
+		font-size: 20px;
+		.contactanos{
+			font-weight: bold;
+			text-align: right;
+			width: 100%;
+			display: inline-block;
+			@media (min-width: @mq-sm-min){
+				border-right: 2px solid white;
+				width: 70%;
+				padding-right: 20px;
+			}
+			
+			padding-top: 20px;
+			padding-bottom: 10px;
+		}
+		
+		.buscar{
+			padding: 20px 50px 10px 50px;
+			width: 29%;
+			display: inline-block;
+		}
+	}
+}
+
+nav{
+	&.navbar{
+		border-radius: 0px;
+	}
+	
+	&.navbar-default{
+		background: black;
+		border: none;
+	}
+}
