@@ -1,22 +1,22 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-08-24 14:10:19
+<?php /* Smarty version Smarty-3.1.11, created on 2017-08-26 15:01:38
          compiled from "templates/plantillas/layout/rocket.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:2047659047599f14422b1001-97868860%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:10575565359a0e9dd645a93-79600797%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '956749a10a45175b89ff33faade5ab0f5da760e0' => 
     array (
       0 => 'templates/plantillas/layout/rocket.tpl',
-      1 => 1503601818,
+      1 => 1503777697,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2047659047599f14422b1001-97868860',
+  'nocache_hash' => '10575565359a0e9dd645a93-79600797',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_599f144233a713_39476587',
+  'unifunc' => 'content_59a0e9dd823f75_36588293',
   'variables' => 
   array (
     'PAGE' => 0,
@@ -24,7 +24,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_599f144233a713_39476587')) {function content_599f144233a713_39476587($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_59a0e9dd823f75_36588293')) {function content_59a0e9dd823f75_36588293($_smarty_tpl) {?><!DOCTYPE html>
 <html>
 	<head>
 	<meta charset="utf-8">
@@ -56,6 +56,7 @@ rocket/style.css" />
 		<?php }?>
 		
 		<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates" rel="stylesheet">
 		
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -71,8 +72,9 @@ rocket/style.css" />
 					CONTÁCTANOS
 				</div>
 				<div class="buscar hidden-xs">
-					<div class="form-group">
-						<input type="text" class="form-control" placeholder="Buscar">
+					<div class="input-group">
+						<input id="txtTarjeta" name="txtTarjeta" type="text" class="form-control" placeholder="Buscar">
+						<span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></span>
 					</div>
 				</div>
 			</div>
@@ -86,7 +88,10 @@ rocket/style.css" />
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">Logotipo</a>
+				<a class="navbar-brand" href="#">
+					<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['imagenes'];?>
+logo.png" />
+				</a>
 			</div>
 			
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -99,8 +104,103 @@ rocket/style.css" />
 				</ul>
 			</div>
 		</nav>
-
-
+		<div class="headPrincipal">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4 col-md-3 text-center">
+						<form id="frmLoginCliente">
+							<div class="titulo">INGRESA A TU CUENTA</div>
+							<br />
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-credit-card fa-inverse" aria-hidden="true"></i></span>
+								<input id="txtTarjeta" name="txtTarjeta" type="text" class="form-control" placeholder="* Número de tarjeta">
+							</div>
+							<br />
+							<div class="input-group">
+								<span class="input-group-addon">&nbsp;<i class="fa fa-lock fa-inverse" aria-hidden="true"></i>&nbsp;</span>
+								<input id="txtTarjeta" name="txtTarjeta" type="text" class="form-control" placeholder="* Contraseña">
+							</div>
+							<br />
+							<button type="submit" class="btn btn-danger">INGRESAR</button>
+							<button type="button" class="btn btn-link">Recuperar contraseña</button>
+						</form>
+					</div>
+					<div class="col-sm-4 col-sm-offset-4 col-md-3 col-md-offset-6 text-center">
+						<div id="carruselNegocios" class="carousel slide" data-ride="carousel">
+							<ol class="carousel-indicators">
+								<li data-target="#carruselNegocios" data-slide-to="0" class="active"></li>
+								<li data-target="#carruselNegocios" data-slide-to="1"></li>
+								<li data-target="#carruselNegocios" data-slide-to="2"></li>
+								<li data-target="#carruselNegocios" data-slide-to="3"></li>
+								<li data-target="#carruselNegocios" data-slide-to="4"></li>
+							</ol>
+							
+							<div class="carousel-inner">
+								<div class="item active">
+									<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['imagenes'];?>
+negocios/1.jpg" alt="Los Angeles" style="width:100%;">
+								</div>
+								
+								<div class="item">
+									<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['imagenes'];?>
+negocios/2.jpg" alt="Los Angeles" style="width:100%;">
+								</div>
+								
+								<div class="item">
+									<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['imagenes'];?>
+negocios/3.jpg" alt="Los Angeles" style="width:100%;">
+								</div>
+								<div class="item">
+									<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['imagenes'];?>
+negocios/4.jpg" alt="Los Angeles" style="width:100%;">
+								</div>
+								<div class="item">
+									<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['imagenes'];?>
+negocios/5.jpg" alt="Los Angeles" style="width:100%;">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 col-sm-6 col-sm-offset-3 descripcion text-center">
+						SÉ UN SOCIO ROCKET CARD Y DESCUBRE QUE MIENTRAS MÁS COMPRAS, MÁS DINERO GANAS
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="container beneficios">
+			<div class="row">
+				<div class="col-xs-12 text-center">
+					<h2>REGISTRATE TOTALMENTE GRATIS</h2>
+				</div>
+			</div>
+			<br />
+			<div class="row">
+				<div class="col-xs-6 col-md-3 text-center item">
+					<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['imagenes'];?>
+1.png" />
+					<p class="descripcion"><span class="text-danger">Realiza</span> compras en Negocios Afiliados</p>
+				</div>
+				<div class="col-xs-6 col-md-3 text-center item">
+					<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['imagenes'];?>
+2.png" />
+					<p class="descripcion"><span class="text-danger">Acumula</span> dinero electrónico</p>
+				</div>
+				<div class="col-xs-6 col-md-3 text-center item">
+					<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['imagenes'];?>
+3.png" />
+					<p class="descripcion"><span class="text-danger">Canjealo</span> por dinero en efectivo</p>
+				</div>
+				<div class="col-xs-6 col-md-3 text-center item">
+					<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['imagenes'];?>
+4.png" />
+					<p class="descripcion"><span class="text-danger">Utilízalo</span> para realizar más compras</p>
+				</div>
+			</div>
+		</div>
+		
 		<!-- jQuery 2.1.4 -->
 	    <script src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
 plugins/jQuery/jQuery-2.1.4.min.js"></script>

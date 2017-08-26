@@ -21,6 +21,7 @@
 		{/if}
 		
 		<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates" rel="stylesheet">
 		
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -36,8 +37,9 @@
 					CONTÁCTANOS
 				</div>
 				<div class="buscar hidden-xs">
-					<div class="form-group">
-						<input type="text" class="form-control" placeholder="Buscar">
+					<div class="input-group">
+						<input id="txtTarjeta" name="txtTarjeta" type="text" class="form-control" placeholder="Buscar">
+						<span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></span>
 					</div>
 				</div>
 			</div>
@@ -51,7 +53,9 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">Logotipo</a>
+				<a class="navbar-brand" href="#">
+					<img src="{$PAGE.imagenes}logo.png" />
+				</a>
 			</div>
 			
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -64,8 +68,94 @@
 				</ul>
 			</div>
 		</nav>
-
-
+		<div class="headPrincipal">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4 col-md-3 text-center">
+						<form id="frmLoginCliente">
+							<div class="titulo">INGRESA A TU CUENTA</div>
+							<br />
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-credit-card fa-inverse" aria-hidden="true"></i></span>
+								<input id="txtTarjeta" name="txtTarjeta" type="text" class="form-control" placeholder="* Número de tarjeta">
+							</div>
+							<br />
+							<div class="input-group">
+								<span class="input-group-addon">&nbsp;<i class="fa fa-lock fa-inverse" aria-hidden="true"></i>&nbsp;</span>
+								<input id="txtTarjeta" name="txtTarjeta" type="text" class="form-control" placeholder="* Contraseña">
+							</div>
+							<br />
+							<button type="submit" class="btn btn-danger">INGRESAR</button>
+							<button type="button" class="btn btn-link">Recuperar contraseña</button>
+						</form>
+					</div>
+					<div class="col-sm-4 col-sm-offset-4 col-md-3 col-md-offset-6 text-center">
+						<div id="carruselNegocios" class="carousel slide" data-ride="carousel">
+							<ol class="carousel-indicators">
+								<li data-target="#carruselNegocios" data-slide-to="0" class="active"></li>
+								<li data-target="#carruselNegocios" data-slide-to="1"></li>
+								<li data-target="#carruselNegocios" data-slide-to="2"></li>
+								<li data-target="#carruselNegocios" data-slide-to="3"></li>
+								<li data-target="#carruselNegocios" data-slide-to="4"></li>
+							</ol>
+							
+							<div class="carousel-inner">
+								<div class="item active">
+									<img src="{$PAGE.imagenes}negocios/1.jpg" alt="Los Angeles" style="width:100%;">
+								</div>
+								
+								<div class="item">
+									<img src="{$PAGE.imagenes}negocios/2.jpg" alt="Los Angeles" style="width:100%;">
+								</div>
+								
+								<div class="item">
+									<img src="{$PAGE.imagenes}negocios/3.jpg" alt="Los Angeles" style="width:100%;">
+								</div>
+								<div class="item">
+									<img src="{$PAGE.imagenes}negocios/4.jpg" alt="Los Angeles" style="width:100%;">
+								</div>
+								<div class="item">
+									<img src="{$PAGE.imagenes}negocios/5.jpg" alt="Los Angeles" style="width:100%;">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 col-sm-6 col-sm-offset-3 descripcion text-center">
+						SÉ UN SOCIO ROCKET CARD Y DESCUBRE QUE MIENTRAS MÁS COMPRAS, MÁS DINERO GANAS
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="container beneficios">
+			<div class="row">
+				<div class="col-xs-12 text-center">
+					<h2>REGISTRATE TOTALMENTE GRATIS</h2>
+				</div>
+			</div>
+			<br />
+			<div class="row">
+				<div class="col-xs-6 col-md-3 text-center item">
+					<img src="{$PAGE.imagenes}1.png" />
+					<p class="descripcion"><span class="text-danger">Realiza</span> compras en Negocios Afiliados</p>
+				</div>
+				<div class="col-xs-6 col-md-3 text-center item">
+					<img src="{$PAGE.imagenes}2.png" />
+					<p class="descripcion"><span class="text-danger">Acumula</span> dinero electrónico</p>
+				</div>
+				<div class="col-xs-6 col-md-3 text-center item">
+					<img src="{$PAGE.imagenes}3.png" />
+					<p class="descripcion"><span class="text-danger">Canjealo</span> por dinero en efectivo</p>
+				</div>
+				<div class="col-xs-6 col-md-3 text-center item">
+					<img src="{$PAGE.imagenes}4.png" />
+					<p class="descripcion"><span class="text-danger">Utilízalo</span> para realizar más compras</p>
+				</div>
+			</div>
+		</div>
+		
 		<!-- jQuery 2.1.4 -->
 	    <script src="{$PAGE.ruta}plugins/jQuery/jQuery-2.1.4.min.js"></script>
 	    <!-- jQuery UI 1.11.4 -->

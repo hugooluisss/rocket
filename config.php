@@ -11,12 +11,13 @@ define('LAYOUT_DEFECTO', 'layout/default.tpl');
 define('LAYOUT_AJAX', 'layout/update.tpl');
 define('LAYOUT_JSON', 'layout/json.tpl');
 define('LAYOUT_TOPNAV', 'layout/topnav.tpl');
+define('LAYOUT_ROCKET', 'layout/rocket.tpl');
 
 #Login y su controlador
 $conf['inicio'] = array(
 	'descripcion' => '',
 	'seguridad' => false,
-	'capa' => "layout/rocket.tpl");
+	'capa' => LAYOUT_ROCKET);
 
 $conf['logout'] = array(
 	'controlador' => 'login.php',
