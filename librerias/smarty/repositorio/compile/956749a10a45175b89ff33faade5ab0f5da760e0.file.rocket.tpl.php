@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-08-26 15:01:38
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-04 23:03:47
          compiled from "templates/plantillas/layout/rocket.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:10575565359a0e9dd645a93-79600797%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '956749a10a45175b89ff33faade5ab0f5da760e0' => 
     array (
       0 => 'templates/plantillas/layout/rocket.tpl',
-      1 => 1503777697,
+      1 => 1504584226,
       2 => 'file',
     ),
   ),
@@ -99,7 +99,7 @@ logo.png" />
 					<li><a href="#">¿Como funciona?</a></li>
 					<li><a href="#">Mis beneficios</a></li>
 					<li><a href="#">Marcas afiliadas</a></li>
-					<li><a href="#">Registrate gratis</a></li>
+					<li><a href="#" data-toggle="modal" data-target="#winRegistro">Registrate gratis</a></li>
 					<li><a href="#">Ingresa</a></li>
 				</ul>
 			</div>
@@ -170,36 +170,15 @@ negocios/5.jpg" alt="Los Angeles" style="width:100%;">
 			</div>
 		</div>
 		
-		<div class="container beneficios">
-			<div class="row">
-				<div class="col-xs-12 text-center">
-					<h2>REGISTRATE TOTALMENTE GRATIS</h2>
-				</div>
-			</div>
-			<br />
-			<div class="row">
-				<div class="col-xs-6 col-md-3 text-center item">
-					<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['imagenes'];?>
-1.png" />
-					<p class="descripcion"><span class="text-danger">Realiza</span> compras en Negocios Afiliados</p>
-				</div>
-				<div class="col-xs-6 col-md-3 text-center item">
-					<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['imagenes'];?>
-2.png" />
-					<p class="descripcion"><span class="text-danger">Acumula</span> dinero electrónico</p>
-				</div>
-				<div class="col-xs-6 col-md-3 text-center item">
-					<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['imagenes'];?>
-3.png" />
-					<p class="descripcion"><span class="text-danger">Canjealo</span> por dinero en efectivo</p>
-				</div>
-				<div class="col-xs-6 col-md-3 text-center item">
-					<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['imagenes'];?>
-4.png" />
-					<p class="descripcion"><span class="text-danger">Utilízalo</span> para realizar más compras</p>
-				</div>
-			</div>
+		<div class="container">
+			<?php if ($_smarty_tpl->tpl_vars['PAGE']->value['vista']!=''){?>
+				<?php echo $_smarty_tpl->getSubTemplate ($_smarty_tpl->tpl_vars['PAGE']->value['vista'], $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
+			<?php }?>
 		</div>
+		
+		<?php echo $_smarty_tpl->getSubTemplate (($_smarty_tpl->tpl_vars['PAGE']->value['rutaModulos']).("modulos/usuarios/registro.tpl"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
 		
 		<!-- jQuery 2.1.4 -->
 	    <script src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
@@ -212,6 +191,11 @@ plugins/jQueryUI/jquery-ui.css">
 	    <!-- Bootstrap 3.3.5 -->
 	    <script src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
 bootstrap/js/bootstrap.min.js"></script>
+	    
+	    <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
+plugins/validate/validate.es.js"></script>
+	    <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
+plugins/validate/validate.js"></script>
 	    
 	    <?php  $_smarty_tpl->tpl_vars['script'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['script']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['PAGE']->value['scriptsJS']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}

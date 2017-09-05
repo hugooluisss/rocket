@@ -15,7 +15,10 @@ define('LAYOUT_ROCKET', 'layout/rocket.tpl');
 
 #Login y su controlador
 $conf['inicio'] = array(
+	'vista' => 'home.tpl',
 	'descripcion' => '',
+	'js' => array('socio.class.js'),
+	'jsTemplate' => array('socios.js'),
 	'seguridad' => false,
 	'capa' => LAYOUT_ROCKET);
 

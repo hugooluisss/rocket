@@ -63,7 +63,7 @@
 					<li><a href="#">¿Como funciona?</a></li>
 					<li><a href="#">Mis beneficios</a></li>
 					<li><a href="#">Marcas afiliadas</a></li>
-					<li><a href="#">Registrate gratis</a></li>
+					<li><a href="#" data-toggle="modal" data-target="#winRegistro">Registrate gratis</a></li>
 					<li><a href="#">Ingresa</a></li>
 				</ul>
 			</div>
@@ -129,32 +129,13 @@
 			</div>
 		</div>
 		
-		<div class="container beneficios">
-			<div class="row">
-				<div class="col-xs-12 text-center">
-					<h2>REGISTRATE TOTALMENTE GRATIS</h2>
-				</div>
-			</div>
-			<br />
-			<div class="row">
-				<div class="col-xs-6 col-md-3 text-center item">
-					<img src="{$PAGE.imagenes}1.png" />
-					<p class="descripcion"><span class="text-danger">Realiza</span> compras en Negocios Afiliados</p>
-				</div>
-				<div class="col-xs-6 col-md-3 text-center item">
-					<img src="{$PAGE.imagenes}2.png" />
-					<p class="descripcion"><span class="text-danger">Acumula</span> dinero electrónico</p>
-				</div>
-				<div class="col-xs-6 col-md-3 text-center item">
-					<img src="{$PAGE.imagenes}3.png" />
-					<p class="descripcion"><span class="text-danger">Canjealo</span> por dinero en efectivo</p>
-				</div>
-				<div class="col-xs-6 col-md-3 text-center item">
-					<img src="{$PAGE.imagenes}4.png" />
-					<p class="descripcion"><span class="text-danger">Utilízalo</span> para realizar más compras</p>
-				</div>
-			</div>
+		<div class="container">
+			{if $PAGE.vista neq ''}
+				{include file=$PAGE.vista}
+			{/if}
 		</div>
+		
+		{include file=$PAGE.rutaModulos|cat:"modulos/usuarios/registro.tpl"}
 		
 		<!-- jQuery 2.1.4 -->
 	    <script src="{$PAGE.ruta}plugins/jQuery/jQuery-2.1.4.min.js"></script>
@@ -163,6 +144,9 @@
 	    <link rel="stylesheet" href="{$PAGE.ruta}plugins/jQueryUI/jquery-ui.css">
 	    <!-- Bootstrap 3.3.5 -->
 	    <script src="{$PAGE.ruta}bootstrap/js/bootstrap.min.js"></script>
+	    
+	    <script type="text/javascript" src="{$PAGE.ruta}plugins/validate/validate.es.js"></script>
+	    <script type="text/javascript" src="{$PAGE.ruta}plugins/validate/validate.js"></script>
 	    
 	    {foreach from=$PAGE.scriptsJS item=script}
 			<script type="text/javascript" src="{$script}?m={rand()}"></script>

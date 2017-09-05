@@ -10,7 +10,8 @@ class TUsuario{
 	private $idUsuario;
 	private $idTipo;
 	private $nombre;
-	private $email;
+	private $apellidos;
+	private $correo;
 	private $pass;
 	private $visible;
 	
@@ -72,7 +73,7 @@ class TUsuario{
 	* @return boolean True si se realizó sin problemas
 	*/
 	
-	public function setTipo($val = 2){
+	public function setTipo($val = 3){
 		$this->idTipo = $val;
 		return true;
 	}
@@ -101,7 +102,7 @@ class TUsuario{
 		if ($this->getIdTipo() == '') return false;
 		
 		$db = TBase::conectaDB();
-		$rs = $db->query("select nombre from tipoUsuario where idTipoUsuario = ".$this->getIdTipo());
+		$rs = $db->query("select nombre from tipousuario where idTipoUsuario = ".$this->getIdTipo());
 		$row = $rs->fetch_assoc();
 		return $row['nombre'];
 	}
@@ -145,7 +146,7 @@ class TUsuario{
 	}
 	
 	/**
-	* Establece el email
+	* Establece el apellido
 	*
 	* @autor Hugo
 	* @access public
@@ -153,21 +154,47 @@ class TUsuario{
 	* @return boolean True si se realizó sin problemas
 	*/
 	
-	public function setEmail($val = ''){
-		$this->email = $val;
+	public function setApellidos($val = ''){
+		$this->apellidos = $val;
 		return true;
 	}
 	
 	/**
-	* Retorna el email
+	* Retorna el apellido
 	*
 	* @autor Hugo
 	* @access public
 	* @return string Texto
 	*/
 	
-	public function getEmail(){
-		return $this->email;
+	public function getApellidos(){
+		return $this->apellidos;
+	}
+	
+	/**
+	* Establece el correo
+	*
+	* @autor Hugo
+	* @access public
+	* @param string $val Valor a asignar
+	* @return boolean True si se realizó sin problemas
+	*/
+	
+	public function setCorreo($val = ''){
+		$this->correo = $val;
+		return true;
+	}
+	
+	/**
+	* Retorna el correo
+	*
+	* @autor Hugo
+	* @access public
+	* @return string Texto
+	*/
+	
+	public function getCorreo(){
+		return $this->correo;
 	}
 	
 	/**
@@ -223,7 +250,8 @@ class TUsuario{
 			SET
 				idTipo = ".$this->getIdTipo().",
 				nombre = '".$this->getNombre()."',
-				email = '".$this->getEmail()."',
+				apellidos = '".$this->getApellidos()."'
+				correo = '".$this->getCorreo()."',
 				pass = '".$this->getPass()."'
 			WHERE idUsuario = ".$this->getId();
 		$rs = $db->query($sql) or errorMySQL($db, $sql);
