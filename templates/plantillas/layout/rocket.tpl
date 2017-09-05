@@ -64,7 +64,7 @@
 					<li><a href="#">Mis beneficios</a></li>
 					<li><a href="#">Marcas afiliadas</a></li>
 					<li><a href="#" data-toggle="modal" data-target="#winRegistro">Registrate gratis</a></li>
-					<li><a href="#">Ingresa</a></li>
+					<li><a href="#" data-toggle="modal" data-target="#winNegocioLogin">Ingresa</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -136,6 +136,7 @@
 		</div>
 		
 		{include file=$PAGE.rutaModulos|cat:"modulos/usuarios/registro.tpl"}
+		{include file=$PAGE.rutaModulos|cat:"modulos/usuarios/loginNegocio.tpl"}
 		
 		<!-- jQuery 2.1.4 -->
 	    <script src="{$PAGE.ruta}plugins/jQuery/jQuery-2.1.4.min.js"></script>

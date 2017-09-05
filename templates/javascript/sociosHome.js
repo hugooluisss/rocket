@@ -6,12 +6,14 @@ $(document).ready(function(){
 			txtApellidos: "required",
 			txtCorreo: {
 				"required": true,
-				"email": true,
-				"remote": {
-					url: "csocios",
-					type: "post",
-					data: {
-						"action": "validarEmail",
+				"email": {
+					"required": true,
+					"remote": {
+						url: "cusuarios",
+						type: "post",
+						data: {
+							"action": "validarEmail",
+						}
 					}
 				}
 			},
@@ -30,13 +32,12 @@ $(document).ready(function(){
 				municipio: $("#txtMunicipio").val(), 
 				entidadFederativa: $("#txtEntidadFederativa").val(), 
 				correo: $("#txtCorreo").val(), 
-				txtPass: $("#txtPass").val(), 
+				pass: $("#txtPass").val(), 
 				fn: {
 					after: function(datos){
 						if (datos.band){
-							getLista();
-							$("#frmAdd").get(0).reset();
-							$('#panelTabs a[href="#listas"]').tab('show');
+							$("#frmRegistroSocio").get(0).reset();
+							alert("¡¡¡ Felicidades !!! ya eres nuestro socio");
 						}else{
 							alert("No se pudo guardar el registro");
 						}

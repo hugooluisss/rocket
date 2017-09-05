@@ -37,17 +37,17 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 	</head>
-	<body class="hold-transition skin-yellow-light sidebar-mini">
+	<body class="hold-transition skin-red-light sidebar-mini">
 	<div class="wrapper">
 		<header class="main-header">
 			<!-- Logo -->
 			<a href="panelPrincipal" class="logo">
 				<!-- mini logo for sidebar mini 50x50 pixels -->
 				<span class="logo-lg">
-					<img src="{$PAGE.ruta}img/logo_transparencia.png" alt="Lujan" style="width: 105px;"/>
+					<img src="{$PAGE.ruta}img/logo.png" alt="ROCKET" style="width: 105px;"/>
 				</span>
 				<!-- logo for regular state and mobile devices -->
-				<span class="logo-mini"><b>LUJAN</b></span>
+				<span class="logo-mini"><b>ROCKET</b></span>
 			</a>
 			<!-- Header Navbar: style can be found in header.less -->
 			<nav class="navbar navbar-static-top" role="navigation">
@@ -74,6 +74,16 @@
 										<small>{$PAGE.usuario->getTipo()}</small>
 									</p>
 								</li>
+								<!-- Menu Body -->
+								<!--
+								<li class="user-body">
+									<div class="row">
+										<div class="col-xs-12 text-center">
+											<a href="#" data-toggle="modal" data-target="#winDatosNegocio">Actualizar datos del negocio</a>
+										</div>
+									</div>
+								</li>
+								-->
 								<!-- Menu Footer-->
 								<li class="user-footer">
 									<div class="pull-right">
@@ -97,15 +107,23 @@
 				<ul class="sidebar-menu">
 					<li class="header">MENÚ PRINCIPAL</li>
 					{if $PAGE.usuario->getPerfil() eq 1}
-					<li class="{if in_array($PAGE.modulo, array('usuarios', 'estados'))}active{/if} treeview">
+					<li class="{if in_array($PAGE.modulo, array('usuarios', 'negocios'))}active{/if} treeview">
 						<a href="#">
 							<i class="fa fa-dashboard"></i>
 							<span>Administración</span> <i class="fa fa-angle-left pull-right"></i>
 						</a>
 						<ul class="treeview-menu">
 							<li {if $PAGE.modulo eq 'usuarios'}class="active"{/if}><a href="usuarios">Usuarios</a></li>
-							<li class="{if in_array($PAGE.modulo, array('estados'))}active{/if}"><a href="estados">Estados</a></li>
+							<li class="{if in_array($PAGE.modulo, array('negocios'))}active{/if}"><a href="negocios">Negocios</a></li>
 						</ul>
+						
+						
+						
+						
+						
+						
+						
+						
 						<li class="{if in_array($PAGE.modulo, array('clientes'))}active{/if} treeview">
 							<a href="#">
 								<i class="fa fa-list-alt"></i> 
@@ -125,6 +143,19 @@
 							</ul>
 						</li>
 					</li>
+					{/if}
+					
+					{if $PAGE.usuario->getPerfil() eq 2}
+						<li class="{if in_array($PAGE.modulo, array('puntos'))}active{/if}"><a href="puntos">Puntos</a></li>
+						<li class="{if in_array($PAGE.modulo, array('puntos'))}active{/if} treeview">
+							<a href="#">
+								<i class="fa fa-dashboard"></i>
+								<span>Administración</span> <i class="fa fa-angle-left pull-right"></i>
+							</a>
+							<ul class="treeview-menu">
+								<li {if $PAGE.modulo eq 'datosEmpresa'}class="active"{/if}><a href="datosEmpresa">Actualizar datos</a></li>
+							</ul>
+						</li>
 					{/if}
 				</ul>
 			</section>

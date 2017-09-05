@@ -1,4 +1,25 @@
-<div class="row">
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-05 12:05:35
+         compiled from "templates/plantillas/modulos/usuarios/panel.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:181242953559aed533ba2fe1-35612437%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '75fca16c9665563fbe115b9d9483a90d1409c54e' => 
+    array (
+      0 => 'templates/plantillas/modulos/usuarios/panel.tpl',
+      1 => 1504631134,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '181242953559aed533ba2fe1-35612437',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.11',
+  'unifunc' => 'content_59aed533bf8789_97283563',
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_59aed533bf8789_97283563')) {function content_59aed533bf8789_97283563($_smarty_tpl) {?><div class="row">
 	<div class="col-lg-12">
 		<h1 class="page-header">Administración de usuarios</h1>
 	</div>
@@ -50,4 +71,4 @@
 			</div>
 		</form>
 	</div>
-</div>
+</div><?php }} ?>

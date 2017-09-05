@@ -12,7 +12,7 @@ switch($objModulo->getId()){
 		switch($objModulo->getAction()){
 			case 'login':
 				$db = TBase::conectaDB();
-				$rs = $db->query("select idUsuario, pass from usuario where upper(email) = upper('".$_POST['usuario']."') and visible = true");
+				$rs = $db->query("select idUsuario, pass from usuario where upper(correo) = upper('".$_POST['usuario']."') and visible = true");
 				$result = array('band' => false, 'mensaje' => 'Error al consultar los datos');
 				
 				$row = $rs->fetch_assoc();

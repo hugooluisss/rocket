@@ -6,12 +6,11 @@
 		{$PAGE.usuario->getNombre()}
 	</div>
 </div>
-<!--
-{if $PAGE.usuario->getIdTipo() eq 2}
-	{include file=$PAGE.rutaModulos|cat:"modulos/inicio/responsable.tpl"}
+
+{if $PAGE.usuario->getIdTipo() eq 1}
+	{include file=$PAGE.rutaModulos|cat:"modulos/inicio/administrador.tpl"}
 {/if}
 
-{if $PAGE.usuario->getIdTipo() eq 3}
-	{include file=$PAGE.rutaModulos|cat:"modulos/inicio/vendedor.tpl"}
+{if $PAGE.usuario->getIdTipo() eq 2}
+	{include file=$PAGE.rutaModulos|cat:"modulos/inicio/negocio.tpl"}
 {/if}
--->

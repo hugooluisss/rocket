@@ -23,7 +23,7 @@ class TUsuario{
 	* @param int $id identificador del objeto
 	*/
 	public function TUsuario($id = ''){
-		$this->setId($id);		
+		$this->setId($id);
 		return true;
 	}
 	
@@ -102,7 +102,7 @@ class TUsuario{
 		if ($this->getIdTipo() == '') return false;
 		
 		$db = TBase::conectaDB();
-		$rs = $db->query("select nombre from tipousuario where idTipoUsuario = ".$this->getIdTipo());
+		$rs = $db->query("select nombre from tipousuario where idTipo = ".$this->getIdTipo());
 		$row = $rs->fetch_assoc();
 		return $row['nombre'];
 	}
@@ -233,27 +233,26 @@ class TUsuario{
 	
 	public function guardar(){
 		if ($this->getIdTipo() == '') return false;
-		
 		$db = TBase::conectaDB();
 		
 		if ($this->getId() == ''){
-			$rs = $db->query("INSERT INTO usuario(idTipo, visible) VALUES(".$this->getIdTipo().", true);");
+			$sql = "INSERT INTO usuario(idTipo, visible) VALUES(".$this->getIdTipo().", true);";
+			$rs = $db->query($sql) or errorMySQL($db, $sql);
 			if (!$rs) return false;
-				
+			
 			$this->idUsuario = $db->insert_id;
 		}		
 		
-		if ($this->getId() == '')
+		if ($this->idUsuario == '')
 			return false;
-		
+			
 		$sql = "UPDATE usuario
 			SET
-				idTipo = ".$this->getIdTipo().",
 				nombre = '".$this->getNombre()."',
-				apellidos = '".$this->getApellidos()."'
+				apellidos = '".$this->getApellidos()."',
 				correo = '".$this->getCorreo()."',
 				pass = '".$this->getPass()."'
-			WHERE idUsuario = ".$this->getId();
+			WHERE idUsuario = ".$this->idUsuario;
 		$rs = $db->query($sql) or errorMySQL($db, $sql);
 			
 		return $rs?true:false;

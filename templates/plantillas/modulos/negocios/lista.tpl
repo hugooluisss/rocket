@@ -1,9 +1,10 @@
 <div class="box">
 	<div class="box-body">
-		<table id="tblUsuarios" class="table table-bordered table-hover">
+		<table id="tblDatos" class="table table-bordered table-hover">
 			<thead>
 				<tr>
-					<th>Nombre</th>
+					<th>Razón Social</th>
+					<th>Contacto</th>
 					<th>Correo</th>
 					<th>&nbsp;</th>
 				</tr>
@@ -11,6 +12,7 @@
 			<tbody>
 				{foreach from=$lista item="row"}
 					<tr>
+						<td>{$row.razonsocial}</td>
 						<td><b>{$row.nombre}</b> {$row.apellidos}</td>
 						<td>{$row.correo}</td>
 						<td style="text-align: right">

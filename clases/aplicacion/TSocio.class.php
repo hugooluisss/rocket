@@ -125,10 +125,13 @@ class TSocio extends TUsuario{
 	
 	public function guardar(){
 		if (parent::guardar() == '') return false;
+		$this->idUsuario = parent::getId();
 		
 		$db = TBase::conectaDB();
+		$sql = "select idUsuario from socio where idUsuario = ".$this->getId();
+		$rs = $db->query($sql) or errorMySQL($db, $sql);
 		
-		if ($this->getId() == ''){
+		if ($rs->num_rows == 0){
 			$rs = $db->query("INSERT INTO socio(idUsuario) VALUES(".$this->getId().");");
 			if (!$rs) return false;
 		}		
@@ -138,7 +141,7 @@ class TSocio extends TUsuario{
 		
 		$sql = "UPDATE socio
 			SET
-				municipio = ".$this->getMunicipio().",
+				municipio = '".$this->getMunicipio()."',
 				entidadfederativa = '".$this->getEntidadFederativa()."'
 			WHERE idUsuario = ".$this->getId();
 		$rs = $db->query($sql) or errorMySQL($db, $sql);

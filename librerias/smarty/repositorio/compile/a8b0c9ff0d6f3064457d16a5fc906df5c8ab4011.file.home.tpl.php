@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-04 20:24:28
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-05 08:45:42
          compiled from "templates/plantillas/modulos/home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:81926296259adfccc4e8af9-05847640%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a8b0c9ff0d6f3064457d16a5fc906df5c8ab4011' => 
     array (
       0 => 'templates/plantillas/modulos/home.tpl',
-      1 => 1504574447,
+      1 => 1504619033,
       2 => 'file',
     ),
   ),
@@ -15,13 +15,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.11',
+  'unifunc' => 'content_59adfccc565c96_93240693',
   'variables' => 
   array (
     'PAGE' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_59adfccc565c96_93240693',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_59adfccc565c96_93240693')) {function content_59adfccc565c96_93240693($_smarty_tpl) {?><div class="beneficios">
 	<div class="row">

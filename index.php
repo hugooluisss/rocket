@@ -107,6 +107,9 @@ define('NUMPAG', $ini['config']['NUMPAG']);
 
 if ($objModulo->getRutaControlador() <> '')
 	require('controlador/'.$objModulo->getRutaControlador());
+	
+if (file_exists('controlador/index.php'))
+	require('controlador/index.php');
 
 $smarty->assign("PAGE", $datosPlantilla);
 

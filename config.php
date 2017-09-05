@@ -17,8 +17,8 @@ define('LAYOUT_ROCKET', 'layout/rocket.tpl');
 $conf['inicio'] = array(
 	'vista' => 'home.tpl',
 	'descripcion' => '',
-	'js' => array('socio.class.js'),
-	'jsTemplate' => array('socios.js'),
+	'js' => array('socio.class.js', 'usuario.class.js'),
+	'jsTemplate' => array('sociosHome.js', 'negociosHome.js'),
 	'seguridad' => false,
 	'capa' => LAYOUT_ROCKET);
 
@@ -47,6 +47,16 @@ $conf['cusuarios'] = array(
 	'descripcion' => 'Controlador de usuarios',
 	'seguridad' => true,
 	'capa' => LAYOUT_JSON);
+	
+	
+$conf['panelPrincipal'] = array(
+	'vista' => 'inicio.tpl',
+	#'controlador' => 'panelPrincipal.php',
+	'descripcion' => '',
+	#'js' => array('socio.class.js', 'usuario.class.js'),
+	#'jsTemplate' => array('sociosHome.js', 'negociosHome.js'),
+	'seguridad' => false,
+	'capa' => LAYOUT_DEFECTO);
 
 includeDir("config/");
 ?>
