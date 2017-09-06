@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-05 10:02:06
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-05 14:47:10
          compiled from "templates/plantillas/modulos/usuarios/loginNegocio.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:167907404159aeb813b80052-31965204%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c5213a4d8f42018e80a5cd329c6f930b51fe6cb9' => 
     array (
       0 => 'templates/plantillas/modulos/usuarios/loginNegocio.tpl',
-      1 => 1504623116,
+      1 => 1504637813,
       2 => 'file',
     ),
   ),
