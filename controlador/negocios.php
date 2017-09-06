@@ -35,7 +35,7 @@ switch($objModulo->getId()){
 				$obj->setCodigoPostal($_POST['codigopostal']);
 				$obj->setLocalidad($_POST['localidad']);
 				$obj->setMunicipio($_POST['municipio']);
-				$obj->setEntidadFederativa($_POST['entidadFederativa']);
+				$obj->setEntidadFederativa($_POST['entidadfederativa']);
 				$obj->setTelefono($_POST['telefono']);
 				
 				if ($_POST['pass'] <> '')
@@ -48,10 +48,9 @@ switch($objModulo->getId()){
 				$obj = new TUsuario($_POST['usuario']);
 				$smarty->assign("json", array("band" => $obj->eliminar()));
 			break;
-			case 'validarEmail':
-				$db = TBase::conectaDB();
-				$rs = $db->query("select idUsuario from usuario where upper(correo) = upper('".$_POST['txtCorreo']."')");
-				echo $rs->num_rows == 0?"true":"false";
+			case 'addComision':
+				$obj = new TUsuario($_POST['negocio']);
+				$smarty->assign("json", array("band" => $obj->addComision($_POST['comision'])));
 			break;
 		}
 	break;

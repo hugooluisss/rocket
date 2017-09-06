@@ -42,4 +42,20 @@ TNegocio = function(){
 			}
 		}, "json");
 	};
+	
+	this.addComision = function(datos){
+		if (datos.fn.before !== undefined) datos.fn.before();
+		
+		$.post('cnegocios', {
+				"id": datos.id,
+				"comision": datos.comision,
+				"action": "addComision"
+			}, function(data){
+				if (data.band == false)
+					console.log(data.mensaje);
+					
+				if (datos.fn.after !== undefined)
+					datos.fn.after(data);
+			}, "json");
+	};
 };

@@ -342,6 +342,7 @@ class TNegocio extends TUsuario{
 	
 	public function guardar(){
 		if (parent::guardar() == '') return false;
+		global $ini;
 		
 		$db = TBase::conectaDB();
 		$sql = "select idUsuario from negocio where idUsuario = ".$this->getId();
@@ -349,6 +350,7 @@ class TNegocio extends TUsuario{
 		
 		if ($rs->num_rows == 0){
 			$rs = $db->query("INSERT INTO negocio(idUsuario) VALUES(".$this->getId().");");
+			$rs = $db->query("INSERT INTO comision(idUsuario, activar, comision) VALUES(".$this->getId().", now(), ".($ini['sistema']['comision'] == ''?5:$ini['sistema']['comision']).");");
 			if (!$rs) return false;
 		}		
 		
@@ -369,6 +371,25 @@ class TNegocio extends TUsuario{
 				telefono = '".$this->getTelefono()."'
 			WHERE idUsuario = ".$this->getId();
 		$rs = $db->query($sql) or errorMySQL($db, $sql);
+			
+		return $rs?true:false;
+	}
+	
+	/**
+	* Agrega una comision
+	*
+	* @autor Hugo
+	* @access public
+	* @return boolean True si se realizó sin problemas
+	*/
+	
+	public function addComision($comision = 0){
+		if ($this->getId() == '') return false;
+		
+		$fecha = new DateTime();
+		$fecha->add(new DateInterval('PT24H'));
+		$db = TBase::conectaDB();
+		$rs = $db->query("INSERT INTO comision(idUsuario, activar, comision) VALUES(".$this->getId().", '".$fecha->format("Y-m-d H:i:s")."', ".$comision.");");
 			
 		return $rs?true:false;
 	}

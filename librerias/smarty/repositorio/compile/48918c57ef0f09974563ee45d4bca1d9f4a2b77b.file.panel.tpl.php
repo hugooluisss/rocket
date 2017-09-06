@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-05 12:31:57
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-06 13:44:41
          compiled from "templates/plantillas/modulos/negocios/panel.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:56730445759aede7ba4f772-24284208%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '48918c57ef0f09974563ee45d4bca1d9f4a2b77b' => 
     array (
       0 => 'templates/plantillas/modulos/negocios/panel.tpl',
-      1 => 1504632715,
+      1 => 1504723480,
       2 => 'file',
     ),
   ),
@@ -17,6 +17,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'version' => 'Smarty-3.1.11',
   'unifunc' => 'content_59aede7bab4bc2_83626769',
+  'variables' => 
+  array (
+    'PAGE' => 0,
+  ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_59aede7bab4bc2_83626769')) {function content_59aede7bab4bc2_83626769($_smarty_tpl) {?><div class="row">
@@ -117,6 +121,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 							<input type="email" class="form-control" id="txtPass" name="txtPass">
 						</div>
 					</div>
+					
 				</div>
 				<div class="box-footer">
 					<button type="reset" id="btnReset" class="btn btn-default">Cancelar</button>
@@ -126,4 +131,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			</div>
 		</form>
 	</div>
-</div><?php }} ?>
+</div>
+
+<?php echo $_smarty_tpl->getSubTemplate (($_smarty_tpl->tpl_vars['PAGE']->value['rutaModulos']).("modulos/negocios/winComision.tpl"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php }} ?>

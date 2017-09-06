@@ -2,6 +2,23 @@
 global $objModulo;
 
 switch($objModulo->getId()){
+	case 'listaSocios':
+		$db = TBase::conectaDB();
+		global $sesion;
+		$usuario = new TUsuario($sesion['usuario']);
+		$sql = "select * from usuario a join socio b using(idUsuario) where a.visible = true and idTipo = 3";
+		
+		$rs = $db->query($sql) or errorMySQL($db, $sql);
+		$datos = array();
+		while($row = $rs->fetch_assoc()){
+			$row['pass'] = '';
+			$row['json'] = json_encode($row);
+			
+			array_push($datos, $row);
+		}
+		
+		$smarty->assign("lista", $datos);
+	break;
 	default:
 		switch($objModulo->getAction()){
 			case 'add':

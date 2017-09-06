@@ -96,6 +96,7 @@
 							<input type="email" class="form-control" id="txtPass" name="txtPass">
 						</div>
 					</div>
+					
 				</div>
 				<div class="box-footer">
 					<button type="reset" id="btnReset" class="btn btn-default">Cancelar</button>
@@ -106,3 +107,5 @@
 		</form>
 	</div>
 </div>
+
+{include file=$PAGE.rutaModulos|cat:"modulos/negocios/winComision.tpl"}

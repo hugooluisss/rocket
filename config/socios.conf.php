@@ -6,7 +6,7 @@ $conf['socios'] = array(
 	'vista' => 'socios/panel.tpl',
 	'descripcion' => 'socios',
 	'seguridad' => true,
-	'js' => array('socio.class.js'),
+	'js' => array('socio.class.js', 'usuario.class.js'),
 	'jsTemplate' => array('socios.js'),
 	'capa' => LAYOUT_DEFECTO);
 

@@ -1,22 +1,22 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-06 12:47:17
-         compiled from "templates/plantillas/modulos/negocios/lista.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:105764173159aee0e7e7c324-95197605%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-06 12:41:08
+         compiled from "templates/plantillas/modulos/socios/lista.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:206663579059b0291624fe14-16536164%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    'dbb76b85ffc3ee5e89095865b7b39970477f116c' => 
+    'b5f2e649fef534b321c6e382033484c5530be337' => 
     array (
-      0 => 'templates/plantillas/modulos/negocios/lista.tpl',
-      1 => 1504720029,
+      0 => 'templates/plantillas/modulos/socios/lista.tpl',
+      1 => 1504719663,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '105764173159aee0e7e7c324-95197605',
+  'nocache_hash' => '206663579059b0291624fe14-16536164',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_59aee0e7ec3894_46012253',
+  'unifunc' => 'content_59b029162f4127_44713472',
   'variables' => 
   array (
     'lista' => 0,
@@ -24,15 +24,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_59aee0e7ec3894_46012253')) {function content_59aee0e7ec3894_46012253($_smarty_tpl) {?><div class="box">
+<?php if ($_valid && !is_callable('content_59b029162f4127_44713472')) {function content_59b029162f4127_44713472($_smarty_tpl) {?><div class="box">
 	<div class="box-body">
 		<table id="tblDatos" class="table table-bordered table-hover">
 			<thead>
 				<tr>
-					<th>Razón Social</th>
-					<th>Contacto</th>
+					<th>Nombre completo</th>
 					<th>Correo</th>
-					<th>Comisión</th>
 					<th>&nbsp;</th>
 				</tr>
 			</thead>
@@ -43,19 +41,12 @@ foreach ($_from as $_smarty_tpl->tpl_vars["row"]->key => $_smarty_tpl->tpl_vars[
 $_smarty_tpl->tpl_vars["row"]->_loop = true;
 ?>
 					<tr>
-						<td><?php echo $_smarty_tpl->tpl_vars['row']->value['razonsocial'];?>
-</td>
 						<td><b><?php echo $_smarty_tpl->tpl_vars['row']->value['nombre'];?>
 </b> <?php echo $_smarty_tpl->tpl_vars['row']->value['apellidos'];?>
 </td>
 						<td><?php echo $_smarty_tpl->tpl_vars['row']->value['correo'];?>
 </td>
-						<td class="text-center">
-							<button type="button" class="btn btn-primary btn-block btn-xs" action="comision" title="Comisiones" identificador='<?php echo $_smarty_tpl->tpl_vars['row']->value['idUsuario'];?>
-' data-toggle="modal" data-target="#winComisiones"><?php echo $_smarty_tpl->tpl_vars['row']->value['comision'];?>
- %</button>
-						</td>
-						<td class="text-right">
+						<td style="text-align: right">
 							<div class="btn-group btn-group-xs">
 								<button type="button" class="btn btn-primary" action="modificar" title="Modificar" datos='<?php echo $_smarty_tpl->tpl_vars['row']->value['json'];?>
 '><i class="fa fa-edit"></i></button>

@@ -14,8 +14,10 @@
 						<td><b>{$row.nombre}</b> {$row.apellidos}</td>
 						<td>{$row.correo}</td>
 						<td style="text-align: right">
-							<button type="button" class="btn btn-primary" action="modificar" title="Modificar" datos='{$row.json}'><i class="fa fa-edit"></i></button>
-							<button type="button" class="btn btn-danger" action="eliminar" title="Eliminar" usuario="{$row.idUsuario}"><i class="fa fa-times"></i></button>
+							<div class="btn-group btn-group-xs">
+								<button type="button" class="btn btn-primary" action="modificar" title="Modificar" datos='{$row.json}'><i class="fa fa-edit"></i></button>
+								<button type="button" class="btn btn-danger" action="eliminar" title="Eliminar" usuario="{$row.idUsuario}"><i class="fa fa-times"></i></button>
+							</div>
 						</td>
 					</tr>
 				{/foreach}

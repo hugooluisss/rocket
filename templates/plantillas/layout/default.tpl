@@ -107,7 +107,7 @@
 				<ul class="sidebar-menu">
 					<li class="header">MENÚ PRINCIPAL</li>
 					{if $PAGE.usuario->getPerfil() eq 1}
-					<li class="{if in_array($PAGE.modulo, array('usuarios', 'negocios'))}active{/if} treeview">
+					<li class="{if in_array($PAGE.modulo, array('usuarios', 'negocios', 'socios'))}active{/if} treeview">
 						<a href="#">
 							<i class="fa fa-dashboard"></i>
 							<span>Administración</span> <i class="fa fa-angle-left pull-right"></i>
@@ -115,6 +115,7 @@
 						<ul class="treeview-menu">
 							<li {if $PAGE.modulo eq 'usuarios'}class="active"{/if}><a href="usuarios">Usuarios</a></li>
 							<li class="{if in_array($PAGE.modulo, array('negocios'))}active{/if}"><a href="negocios">Negocios</a></li>
+							<li class="{if in_array($PAGE.modulo, array('socios'))}active{/if}"><a href="socios">Socios</a></li>
 						</ul>
 						
 						
@@ -127,19 +128,10 @@
 						<li class="{if in_array($PAGE.modulo, array('clientes'))}active{/if} treeview">
 							<a href="#">
 								<i class="fa fa-list-alt"></i> 
-								<span>Catálogos</span> <i class="fa fa-angle-left pull-right"></i>
+								<span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
 							</a>
 							<ul class="treeview-menu">
 								<li class="{if in_array($PAGE.modulo, array('clientes'))}active{/if}"><a href="clientes">Clientes</a></li>
-							</ul>
-						</li>
-						<li class="{if in_array($PAGE.modulo, array('ordenes'))}active{/if} treeview">
-							<a href="#">
-								<i class="fa fa-truck"></i> 
-								<span>Órdenes</span> <i class="fa fa-angle-left pull-right"></i>
-							</a>
-							<ul class="treeview-menu">
-								<li class="{if in_array($PAGE.modulo, array('ordenes'))}active{/if}"><a href="ordenes">Registro</a></li>
 							</ul>
 						</li>
 					</li>
