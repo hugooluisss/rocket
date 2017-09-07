@@ -134,7 +134,7 @@ $(document).ready(function(){
 			txtComision: {
 				required: true,
 				digits: true,
-				min: 0,
+				min: 5,
 				max: 100
 			}
 		},
