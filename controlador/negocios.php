@@ -20,6 +20,26 @@ switch($objModulo->getId()){
 		
 		$smarty->assign("lista", $datos);
 	break;
+	case 'datosNegocio':
+		global $sesion;
+		$usuario = new TUsuario($sesion['usuario']);
+		
+		$smarty->assign("negocio", new TNegocio($sesion['usuario']));
+	break;
+	case 'getListaImagenesGaleria':
+		global $userSesion;
+		$archivos = array();
+		$ruta = "repositorio/galeria/".$userSesion->getId()."/";
+		$directorio = scandir($ruta);
+						
+		foreach($directorio as $file){
+			
+			if (!in_array($file, array("..", ".")))
+				array_push($archivos, $ruta.$file);
+		}
+		
+		$smarty->assign("imagenes", $archivos);
+	break;
 	case 'cnegocios':
 		switch($objModulo->getAction()){
 			case 'add':
@@ -39,6 +59,8 @@ switch($objModulo->getId()){
 				$obj->setMunicipio($_POST['municipio']);
 				$obj->setEntidadFederativa($_POST['entidadfederativa']);
 				$obj->setTelefono($_POST['telefono']);
+				if($_POST['plus'] <> '')
+					$obj->setPlus($_POST['plus']);
 				
 				if ($_POST['pass'] <> '')
 					$obj->setPass($_POST['pass']);
@@ -56,6 +78,29 @@ switch($objModulo->getId()){
 				
 				$smarty->assign("json", array("band" => $result <> '', "fecha" => $result));
 			break;
+			case 'uploadGaleria':
+				global $userSesion;
+				$result = false;
+				if(isset($_FILES['upl']) && $_FILES['upl']['error'] == 0){
+					$carpeta = "repositorio/galeria/".$userSesion->getId()."/";
+					if (!file_exists($carpeta))
+						mkdir($carpeta, 0755);
+					
+					$archivo = date("YmdHis").".".substr($carpeta.$_FILES['upl']['name'], -3);
+					if(move_uploaded_file($_FILES['upl']['tmp_name'], $carpeta.$archivo)){
+						chmod($carpeta.$_FILES['upl']['name'], 0755);
+						$result = true;
+					}
+				}
+				
+				$smarty->assign("json", array("band" => $result));
+			break;
+			case 'eliminarImagen':
+				$carpeta = "repositorio/galeria/".$userSesion->getId()."/";
+				unlink($_POST["ruta"]);
+				
+				$smarty->assign("json", array("band" => true));
+			break; 
 		}
 	break;
 }

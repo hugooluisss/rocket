@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-06 23:28:08
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-07 10:25:56
          compiled from "templates/plantillas/modulos/movimientos/lista.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:133051028559b0af8232f9c0-67832294%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd0ceb44e9124b6d3e2779092a6d431a19c05b0c8' => 
     array (
       0 => 'templates/plantillas/modulos/movimientos/lista.tpl',
-      1 => 1504758486,
+      1 => 1504797954,
       2 => 'file',
     ),
   ),
@@ -30,8 +30,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			<th>Fecha</th>
 			<th>Socio</th>
 			<th>Monto</th>
-			<th>Puntos</th>
-			<th>&nbsp;</th>
+			<th>Puntos acumulados</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -52,14 +51,6 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 </td>
 				<td><?php echo $_smarty_tpl->tpl_vars['row']->value['puntos'];?>
 </td>
-				<td style="text-align: right">
-					<div class="btn-group btn-group-xs">
-						<button type="button" class="btn btn-primary" action="modificar" title="Modificar" datos='<?php echo $_smarty_tpl->tpl_vars['row']->value['json'];?>
-'><i class="fa fa-edit"></i></button>
-						<button type="button" class="btn btn-danger" action="eliminar" title="Eliminar" usuario="<?php echo $_smarty_tpl->tpl_vars['row']->value['idUsuario'];?>
-"><i class="fa fa-times"></i></button>
-					</div>
-				</td>
 			</tr>
 		<?php } ?>
 	</tbody>

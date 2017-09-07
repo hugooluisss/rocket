@@ -137,16 +137,17 @@
 					</li>
 					{/if}
 					{if $PAGE.usuario->getPerfil() eq 2}
-						<li class="{if in_array($PAGE.modulo, array('movimientos'))}active{/if}"><a href="movimientos">Movimientos</a></li>
-						<li class="{if in_array($PAGE.modulo, array('puntos'))}active{/if} treeview">
+						<li class="{if in_array($PAGE.modulo, array('datosNegocio', 'galeria'))}active{/if} treeview">
 							<a href="#">
 								<i class="fa fa-dashboard"></i>
-								<span>Administración</span> <i class="fa fa-angle-left pull-right"></i>
+								<span>Mi negocio</span> <i class="fa fa-angle-left pull-right"></i>
 							</a>
 							<ul class="treeview-menu">
-								<li {if $PAGE.modulo eq 'datosEmpresa'}class="active"{/if}><a href="datosEmpresa">Actualizar datos</a></li>
+								<li {if $PAGE.modulo eq 'datosNegocio'}class="active"{/if}><a href="datosNegocio">Actualizar datos</a></li>
+								<li {if $PAGE.modulo eq 'galeria'}class="active"{/if}><a href="galeria">Galería</a></li>
 							</ul>
 						</li>
+						<li class="{if in_array($PAGE.modulo, array('movimientos'))}active{/if}"><a href="movimientos">Movimientos</a></li>
 					{/if}
 				</ul>
 			</section>

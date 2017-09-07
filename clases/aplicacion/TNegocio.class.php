@@ -18,6 +18,7 @@ class TNegocio extends TUsuario{
 	private $municipio;
 	private $entidadfederativa;
 	private $telefono;
+	private $plus;
 	
 	/**
 	* Constructor de la clase
@@ -28,6 +29,7 @@ class TNegocio extends TUsuario{
 	*/
 	public function TNegocio($id = ''){
 		parent::TUsuario($id);
+		$this->plus = 0;
 		$this->setId($id);		
 		return true;
 	}
@@ -333,6 +335,32 @@ class TNegocio extends TUsuario{
 	}
 	
 	/**
+	* Establece si es considerado como plus o no
+	*
+	* @autor Hugo
+	* @access public
+	* @param string $val Valor a asignar
+	* @return boolean True si se realizó sin problemas
+	*/
+	
+	public function setPlus($val = 0){
+		$this->plus = $val;
+		return true;
+	}
+	
+	/**
+	* Retorna si es plus
+	*
+	* @autor Hugo
+	* @access public
+	* @return string Texto
+	*/
+	
+	public function getPlus(){
+		return $this->plus;
+	}
+	
+	/**
 	* Retorna la comisión que se tiene activa
 	*
 	* @autor Hugo
@@ -388,7 +416,8 @@ class TNegocio extends TUsuario{
 				localidad = '".$this->getLocalidad()."',
 				municipio = '".$this->getMunicipio()."',
 				entidadfederativa = '".$this->getEntidadFederativa()."',
-				telefono = '".$this->getTelefono()."'
+				telefono = '".$this->getTelefono()."',
+				plus = ".$this->getPlus()."
 			WHERE idUsuario = ".$this->getId();
 		$rs = $db->query($sql) or errorMySQL($db, $sql);
 			

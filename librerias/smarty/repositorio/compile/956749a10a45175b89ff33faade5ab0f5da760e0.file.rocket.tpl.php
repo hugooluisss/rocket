@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-05 14:47:10
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-07 13:48:08
          compiled from "templates/plantillas/layout/rocket.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:10575565359a0e9dd645a93-79600797%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '956749a10a45175b89ff33faade5ab0f5da760e0' => 
     array (
       0 => 'templates/plantillas/layout/rocket.tpl',
-      1 => 1504637813,
+      1 => 1504810087,
       2 => 'file',
     ),
   ),
@@ -96,86 +96,19 @@ logo.png" />
 			
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="#">¿Como funciona?</a></li>
-					<li><a href="#">Mis beneficios</a></li>
+					<li><a href="inicio">¿Como funciona?</a></li>
+					<li><a href="misbeneficios">Mis beneficios</a></li>
 					<li><a href="#">Marcas afiliadas</a></li>
 					<li><a href="#" data-toggle="modal" data-target="#winRegistro">Registrate gratis</a></li>
 					<li><a href="#" data-toggle="modal" data-target="#winNegocioLogin">Ingresa</a></li>
 				</ul>
 			</div>
 		</nav>
-		<div class="headPrincipal">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-4 col-md-3 text-center">
-						<form id="frmLoginCliente">
-							<div class="titulo">INGRESA A TU CUENTA</div>
-							<br />
-							<div class="input-group">
-								<span class="input-group-addon"><i class="fa fa-credit-card fa-inverse" aria-hidden="true"></i></span>
-								<input id="txtTarjeta" name="txtTarjeta" type="text" class="form-control" placeholder="* Número de tarjeta">
-							</div>
-							<br />
-							<div class="input-group">
-								<span class="input-group-addon">&nbsp;<i class="fa fa-lock fa-inverse" aria-hidden="true"></i>&nbsp;</span>
-								<input id="txtTarjeta" name="txtTarjeta" type="text" class="form-control" placeholder="* Contraseña">
-							</div>
-							<br />
-							<button type="submit" class="btn btn-danger">INGRESAR</button>
-							<button type="button" class="btn btn-link">Recuperar contraseña</button>
-						</form>
-					</div>
-					<div class="col-sm-4 col-sm-offset-4 col-md-3 col-md-offset-6 text-center">
-						<div id="carruselNegocios" class="carousel slide" data-ride="carousel">
-							<ol class="carousel-indicators">
-								<li data-target="#carruselNegocios" data-slide-to="0" class="active"></li>
-								<li data-target="#carruselNegocios" data-slide-to="1"></li>
-								<li data-target="#carruselNegocios" data-slide-to="2"></li>
-								<li data-target="#carruselNegocios" data-slide-to="3"></li>
-								<li data-target="#carruselNegocios" data-slide-to="4"></li>
-							</ol>
-							
-							<div class="carousel-inner">
-								<div class="item active">
-									<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['imagenes'];?>
-negocios/1.jpg" alt="Los Angeles" style="width:100%;">
-								</div>
-								
-								<div class="item">
-									<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['imagenes'];?>
-negocios/2.jpg" alt="Los Angeles" style="width:100%;">
-								</div>
-								
-								<div class="item">
-									<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['imagenes'];?>
-negocios/3.jpg" alt="Los Angeles" style="width:100%;">
-								</div>
-								<div class="item">
-									<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['imagenes'];?>
-negocios/4.jpg" alt="Los Angeles" style="width:100%;">
-								</div>
-								<div class="item">
-									<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['imagenes'];?>
-negocios/5.jpg" alt="Los Angeles" style="width:100%;">
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-xs-12 col-sm-6 col-sm-offset-3 descripcion text-center">
-						SÉ UN SOCIO ROCKET CARD Y DESCUBRE QUE MIENTRAS MÁS COMPRAS, MÁS DINERO GANAS
-					</div>
-				</div>
-			</div>
-		</div>
 		
-		<div class="container">
-			<?php if ($_smarty_tpl->tpl_vars['PAGE']->value['vista']!=''){?>
-				<?php echo $_smarty_tpl->getSubTemplate ($_smarty_tpl->tpl_vars['PAGE']->value['vista'], $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+		<?php if ($_smarty_tpl->tpl_vars['PAGE']->value['vista']!=''){?>
+			<?php echo $_smarty_tpl->getSubTemplate ($_smarty_tpl->tpl_vars['PAGE']->value['vista'], $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
-			<?php }?>
-		</div>
+		<?php }?>
 		
 		<?php echo $_smarty_tpl->getSubTemplate (($_smarty_tpl->tpl_vars['PAGE']->value['rutaModulos']).("modulos/usuarios/registro.tpl"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 

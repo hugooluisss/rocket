@@ -1,6 +1,10 @@
 <?php
 global $objModulo;
 switch($objModulo->getId()){
+	case 'movimientos':
+		$negocio = new TNegocio($userSesion->getId());
+		$smarty->assign("esPlus", $negocio->getPlus() == 1);
+	break;
 	case 'listaMovimientos':
 		$db = TBase::conectaDB();
 		$sql = "select a.*, c.nombre, c.apellidos, d.color, d.nombre as nombreTipo from movimiento a join socio b on a.idSocio = b.idUsuario join usuario c using(idUsuario) join tipomovimiento d using(idTipoMovimiento) where idNegocio = ".$userSesion->getId()." order by a.registro";
@@ -42,6 +46,20 @@ switch($objModulo->getId()){
 					$obj->setMonto($_POST['efectivo'] + $_POST['puntos']);
 					$band = $obj->guardar();
 				}
+				
+				$smarty->assign("json", array("band" => $band));
+			break;
+			case 'canjearPuntos':
+				$obj = new TMovimiento();
+				$band = true;
+				#primero el canje de puntos
+				$obj = new TMovimiento();
+				
+				$obj->tipo = new TTipoMovimiento(3);
+				$obj->socio = new TSocio($_POST['socio']);
+				$obj->negocio = new TNegocio($userSesion->getId());
+				$obj->setMonto($_POST['puntos']);
+				$band = $obj->guardar();
 				
 				$smarty->assign("json", array("band" => $band));
 			break;

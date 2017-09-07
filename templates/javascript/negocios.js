@@ -28,13 +28,7 @@ $(document).ready(function(){
 				}
 			},
 			txtNombre: "required",
-			txtApellidos: "required",
-			txtComision: {
-				required: true,
-				digits: true,
-				min: 0,
-				max: 100
-			}
+			txtApellidos: "required"
 		},
 		wrapper: 'span', 
 		submitHandler: function(form){
@@ -56,6 +50,7 @@ $(document).ready(function(){
 				municipio: $("#txtMunicipio").val(),
 				entidadfederativa: $("#txtEntidadFederativa").val(),
 				telefono: $("#txtTelefono").val(),
+				plus: $("#selPlus").val(),
 				fn: {
 					after: function(datos){
 						if (datos.band){
@@ -107,6 +102,7 @@ $(document).ready(function(){
 				$("#txtEntidadFederativa").val(el.entidadfederativa);
 				$("#txtTelefono").val(el.telefono);
 				$("#txtMunicipio").val(el.municipio);
+				$("#selPlus").val(el.plus);
 				
 				$('#panelTabs a[href="#add"]').tab('show');
 			});

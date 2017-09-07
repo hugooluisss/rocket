@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-06 22:17:44
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-07 13:01:56
          compiled from "templates/plantillas/modulos/movimientos/panel.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:124369857659b09ffbd7b215-00029725%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '093a8f02f421822297f3482e4f6240db763ce416' => 
     array (
       0 => 'templates/plantillas/modulos/movimientos/panel.tpl',
-      1 => 1504754263,
+      1 => 1504807270,
       2 => 'file',
     ),
   ),
@@ -19,6 +19,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_59b09ffbdc6c93_93681576',
   'variables' => 
   array (
+    'esPlus' => 0,
     'PAGE' => 0,
   ),
   'has_nocache_code' => false,
@@ -31,11 +32,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
 <div class="row">
 	<div class="col-xs-6 col-md-3">
-		<button class="btn btn-lg btn-primary btn-block"  data-toggle="modal" data-target="#winVenta">Registrar venta</button>
+		<button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#winVenta">Registrar venta</button>
 	</div>
+	<?php if ($_smarty_tpl->tpl_vars['esPlus']->value){?>
 	<div class="col-xs-6 col-md-3">
-		<button class="btn btn-lg btn-danger btn-block">Canjear puntos por efectivo</button>
+		<button class="btn btn-lg btn-danger btn-block" data-toggle="modal" data-target="#winCanje">Canjear puntos por efectivo</button>
 	</div>
+	<?php }?>
 </div>
 
 <br />
@@ -46,4 +49,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 </div>
 
 <?php echo $_smarty_tpl->getSubTemplate (($_smarty_tpl->tpl_vars['PAGE']->value['rutaModulos']).("modulos/movimientos/winVenta.tpl"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
+<?php echo $_smarty_tpl->getSubTemplate (($_smarty_tpl->tpl_vars['PAGE']->value['rutaModulos']).("modulos/movimientos/winCanje.tpl"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 <?php }} ?>

@@ -93,10 +93,18 @@
 						</div>
 						<label class="col-sm-3 control-label" for="txtCorreo">Contraseña</label>
 						<div class="col-sm-3">
-							<input type="email" class="form-control" id="txtPass" name="txtPass">
+							<input type="password" class="form-control" id="txtPass" name="txtPass">
 						</div>
 					</div>
-					
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="selPlus">¿Es negocio plus?</label>
+						<div class="col-sm-2">
+							<select id="selPlus" name="selPlus" class="form-control">
+								<option value="1">Si</option>
+								<option value="0">No</option>
+							</select>
+						</div>
+					</div>
 				</div>
 				<div class="box-footer">
 					<button type="reset" id="btnReset" class="btn btn-default">Cancelar</button>

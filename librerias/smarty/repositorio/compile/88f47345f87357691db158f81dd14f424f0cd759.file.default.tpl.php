@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-06 20:20:58
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-07 11:22:18
          compiled from "templates/plantillas/layout/default.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:89763678259a0e9dcbf89c9-13752529%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '88f47345f87357691db158f81dd14f424f0cd759' => 
     array (
       0 => 'templates/plantillas/layout/default.tpl',
-      1 => 1504747256,
+      1 => 1504801336,
       2 => 'file',
     ),
   ),
@@ -186,16 +186,17 @@ img/logo.jpg" alt="User Image" style="background: white"/>
 					</li>
 					<?php }?>
 					<?php if ($_smarty_tpl->tpl_vars['PAGE']->value['usuario']->getPerfil()==2){?>
-						<li class="<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['modulo'],array('movimientos'))){?>active<?php }?>"><a href="movimientos">Movimientos</a></li>
-						<li class="<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['modulo'],array('puntos'))){?>active<?php }?> treeview">
+						<li class="<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['modulo'],array('datosNegocio','galeria'))){?>active<?php }?> treeview">
 							<a href="#">
 								<i class="fa fa-dashboard"></i>
-								<span>Administración</span> <i class="fa fa-angle-left pull-right"></i>
+								<span>Mi negocio</span> <i class="fa fa-angle-left pull-right"></i>
 							</a>
 							<ul class="treeview-menu">
-								<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='datosEmpresa'){?>class="active"<?php }?>><a href="datosEmpresa">Actualizar datos</a></li>
+								<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='datosNegocio'){?>class="active"<?php }?>><a href="datosNegocio">Actualizar datos</a></li>
+								<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='galeria'){?>class="active"<?php }?>><a href="galeria">Galería</a></li>
 							</ul>
 						</li>
+						<li class="<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['modulo'],array('movimientos'))){?>active<?php }?>"><a href="movimientos">Movimientos</a></li>
 					<?php }?>
 				</ul>
 			</section>

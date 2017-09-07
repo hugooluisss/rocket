@@ -4,8 +4,7 @@
 			<th>Fecha</th>
 			<th>Socio</th>
 			<th>Monto</th>
-			<th>Puntos</th>
-			<th>&nbsp;</th>
+			<th>Puntos acumulados</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -15,12 +14,6 @@
 				<td><b>{$row.nombre}</b> {$row.apellidos}</td>
 				<td>{$row.monto}</td>
 				<td>{$row.puntos}</td>
-				<td style="text-align: right">
-					<div class="btn-group btn-group-xs">
-						<button type="button" class="btn btn-primary" action="modificar" title="Modificar" datos='{$row.json}'><i class="fa fa-edit"></i></button>
-						<button type="button" class="btn btn-danger" action="eliminar" title="Eliminar" usuario="{$row.idUsuario}"><i class="fa fa-times"></i></button>
-					</div>
-				</td>
 			</tr>
 		{/foreach}
 	</tbody>

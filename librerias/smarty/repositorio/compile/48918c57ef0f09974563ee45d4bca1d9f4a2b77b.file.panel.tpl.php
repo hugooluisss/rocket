@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-06 18:32:05
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-07 12:58:26
          compiled from "templates/plantillas/modulos/negocios/panel.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:56730445759aede7ba4f772-24284208%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '48918c57ef0f09974563ee45d4bca1d9f4a2b77b' => 
     array (
       0 => 'templates/plantillas/modulos/negocios/panel.tpl',
-      1 => 1504724861,
+      1 => 1504807105,
       2 => 'file',
     ),
   ),
@@ -118,10 +118,18 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 						</div>
 						<label class="col-sm-3 control-label" for="txtCorreo">Contraseña</label>
 						<div class="col-sm-3">
-							<input type="email" class="form-control" id="txtPass" name="txtPass">
+							<input type="password" class="form-control" id="txtPass" name="txtPass">
 						</div>
 					</div>
-					
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="selPlus">¿Es negocio plus?</label>
+						<div class="col-sm-2">
+							<select id="selPlus" name="selPlus" class="form-control">
+								<option value="1">Si</option>
+								<option value="0">No</option>
+							</select>
+						</div>
+					</div>
 				</div>
 				<div class="box-footer">
 					<button type="reset" id="btnReset" class="btn btn-default">Cancelar</button>

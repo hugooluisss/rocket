@@ -1,49 +1,43 @@
 <?php /* Smarty version Smarty-3.1.11, created on 2017-09-07 10:47:34
-         compiled from "templates/plantillas/modulos/movimientos/winVenta.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:126370035359b0b1a0ec76d8-81990889%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+         compiled from "templates/plantillas/modulos/movimientos/winCanje.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:24673203159b165464e2388-75450611%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '9111853366f9455e2a7889bbdf5230292c3b54a9' => 
+    '911032bd17531e2d3f09df3a0ca38f1c865837eb' => 
     array (
-      0 => 'templates/plantillas/modulos/movimientos/winVenta.tpl',
-      1 => 1504799234,
+      0 => 'templates/plantillas/modulos/movimientos/winCanje.tpl',
+      1 => 1504799252,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '126370035359b0b1a0ec76d8-81990889',
+  'nocache_hash' => '24673203159b165464e2388-75450611',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_59b0b1a0ec9e15_62320181',
+  'unifunc' => 'content_59b165464e4068_55077212',
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_59b0b1a0ec9e15_62320181')) {function content_59b0b1a0ec9e15_62320181($_smarty_tpl) {?><form role="form" id="frmVenta" class="form-horizontal" onsubmit="javascript: return false;">
-	<div id="winVenta" class="modal fade" role="dialog">
+<?php if ($_valid && !is_callable('content_59b165464e4068_55077212')) {function content_59b165464e4068_55077212($_smarty_tpl) {?><form role="form" id="frmCanje" class="form-horizontal" onsubmit="javascript: return false;">
+	<div id="winCanje" class="modal fade" role="dialog">
 		<div class="modal-dialog">
 			<!-- Modal content-->
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Registro de venta</h4>
+					<h4 class="modal-title">Canje de puntos</h4>
 				</div>
 				<div class="modal-body">
 					<div class="form-group">
 						<label class="col-xs-3 control-label" for="txtComision">Socio</label>
 						<div class="col-xs-9">
-							<input type="text" class="form-control socio" id="txtSocio" name="txtSocio" formulario="frmVenta" value="" placeholder="Número de tarjeta o correo electrónico">
+							<input type="text" class="form-control socio" id="txtSocio" name="txtSocio" formulario="frmCanje" value="" placeholder="Número de tarjeta o correo electrónico">
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="col-xs-offset-3 col-xs-9">
 							<input type="text" class="form-control" id="txtNombre" name="txtNombre" value="" placeholder="Nombre del cliente" disabled="true">
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="col-xs-3 control-label" for="txtEfectivo">Efectivo</label>
-						<div class="col-xs-5">
-							<input type="text" class="form-control text-right" id="txtEfectivo" name="txtEfectivo" value="0">
 						</div>
 					</div>
 					<div class="form-group">
