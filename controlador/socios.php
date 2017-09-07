@@ -19,7 +19,7 @@ switch($objModulo->getId()){
 		
 		$smarty->assign("lista", $datos);
 	break;
-	default:
+	case 'csocios':
 		switch($objModulo->getAction()){
 			case 'add':
 				global $userSesion;
@@ -44,11 +44,19 @@ switch($objModulo->getId()){
 				
 				$smarty->assign("json", array("band" => $obj->eliminar()));
 			break;
+			case 'getData':
+				$db = TBase::conectaDB();
+				$rs = $db->query("select * from usuario a join socio b using(idUsuario) where (upper(correo) = upper('".$_POST['socio']."') or idUsuario = '".ltrim($_POST['socio'], '0')."') and a.visible = 1");
+				
+				$smarty->assign("json", $rs->num_rows > 0?$rs->fetch_assoc():array("idUsuario" => ''));
+			break;
+			/*
 			case 'validarEmail':
 				$db = TBase::conectaDB();
 				$rs = $db->query("select idUsuario from usuario where upper(correo) = upper('".$_POST['txtUsuario']."')");
 				echo $rs->num_rows == 0?"true":"false";
 			break;
+			*/
 		}
 	break;
 }

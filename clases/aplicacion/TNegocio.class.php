@@ -333,6 +333,26 @@ class TNegocio extends TUsuario{
 	}
 	
 	/**
+	* Retorna la comisión que se tiene activa
+	*
+	* @autor Hugo
+	* @access public
+	* @return string Texto
+	*/
+	
+	public function getComision(){
+		if ($this->getId() == '') return 0;
+		
+		$db = TBase::conectaDB();
+		$sql = "select comision from comision where activar <= now() and idUsuario = ".$this->getId()." order by activar desc limit 1";
+		
+		$rs = $db->query($sql) or errorMySQL($db, $sql);
+		$row = $rs->fetch_assoc();
+		global $ini;
+		return $row['comision'] == ''?$ini['sistema']['comision']:$row['comision'];
+	}
+	
+	/**
 	* Guarda los datos en la base de datos, si no existe un identificador entonces crea el objeto
 	*
 	* @autor Hugo
@@ -391,7 +411,7 @@ class TNegocio extends TUsuario{
 		$db = TBase::conectaDB();
 		$rs = $db->query("INSERT INTO comision(idUsuario, activar, comision) VALUES(".$this->getId().", '".$fecha->format("Y-m-d H:i:s")."', ".$comision.");");
 			
-		return $rs?true:false;
+		return $rs?$fecha->format("Y-m-d H:i:s"):"";
 	}
 }
 ?>

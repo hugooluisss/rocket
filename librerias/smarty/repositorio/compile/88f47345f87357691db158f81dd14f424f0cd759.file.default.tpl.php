@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-06 12:24:40
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-06 20:20:58
          compiled from "templates/plantillas/layout/default.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:89763678259a0e9dcbf89c9-13752529%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '88f47345f87357691db158f81dd14f424f0cd759' => 
     array (
       0 => 'templates/plantillas/layout/default.tpl',
-      1 => 1504718472,
+      1 => 1504747256,
       2 => 'file',
     ),
   ),
@@ -185,9 +185,8 @@ img/logo.jpg" alt="User Image" style="background: white"/>
 						</li>
 					</li>
 					<?php }?>
-					
 					<?php if ($_smarty_tpl->tpl_vars['PAGE']->value['usuario']->getPerfil()==2){?>
-						<li class="<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['modulo'],array('puntos'))){?>active<?php }?>"><a href="puntos">Puntos</a></li>
+						<li class="<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['modulo'],array('movimientos'))){?>active<?php }?>"><a href="movimientos">Movimientos</a></li>
 						<li class="<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['modulo'],array('puntos'))){?>active<?php }?> treeview">
 							<a href="#">
 								<i class="fa fa-dashboard"></i>

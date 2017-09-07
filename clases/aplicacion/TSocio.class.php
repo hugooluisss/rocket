@@ -10,6 +10,7 @@ class TSocio extends TUsuario{
 	private $idUsuario;
 	private $municipio;
 	private $entidadfederativa;
+	private $puntos;
 	
 	/**
 	* Constructor de la clase
@@ -142,11 +143,38 @@ class TSocio extends TUsuario{
 		$sql = "UPDATE socio
 			SET
 				municipio = '".$this->getMunicipio()."',
-				entidadfederativa = '".$this->getEntidadFederativa()."'
+				entidadfederativa = '".$this->getEntidadFederativa()."',
+				puntos = ".$this->getPuntos()."
 			WHERE idUsuario = ".$this->getId();
 		$rs = $db->query($sql) or errorMySQL($db, $sql);
 			
 		return $rs?true:false;
+	}
+	
+	/**
+	* Agrega puntos
+	*
+	* @autor Hugo
+	* @access public
+	* @return string Texto
+	*/
+	
+	public function addPuntos($puntos){
+		$this->puntos += $puntos;
+		
+		return true;
+	}
+	
+	/**
+	* Retorna el número de puntos que tiene disponible
+	*
+	* @autor Hugo
+	* @access public
+	* @return string Texto
+	*/
+	
+	public function getPuntos(){
+		return $this->puntos == ''?0:$this->puntos;
 	}
 }
 ?>

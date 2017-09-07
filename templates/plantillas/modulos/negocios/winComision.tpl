@@ -1,5 +1,5 @@
 <form role="form" id="frmComision" class="form-horizontal" onsubmit="javascript: return false;">
-	<div id="winComisiones" class="modal fade" role="dialog">
+	<div id="winComisiones" class="modal fade" role="dialog" usuario="">
 		<div class="modal-dialog">
 			<!-- Modal content-->
 			<div class="modal-content">

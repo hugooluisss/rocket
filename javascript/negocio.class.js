@@ -20,6 +20,7 @@ TNegocio = function(){
 				"municipio": datos.municipio,
 				"entidadfederativa": datos.entidadfederativa,
 				"telefono": datos.telefono,
+				"plus": datos.plus,
 				"action": "add"
 			}, function(data){
 				if (data.band == 'false')
@@ -47,7 +48,7 @@ TNegocio = function(){
 		if (datos.fn.before !== undefined) datos.fn.before();
 		
 		$.post('cnegocios', {
-				"id": datos.id,
+				"id": datos.negocio,
 				"comision": datos.comision,
 				"action": "addComision"
 			}, function(data){

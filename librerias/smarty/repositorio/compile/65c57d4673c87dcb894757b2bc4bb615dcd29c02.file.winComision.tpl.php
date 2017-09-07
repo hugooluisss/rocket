@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-06 13:46:18
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-06 18:37:22
          compiled from "templates/plantillas/modulos/negocios/winComision.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:75582359859b04219cc38d9-92644408%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '65c57d4673c87dcb894757b2bc4bb615dcd29c02' => 
     array (
       0 => 'templates/plantillas/modulos/negocios/winComision.tpl',
-      1 => 1504723576,
+      1 => 1504741041,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_59b04219d28456_57217190')) {function content_59b04219d28456_57217190($_smarty_tpl) {?><form role="form" id="frmComision" class="form-horizontal" onsubmit="javascript: return false;">
-	<div id="winComisiones" class="modal fade" role="dialog">
+	<div id="winComisiones" class="modal fade" role="dialog" usuario="">
 		<div class="modal-dialog">
 			<!-- Modal content-->
 			<div class="modal-content">

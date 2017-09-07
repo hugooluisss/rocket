@@ -136,9 +136,8 @@
 						</li>
 					</li>
 					{/if}
-					
 					{if $PAGE.usuario->getPerfil() eq 2}
-						<li class="{if in_array($PAGE.modulo, array('puntos'))}active{/if}"><a href="puntos">Puntos</a></li>
+						<li class="{if in_array($PAGE.modulo, array('movimientos'))}active{/if}"><a href="movimientos">Movimientos</a></li>
 						<li class="{if in_array($PAGE.modulo, array('puntos'))}active{/if} treeview">
 							<a href="#">
 								<i class="fa fa-dashboard"></i>

@@ -7,7 +7,7 @@ $conf['negocios'] = array(
 	'descripcion' => 'Administración de negocios',
 	'seguridad' => true,
 	'js' => array('negocio.class.js', 'usuario.class.js'),
-	'jsTemplate' => array('negocios.js', 'comisiones.js'),
+	'jsTemplate' => array('negocios.js'),
 	'capa' => LAYOUT_DEFECTO);
 
 $conf['listaNegocios'] = array(

@@ -3,13 +3,15 @@ global $objModulo;
 switch($objModulo->getId()){
 	case 'listaNegocios':
 		$db = TBase::conectaDB();
-		global $sesion;
-		$usuario = new TUsuario($sesion['usuario']);
+		#global $sesion;
+		#$usuario = new TUsuario($sesion['usuario']);
 		$sql = "select * from usuario a join negocio b using(idUsuario) where a.visible = true and idTipo = 2";
 		
 		$rs = $db->query($sql) or errorMySQL($db, $sql);
 		$datos = array();
 		while($row = $rs->fetch_assoc()){
+			$obj = new TNegocio($row['idUsuario']);
+			$row['comision'] = $obj->getComision();
 			$row['pass'] = '';
 			$row['json'] = json_encode($row);
 			
@@ -49,8 +51,10 @@ switch($objModulo->getId()){
 				$smarty->assign("json", array("band" => $obj->eliminar()));
 			break;
 			case 'addComision':
-				$obj = new TUsuario($_POST['negocio']);
-				$smarty->assign("json", array("band" => $obj->addComision($_POST['comision'])));
+				$obj = new TNegocio($_POST['id']);
+				$result = $obj->addComision($_POST['comision']);
+				
+				$smarty->assign("json", array("band" => $result <> '', "fecha" => $result));
 			break;
 		}
 	break;
