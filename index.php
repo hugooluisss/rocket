@@ -47,6 +47,19 @@ if ($objModulo->requiereSeguridad()){
 	}
 }else
 	$bandSesion = isset($sesion['usuario']);
+	
+	
+$pageSesion = new TUsuario($sesion['usuario']);
+$userSesion = $pageSesion;
+
+if ($bandSesion){
+	if (!$objModulo->userCanSee($pageSesion->getPerfil())){
+		$bandSesion = false;
+		$modulo = MODULO_DEFECTO;
+		unset($objModulo);
+		$objModulo = new TModulo($modulo);
+	}
+}
 
 define("DIR_PLANTILLAS", 'templates');
 define('TEMPLATE', DIR_PLANTILLAS.'/plantillas/');
@@ -65,8 +78,6 @@ $smarty->template_dir = TEMPLATE;
 $smarty->config_dir = CONFIG;
 $smarty->cache_dir = CACHE;
 $smarty->compile_dir = COMPILE;
-$pageSesion = new TUsuario($sesion['usuario']);
-$userSesion = $pageSesion;
 
 $datosPlantilla = array(
 	"ruta" => DIR_PLANTILLAS."/",

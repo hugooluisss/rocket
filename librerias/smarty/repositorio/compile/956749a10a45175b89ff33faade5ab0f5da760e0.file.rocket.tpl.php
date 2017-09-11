@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-07 13:48:08
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-10 21:27:05
          compiled from "templates/plantillas/layout/rocket.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:10575565359a0e9dd645a93-79600797%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '956749a10a45175b89ff33faade5ab0f5da760e0' => 
     array (
       0 => 'templates/plantillas/layout/rocket.tpl',
-      1 => 1504810087,
+      1 => 1505096824,
       2 => 'file',
     ),
   ),
@@ -98,7 +98,7 @@ logo.png" />
 				<ul class="nav navbar-nav">
 					<li><a href="inicio">¿Como funciona?</a></li>
 					<li><a href="misbeneficios">Mis beneficios</a></li>
-					<li><a href="#">Marcas afiliadas</a></li>
+					<li><a href="marcasafiliadas">Marcas afiliadas</a></li>
 					<li><a href="#" data-toggle="modal" data-target="#winRegistro">Registrate gratis</a></li>
 					<li><a href="#" data-toggle="modal" data-target="#winNegocioLogin">Ingresa</a></li>
 				</ul>
@@ -114,6 +114,27 @@ logo.png" />
 
 		<?php echo $_smarty_tpl->getSubTemplate (($_smarty_tpl->tpl_vars['PAGE']->value['rutaModulos']).("modulos/usuarios/loginNegocio.tpl"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
+		
+		
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6">
+						<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['imagenes'];?>
+logo.png" />
+					</div>
+					<div class="col-sm-6">
+						<ul class="">
+							<li><a href="inicio">¿Como funciona?</a></li>
+							<li><a href="misbeneficios">Mis beneficios</a></li>
+							<li><a href="marcasafiliadas">Marcas afiliadas</a></li>
+							<li><a href="#" data-toggle="modal" data-target="#winRegistro">Registrate gratis</a></li>
+							<li><a href="#" data-toggle="modal" data-target="#winNegocioLogin">Ingresa</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
 		
 		<!-- jQuery 2.1.4 -->
 	    <script src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>

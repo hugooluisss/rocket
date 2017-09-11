@@ -8,6 +8,7 @@ $conf['negocios'] = array(
 	'seguridad' => true,
 	'js' => array('negocio.class.js', 'usuario.class.js'),
 	'jsTemplate' => array('negocios.js'),
+	'perfiles' => array(1),
 	'capa' => LAYOUT_DEFECTO);
 
 $conf['listaNegocios'] = array(
@@ -15,12 +16,14 @@ $conf['listaNegocios'] = array(
 	'vista' => 'negocios/lista.tpl',
 	'descripcion' => 'Lista de negocios',
 	'seguridad' => true,
+	'perfiles' => array(1),
 	'capa' => LAYOUT_AJAX);
 	
 $conf['cnegocios'] = array(
 	'controlador' => 'negocios.php',
 	'descripcion' => 'Controlador de negocios',
 	'seguridad' => false,
+	'perfiles' => array(2),
 	'capa' => LAYOUT_JSON);
 	
 $conf['datosNegocio'] = array(

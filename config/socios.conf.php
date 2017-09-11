@@ -8,6 +8,7 @@ $conf['socios'] = array(
 	'seguridad' => true,
 	'js' => array('socio.class.js', 'usuario.class.js'),
 	'jsTemplate' => array('socios.js'),
+	'perfiles' => array(1),
 	'capa' => LAYOUT_DEFECTO);
 
 $conf['listaSocios'] = array(
@@ -15,6 +16,7 @@ $conf['listaSocios'] = array(
 	'vista' => 'socios/lista.tpl',
 	'descripcion' => 'Lista de socios',
 	'seguridad' => true,
+	'perfiles' => array(1),
 	'capa' => LAYOUT_AJAX);
 	
 $conf['csocios'] = array(

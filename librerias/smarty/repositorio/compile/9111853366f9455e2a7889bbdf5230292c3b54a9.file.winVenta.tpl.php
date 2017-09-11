@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-07 10:47:34
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-07 20:48:30
          compiled from "templates/plantillas/modulos/movimientos/winVenta.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:126370035359b0b1a0ec76d8-81990889%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '9111853366f9455e2a7889bbdf5230292c3b54a9' => 
     array (
       0 => 'templates/plantillas/modulos/movimientos/winVenta.tpl',
-      1 => 1504799234,
+      1 => 1504811282,
       2 => 'file',
     ),
   ),

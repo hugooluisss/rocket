@@ -36,7 +36,7 @@ $(document).ready(function(){
 		submitHandler: function(form){
 			form = $(form);
 			
-			if (form.find("#txtPuntos").val() > form.find("#puntos").val()){
+			if (form.find("#txtPuntos").val() > form.find("#puntos").val() && form.find("#txtPuntos").val() > 0){
 				alert("No se puede realizar ya que no tiene los Rocket Puntos suficientes");
 				$("#txtPuntos").select();
 			}else if (parseFloat(form.find("#txtPuntos").val()) + parseFloat(form.find("#txtEfectivo").val()) <= 0){
@@ -104,7 +104,6 @@ $(document).ready(function(){
 		wrapper: 'span', 
 		submitHandler: function(form){
 			form = $(form);
-			
 			if (form.find("#txtPuntos").val() > form.find("#puntos").val()){
 				alert("No se puede realizar ya que no tiene los Rocket Puntos suficientes");
 				$("#txtPuntos").select();

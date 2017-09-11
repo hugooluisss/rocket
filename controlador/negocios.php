@@ -40,6 +40,28 @@ switch($objModulo->getId()){
 		
 		$smarty->assign("imagenes", $archivos);
 	break;
+	case 'marcasafiliadas':
+		$db = TBase::conectaDB();
+		$sql = "select * from negocio a join usuario b using(idUsuario) where visible = true";
+		$rs = $db->query($sql) or errorMySQL($db, $sql);
+		$datos = array();
+		while($row = $rs->fetch_assoc()){
+			$ruta = "repositorio/galeria/".$row['idUsuario']."/";
+			$directorio = scandir($ruta);
+			$row['imagenes'] = array();
+			
+			foreach($directorio as $file){
+				if (!in_array($file, array("..", ".")))
+					array_push($row['imagenes'], $ruta.$file);
+			}
+			
+			$row['json'] = json_encode($row);
+			
+			array_push($datos, $row);
+		}
+		
+		$smarty->assign("negocios", $datos);
+	break;
 	case 'cnegocios':
 		switch($objModulo->getAction()){
 			case 'add':

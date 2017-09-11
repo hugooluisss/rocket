@@ -62,7 +62,7 @@
 				<ul class="nav navbar-nav">
 					<li><a href="inicio">¿Como funciona?</a></li>
 					<li><a href="misbeneficios">Mis beneficios</a></li>
-					<li><a href="#">Marcas afiliadas</a></li>
+					<li><a href="marcasafiliadas">Marcas afiliadas</a></li>
 					<li><a href="#" data-toggle="modal" data-target="#winRegistro">Registrate gratis</a></li>
 					<li><a href="#" data-toggle="modal" data-target="#winNegocioLogin">Ingresa</a></li>
 				</ul>
@@ -75,6 +75,26 @@
 		
 		{include file=$PAGE.rutaModulos|cat:"modulos/usuarios/registro.tpl"}
 		{include file=$PAGE.rutaModulos|cat:"modulos/usuarios/loginNegocio.tpl"}
+		
+		
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6">
+						<img src="{$PAGE.imagenes}logo.png" />
+					</div>
+					<div class="col-sm-6">
+						<ul class="">
+							<li><a href="inicio">¿Como funciona?</a></li>
+							<li><a href="misbeneficios">Mis beneficios</a></li>
+							<li><a href="marcasafiliadas">Marcas afiliadas</a></li>
+							<li><a href="#" data-toggle="modal" data-target="#winRegistro">Registrate gratis</a></li>
+							<li><a href="#" data-toggle="modal" data-target="#winNegocioLogin">Ingresa</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
 		
 		<!-- jQuery 2.1.4 -->
 	    <script src="{$PAGE.ruta}plugins/jQuery/jQuery-2.1.4.min.js"></script>

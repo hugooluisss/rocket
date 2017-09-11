@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-07 14:07:07
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-07 20:52:12
          compiled from "templates/plantillas/modulos/front-end/misBeneficios.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:150417869159b1944e00fab9-41899393%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '70e93e7521e2a3a1cca16aa2fd3c7881f75360f4' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/misBeneficios.tpl',
-      1 => 1504811225,
+      1 => 1504835531,
       2 => 'file',
     ),
   ),
@@ -42,17 +42,17 @@ ahorro.png" data-toggle="modal" data-target="#winAhorra"/>
 				</div>
 				<div class="col-xs-6 col-md-3 text-center item">
 					<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['imagenes'];?>
-promociones.png"  data-toggle="modal" data-target="#winPromociones"/>
+promociones.png" data-toggle="modal" data-target="#winPromociones"/>
 					<p class="descripcion"><span class="text-danger">Recibe</span> promociones exclusivas</p>
 				</div>
 				<div class="col-xs-6 col-md-3 text-center item">
 					<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['imagenes'];?>
-premios.png" />
+premios.png" data-toggle="modal" data-target="#winParticipa"/>
 					<p class="descripcion"><span class="text-danger">Participa</span> para obtener premios</p>
 				</div>
 				<div class="col-xs-6 col-md-3 text-center item">
 					<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['imagenes'];?>
-compras.png" />
+compras.png" data-toggle="modal" data-target="#winCompras"/>
 					<p class="descripcion"><span class="text-danger">Utiliza</span> Rocket Card como cuenta de ahorro</p>
 				</div>
 			</div>
@@ -104,6 +104,56 @@ promociones.png"/>
 						<h3><span class="text-danger">Recibe</span> promociones exclusivas</h3>
 						<br />
 						<p>Al ser un socio Rocket Card los establecimientos afiliados te otorgarán descuentos únicos y exclusivos a los que solo tú puedes acceder</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="winParticipa" class="modal fade" role="dialog" usuario="">
+	<div class="modal-dialog">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				&nbsp;
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-xs-12 col-sm-6 text-center item">
+						<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['imagenes'];?>
+premios.png"/>
+					</div>
+					<div class="col-xs-12 col-sm-6">
+						<h3><span class="text-danger">Participa</span> para obtener premios</h3>
+						<br />
+						<p>Podrás participar para ganar premios que se otorgarán a la comunidad de socios Rocket Card totalmente gratis</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="winCompras" class="modal fade" role="dialog" usuario="">
+	<div class="modal-dialog">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				&nbsp;
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-xs-12 col-sm-6 text-center item">
+						<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['imagenes'];?>
+compras.png"/>
+					</div>
+					<div class="col-xs-12 col-sm-6">
+						<h3><span class="text-danger">Utiliza</span> Rocket Card como cuenta de ahorro</h3>
+						<br />
+						<p>Podrás participar para ganar premios que se otorgarán a la comunidad de socios Rocket Card totalmente gratis</p>
 					</div>
 				</div>
 			</div>

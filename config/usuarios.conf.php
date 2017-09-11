@@ -8,6 +8,7 @@ $conf['usuarios'] = array(
 	'seguridad' => true,
 	'js' => array('usuario.class.js'),
 	'jsTemplate' => array('usuarios.js'),
+	'perfiles' => array(1),
 	'capa' => LAYOUT_DEFECTO);
 
 $conf['listaUsuarios'] = array(
@@ -15,6 +16,7 @@ $conf['listaUsuarios'] = array(
 	'vista' => 'usuarios/lista.tpl',
 	'descripcion' => 'Lista de usuarios',
 	'seguridad' => true,
+	'perfiles' => array(1),
 	'capa' => LAYOUT_AJAX);
 	
 $conf['cusuarios'] = array(
