@@ -47,5 +47,32 @@ $(document).ready(function(){
         }
 
     });
+    
+    
+    $("#frmLoginSocio").validate({
+		debug: true,
+		rules: {
+			txtTarjetaUser: "required",
+			txtPassTarjeta: "required"
+		},
+		wrapper: 'span', 
+		submitHandler: function(form){
+			var obj = new TSocio;
+			obj.login({
+				usuario: $("#txtTarjetaUser").val(), 
+				pass: $("#txtPassTarjeta").val(), 
+				fn: {
+					after: function(datos){
+						if (datos.band){
+							$("#frmLoginSocio").get(0).reset();
+							location.href = "sociopanel";
+						}else{
+							alert("Tus datos no son correctos, intenta corrigiendolos");
+						}
+					}
+				}
+			});
+        }
 
+    });
 });

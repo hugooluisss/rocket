@@ -51,7 +51,7 @@ $conf['cusuarios'] = array(
 	
 $conf['panelPrincipal'] = array(
 	'vista' => 'inicio.tpl',
-	#'controlador' => 'panelPrincipal.php',
+	'controlador' => 'panelPrincipal.php',
 	'descripcion' => '',
 	#'js' => array('socio.class.js', 'usuario.class.js'),
 	#'jsTemplate' => array('sociosHome.js', 'negociosHome.js'),

@@ -1,6 +1,7 @@
 body {
   width: 100%;
   margin-right: 0px;
+  background: #edf1f1;
 }
 header {
   color: white;
@@ -9,7 +10,7 @@ header {
 }
 header .busqueda {
   font-family: 'Poppins', sans-serif;
-  font-size: 20px;
+  font-size: 18px;
 }
 header .busqueda .contactanos {
   font-weight: bold;
@@ -27,12 +28,173 @@ header .busqueda .contactanos {
   }
 }
 header .busqueda .buscar {
-  padding: 20px 50px 10px 50px;
+  padding: 0px 50px 0px 50px;
   width: 29%;
   display: inline-block;
 }
-nav .navbar-default {
+header .busqueda .buscar .input-group input {
+  border: none;
+}
+header .busqueda .buscar .input-group .input-group-addon {
+  background: white;
+  border: none;
+}
+nav {
+  margin-bottom: 0px !important;
+}
+nav.navbar {
+  border-radius: 0px;
+}
+nav.navbar-default {
   background: black;
+  border: none;
+  box-shadow: 0px 0px 5px #999;
+}
+nav .navbar-header .navbar-brand {
+  height: 75px;
+  padding-top: 0px;
+}
+nav .navbar-collapse ul {
+  margin-top: 8px;
+}
+nav .navbar-collapse ul li:hover {
+  background: red;
+}
+nav .navbar-collapse ul li > a {
+  font-size: 15px;
+  color: white !important;
+}
+.headPrincipal {
+  background: url("../img/rocketBGHead.jpg");
+  background-position-x: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: bottom;
+  min-height: 500px;
+}
+@media (max-width: 728px) {
+  .headPrincipal {
+    min-height: 500px;
+  }
+}
+.headPrincipal #frmLoginSocio {
+  margin-top: 60px;
+}
+@media (max-width: 728px) {
+  .headPrincipal #frmLoginSocio {
+    background: white;
+    padding: 5px 5px 5px 5px;
+  }
+}
+.headPrincipal #frmLoginSocio .titulo {
+  font-size: 22px;
+  font-weight: bold;
+}
+.headPrincipal #frmLoginSocio span.input-group-addon {
+  background: black;
+}
+.headPrincipal #frmLoginSocio button[type=button] {
+  color: black;
+  font-weight: bold;
+}
+.headPrincipal #carruselNegocios {
+  margin-top: 60px;
+}
+@media (max-width: 728px) {
+  .headPrincipal #carruselNegocios {
+    width: 70%;
+    margin-left: 13%;
+  }
+}
+.headPrincipal .descripcion {
+  font-size: 27px;
+  color: white;
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+@media (max-width: 728px) {
+  .headPrincipal .descripcion {
+    font-size: 18px;
+    margin-top: 60px;
+    margin-bottom: 30px;
+  }
+}
+@media (min-width: 729px) and (max-width: 940px) {
+  .headPrincipal .descripcion {
+    font-size: 20px;
+    margin-top: 60px;
+    margin-bottom: 30px;
+  }
+}
+h2 {
+  color: black;
+}
+.beneficios .item {
+  height: 300px;
+  cursor: pointer;
+}
+@media (max-width: 728px) {
+  .beneficios .item {
+    min-height: 250px;
+  }
+}
+.beneficios img {
+  max-width: 150px;
+}
+@media (max-width: 728px) {
+  .beneficios img {
+    max-width: 100px;
+  }
+}
+.beneficios p.descripcion {
+  margin-top: 30px;
+  font-size: 22px;
+  font-weight: bold;
+}
+@media (max-width: 728px) {
+  .beneficios p.descripcion {
+    font-size: 18px;
+  }
+}
+.modal .modal-header {
+  background: red;
+  color: white;
+}
+.modal .modal-header .close {
+  color: white;
+  opacity: .8;
+}
+.modal .modal-header .close:hover {
+  opacity: 1;
+}
+.modal .modal-body {
+  background: white;
+}
+span label.error {
+  color: #ff5b5b;
+}
+#winNegocio .imgNegocio {
+  max-width: 300px;
+  max-height: 150px;
+}
+#winNegocio .dvListaImagenes .itemImagenNegocio {
+  width: 50px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+footer {
+  background: black;
+  color: white;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+footer ul {
+  list-style: none;
+}
+footer ul a {
+  color: white;
+}
+footer ul a:hover {
+  color: red;
 }
 
 /*# sourceMappingURL=style.css.map */

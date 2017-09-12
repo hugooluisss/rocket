@@ -22,15 +22,11 @@ header('Content-Type: text/html; charset=UTF-8');
 setlocale(LC_CTYPE, "es_ES");
 date_default_timezone_set("America/Mexico_City");
 #librerias
-define('ADODB_ERROR_LOG_DEST','errors.log');
-define('ADODB_ERROR_LOG_TYPE',2);
-
 require_once('librerias/phpMailer/PHPMailerAutoload.php');
 require('librerias/fpdf/fpdf.php');
 require('librerias/fpdf/tfpdf.php');
 require('librerias/upload/uploadHandler.php');
 require('librerias/bmptojpg.php');
-require('librerias/excelRead/reader.php');
 
 ini_set("include_path", ini_get("include_path").PATH_SEPARATOR.dirname(__FILE__)."/librerias/pear/");
 includeDir("clases/framework/");
@@ -103,9 +99,9 @@ $datosPlantilla = array(
 	"maps" => $ini['sistema']['maps']);
 
 foreach($_GET as $indice => $valor){
-	$_GET[$indice] = ereg_replace('\\"', "",$_GET[$indice]);
+	#$_GET[$indice] = ereg_replace('\\"', "",$_GET[$indice]);
 	$_GET[$indice] = stripslashes($_GET[$indice]);
-	$_GET[$indice] = ereg_replace("'", "''", $_GET[$indice]);
+	#$_GET[$indice] = ereg_replace("'", "''", $_GET[$indice]);
 }
 	
 foreach($_POST as $indice => $valor){

@@ -23,5 +23,15 @@ $conf['csocios'] = array(
 	'controlador' => 'socios.php',
 	'descripcion' => 'socios de socios',
 	'seguridad' => false,
-	'capa' => LAYOUT_JSON);	
+	'capa' => LAYOUT_JSON);
+	
+$conf['sociopanel'] = array(
+	'controlador' => 'socios.php',
+	'vista' => 'socios/dashboard.tpl',
+	'descripcion' => 'Panel del socio',
+	'seguridad' => true,
+	'js' => array('socio.class.js'),
+	'jsTemplate' => array('socioPanel.js'),
+	'perfiles' => array(3),
+	'capa' => LAYOUT_TOPNAV);
 ?>

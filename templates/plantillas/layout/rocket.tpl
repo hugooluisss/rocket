@@ -7,7 +7,6 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 	<title>.:: {$PAGE.empresaAcronimo} ::.</title>
 		<base href="{$PAGE.url}index.php" target="_top">
-		<link rel="stylesheet" href="{$PAGE.ruta}bootstrap/css/bootstrap.min.css">
 		
 		<link rel="stylesheet" href="{$PAGE.ruta}dist/css/font-awesome.min.css">
 		<link rel="stylesheet" href="{$PAGE.ruta}dist/css/ionicons.min.css">
@@ -15,10 +14,13 @@
 		{if $PAGE.debug}
 			<link rel="stylesheet/less" type="text/css" href="{$PAGE.ruta}rocket/style.less" />
 		{else}
-			<link rel="stylesheet" href="{$PAGE.ruta}dist/css/AdminLTE.min.css">
+			<!--<link rel="stylesheet" href="{$PAGE.ruta}dist/css/AdminLTE.css">
 			<link rel="stylesheet" type="text/css" href="{$PAGE.ruta}dist/css/skins/_all-skins.css" />
-			<link rel="stylesheet" type="text/css" href="{$PAGE.ruta}rocket/style.css" />
+			-->
+			<link rel="stylesheet" type="text/css" href="{$PAGE.ruta}rocket/style.css"/>
 		{/if}
+		
+		<link rel="stylesheet" href="{$PAGE.ruta}bootstrap/css/bootstrap.min.css">
 		
 		<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates" rel="stylesheet">

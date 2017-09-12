@@ -36,192 +36,35 @@
 	<![endif]-->
 	</head>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
-	<body class="landingpage">
-		<div class="container">
-			<nav class="navbar">
-				<div class="container-fluid">
-					<div class="navbar-header">
-						<a class="navbar-brand" href="#">
-							<img src="{$PAGE.ruta}img/logo.png" class="logo"/>
-						</a>
-					</div>
-					<!--
-					<ul class="nav navbar-nav">
-						<li class="active"><a href="#">Home</a></li>
-						<li><a href="#">Page 1</a></li>
-						<li><a href="#">Page 2</a></li>
-					</ul>-->
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#" class="text-primary" data-toggle="modal" data-target="#winRegistro">Regístrate</a></li>
-						<li><a href="#" class="btn btn-primary" data-toggle="modal" data-target="#winSesion">Iniciar sesión</a></li>
-					</ul>
-				</div>
-			</nav>
-		</div>
-		<br />
-		<br />
-		<div class="container">
-			<div class="body">
-				<div class="row">
-					<div class="col-sm-6 col-sm-offset-3">
-						<h2 class="text-center">Todo listo para empezar a vender tus productos en el bazar</h2>
-						<br />
-						<br />
-						<p class="text-mute text-center">
-							VIP es una herramienta que te auxiliará en todos los procesos de venta en tu bazar ¿estás listo para iniciar?
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<br />
-		<br />
-		<div class="containerImage">
-			<img class="img-responsive" src="{$PAGE.ruta}img/negocio1.jpg">
-		</div>
-		<br />
-		<br />
-		<div class="container stands">
-			<div class="row">
-				<div class="col-xs-6 col-sm-5">
-					<br />
-					<br />
-					<h3>Vende lo que quieras y toma el control de tu bazar</h3>
-					<p class="text-mute">Con VIP tienes el control de tu inventario al cual podrás acceder desde cualquier dispositivo movil o computadora permitiendo que el proceso de venta se realice con facilidad
-					</p>
-				</div>
-				<div class="col-xs-6 col-sm-5 col-sm-offset-2">
-					<img src="{$PAGE.ruta}img/stand1.jpg" class="img-responsive"/>
-				</div>
-			</div>
-			
-			<div class="row">
-				<div class="col-xs-6 col-sm-5">
-					<img src="{$PAGE.ruta}img/stand2.jpg" class="img-responsive"/>
-				</div>
-				<div class="col-xs-6 col-sm-5 col-sm-offset-2">
-					<br />
-					<br />
-					<h3>Tu bazar, tu imagen</h3>
-					<p class="text-mute">Conoce VIP y personalizalo de acuerdo a tus necesidades de imagen</p>
-				</div>
-			</div>
-		</div>
-		<footer>
-			<div class="container">
-				<hr />
-				<div class="row">
-					<div class="col-xs-6 text-left redesSociales">
-						<a href="#">
-							<span class="fa-stack fa-lg">
-								<i class="fa fa-circle fa-stack-2x"></i>
-								<i class="fa fa-facebook fa-stack-1x fa-inverse" aria-hidden="true"></i>
-							</span>
-						</a>
-						<a href="#">
-							<span class="fa-stack fa-lg">
-								<i class="fa fa-circle fa-stack-2x"></i>
-								<i class="fa fa-twitter fa-stack-1x fa-inverse" aria-hidden="true"></i>
-							</span>
-						</a>
-						<a href="#">
-							<span class="fa-stack fa-lg">
-								<i class="fa fa-circle fa-stack-2x"></i>
-								<i class="fa fa-envelope-o fa-stack-1x fa-inverse" aria-hidden="true"></i>
-							</span>
-						</a>
-					</div>
-					<div class="col-xs-6 text-right ligasInteres">
-						<a href="terminos">Términos de servicio</a>
-						<a href="proliticaPrivacidad">Política de privacidad</a>
-					</div>
-				</div>
-			</div>
-		</footer>
-		
-		
-		<div id="winSesion" class="modal fade" role="dialog">
-			<div class="modal-dialog">
-				<!-- Modal content-->
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal">&times;</button>
-						<h4 class="modal-title">Iniciar sesión</h4>
-					</div>
-					<div class="modal-body">
-						<form action="#" id="frmLogin" method="post">
-							<center><img src="{$PAGE.ruta}img/logo.png" class="img-responsive"/></center>
-							<br />
-							<div class="form-group has-feedback">
-								<input type="text" class="form-control" placeholder="Email" id="txtUsuario" name="txtUsuario">
-								<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-							</div>
-							<div class="form-group has-feedback">
-								<input type="password" class="form-control" placeholder="Contraseña" id="txtPass" name="txtPass">
-								<span class="glyphicon glyphicon-lock form-control-feedback"></span>
-							</div>
-							<div class="row">
-								<!-- /.col -->
-								<div class="col-xs-12">
-									<button type="submit" class="btn btn-danger btn-block">Iniciar</button>
-								</div><!-- /.col -->
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		<div id="winRegistro" class="modal fade" role="dialog">
-			<form action="#" id="frmRegistro" method="post" class="form-horizontal" onsubmit="javascript: return false;">
-				<div class="modal-dialog">
-					<!-- Modal content-->
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal">&times;</button>
-							<h4 class="modal-title">Registrate</h4>
-						</div>
-						<div class="modal-body">
-							<center><img src="{$PAGE.ruta}img/logo.png" class="img-responsive"/></center>
-							<br />
-							<div class="form-group">
-								<label for="txtRazonSocial" class="col-sm-4">Razón social</label>
-								<div class="col-sm-8">
-									<input class="form-control" id="txtRazonSocial" name="txtRazonSocial">
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="txtNombre" class="col-sm-4">Nombre del usuario</label>
-								<div class="col-sm-8">
-									<input class="form-control" id="txtNombre" name="txtNombre">
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="txtEmail" class="col-sm-4">Correo electrónico</label>
-								<div class="col-sm-8">
-									<input class="form-control" type="email" id="txtEmail" name="txtEmail">
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="txtPass" class="col-sm-4">Contraseña</label>
-								<div class="col-sm-8">
-									<input class="form-control" type="password" id="txtPassRegistro" name="txtPassRegistro">
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="txtConfirmar" class="col-sm-4">Confirmar</label>
-								<div class="col-sm-8">
-									<input class="form-control" type="password" id="txtConfirmar" name="txtConfirmar">
-								</div>
-							</div>
-						</div>
-						<div class="modal-footer">
-							<button type="submit" class="btn btn-primary">Registrarme</button>
-							<button type="cancel" class="btn btn-secondary btn-right" data-dismiss="modal">Cancelar</button>
+	<body class="hold-transition skin-red-light layout-top-nav">
+		<div class="wrapper">
+			<header class="main-header">
+				<nav class="navbar navbar-static-top">
+					<div class="container">
+						<div class="navbar-header">
+							<img src="{$PAGE.ruta}img/logo.png" alt="ROCKET" style="width: 105px; margin-top: 7px;"/>
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+								<i class="fa fa-bars"></i>
+							</button>
 						</div>
 					</div>
+				</nav>
+			</header>
+			<div class="content-wrapper">
+				<div class="container">
+					{if $PAGE.vista neq ''}
+						{include file=$PAGE.vista}
+					{/if}
 				</div>
-			</form>
+			</div>
+			<footer class="main-footer">
+				<div class="container">
+					<div class="pull-right hidden-xs">
+						<b>Versión</b> {$PAGE.version}
+					</div>
+					<strong>Copyright &copy; {date("Y")} {$PAGE.empresaAcronimo}.</strong> Todos los derechos reservados
+				</div><!-- /.container -->
+			</footer>
 		</div>
     
 	    <!-- jQuery 2.1.4 -->

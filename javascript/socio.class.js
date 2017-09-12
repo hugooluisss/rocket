@@ -34,4 +34,21 @@ TSocio = function(){
 			}
 		}, "json");
 	};
+	
+	this.login = function(datos){
+		if (datos.fn.before !== undefined)
+			datos.fn.before();
+			
+		$.post('csocios', {
+			"usuario": datos.usuario,
+			"pass": datos.pass,
+			"action": "login"
+		}, function(data){
+			if (datos.fn.after != undefined)
+				datos.fn.after(data);
+				
+			if (data.band == false)
+				console.log("Los datos del usuario no son válidos");
+		}, "json");
+	}
 };

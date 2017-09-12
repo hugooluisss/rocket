@@ -23,7 +23,6 @@ $conf['cnegocios'] = array(
 	'controlador' => 'negocios.php',
 	'descripcion' => 'Controlador de negocios',
 	'seguridad' => false,
-	'perfiles' => array(2),
 	'capa' => LAYOUT_JSON);
 	
 $conf['datosNegocio'] = array(
