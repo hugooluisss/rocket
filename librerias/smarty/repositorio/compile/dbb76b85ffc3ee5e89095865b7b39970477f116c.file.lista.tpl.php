@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-12 22:46:56
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-13 10:06:38
          compiled from "templates/plantillas/modulos/negocios/lista.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:105764173159aee0e7e7c324-95197605%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'dbb76b85ffc3ee5e89095865b7b39970477f116c' => 
     array (
       0 => 'templates/plantillas/modulos/negocios/lista.tpl',
-      1 => 1505274414,
+      1 => 1505315189,
       2 => 'file',
     ),
   ),
@@ -56,10 +56,12 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 ' data-toggle="modal" data-target="#winComisiones"><?php echo $_smarty_tpl->tpl_vars['row']->value['comision'];?>
  %</button>
 						</td>
-						<td class="text-right"><?php echo $_smarty_tpl->tpl_vars['row']->value['saldo'];?>
+						<td class="text-right dvSaldo"><?php echo $_smarty_tpl->tpl_vars['row']->value['saldo'];?>
 </td>
 						<td class="text-right">
 							<div class="btn-group btn-group-xs">
+								<button type="button" class="btn btn-warning" action="abonar" title="Abonar a cuenta" datos='<?php echo $_smarty_tpl->tpl_vars['row']->value['json'];?>
+'><i class="fa fa-money"></i></button>
 								<button type="button" class="btn btn-primary" action="modificar" title="Modificar" datos='<?php echo $_smarty_tpl->tpl_vars['row']->value['json'];?>
 '><i class="fa fa-edit"></i></button>
 								<button type="button" class="btn btn-danger" action="eliminar" title="Eliminar" usuario="<?php echo $_smarty_tpl->tpl_vars['row']->value['idUsuario'];?>

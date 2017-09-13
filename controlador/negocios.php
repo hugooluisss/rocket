@@ -122,6 +122,12 @@ switch($objModulo->getId()){
 				unlink($_POST["ruta"]);
 				
 				$smarty->assign("json", array("band" => true));
+			break;
+			case 'cobrarRegalias':
+				$obj = new TNegocio($_POST['id']);
+				$result = $obj->addSaldo($_POST['monto'], 4);
+				
+				$smarty->assign("json", array("band" => $result, "saldo" => sprintf("%0.2f", $obj->getSaldo())));
 			break; 
 		}
 	break;

@@ -111,6 +111,34 @@ $(document).ready(function(){
 				$("#winComisiones").attr("usuario", $(this).attr("identificador"));
 			});
 			
+			$("[action=abonar]").click(function(){
+				var btn = $(this);
+				var el = jQuery.parseJSON($(this).attr("datos"));
+				var cobro = el.saldo < 0?(el.saldo * -1):0;
+				var abono = prompt("¿Cantidad a abonar?", cobro);
+				
+				if (isNaN(abono))
+					alert("Debe ser un número");
+				else if(abono <= 0)
+					alert("Debe ser mayor a 0");
+				else{
+					var obj = new TNegocio;
+					obj.cobrarRegalias({
+						id: el.idUsuario,
+						monto: abono,
+						fn: {
+							after: function(resp){
+								if (resp.band){
+									alert("Abono realizado y saldo actualizado");
+									btn.parent().parent().parent().find(".dvSaldo").text(resp.saldo);
+								}else
+									alert("No se pudo realizar el abono a la cuenta");
+							}
+						}
+					});
+				}
+			});
+			
 			$("#tblDatos").DataTable({
 				"responsive": true,
 				"language": espaniol,

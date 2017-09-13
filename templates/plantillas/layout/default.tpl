@@ -125,13 +125,13 @@
 						
 						
 						
-						<li class="{if in_array($PAGE.modulo, array('clientes'))}active{/if} treeview">
+						<li class="{if in_array($PAGE.modulo, array('reporteRegalias'))}active{/if} treeview">
 							<a href="#">
 								<i class="fa fa-list-alt"></i> 
 								<span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
 							</a>
 							<ul class="treeview-menu">
-								<li class="{if in_array($PAGE.modulo, array('clientes'))}active{/if}"><a href="clientes">Clientes</a></li>
+								<li class="{if in_array($PAGE.modulo, array('reporteRegalias'))}active{/if}"><a href="reporteRegalias">Regalias cobradas</a></li>
 							</ul>
 						</li>
 					</li>

@@ -37,7 +37,7 @@ $(document).ready(function(){
 					after: function(datos){
 						if (datos.band){
 							$("#frmRegistroSocio").get(0).reset();
-							alert("¡¡¡ Felicidades !!! ya eres nuestro socio");
+							alert("Â¡Â¡Â¡ Felicidades !!! ya eres nuestro socio");
 						}else{
 							alert("No se pudo guardar el registro");
 						}
@@ -73,6 +73,16 @@ $(document).ready(function(){
 				}
 			});
         }
-
+    });
+    
+    $(".recuperarPass").click(function(){
+    	var correo = prompt("Â¿Cual es tu cuenta de correo electrÃ³nico con la que te registraste?");
+    	
+    	$.post("cusuarios", {
+    		"correo": correo,
+    		"action": "recuperarPass"
+    	}).done(function(resp){
+    		alert("Te enviaremos los datos a tu correo");
+    	});
     });
 });

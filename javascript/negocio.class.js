@@ -59,4 +59,20 @@ TNegocio = function(){
 					datos.fn.after(data);
 			}, "json");
 	};
+	
+	this.cobrarRegalias = function(datos){
+		if (datos.fn.before !== undefined) datos.fn.before();
+		
+		$.post('cnegocios', {
+				"id": datos.id,
+				"monto": datos.monto,
+				"action": "cobrarRegalias"
+			}, function(data){
+				if (data.band == false)
+					console.log(data.mensaje);
+					
+				if (datos.fn.after !== undefined)
+					datos.fn.after(data);
+			}, "json");
+	};
 };

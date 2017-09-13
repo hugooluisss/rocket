@@ -85,13 +85,19 @@
 					<div class="col-sm-6">
 						<img src="{$PAGE.imagenes}logo.png" />
 					</div>
-					<div class="col-sm-6">
+					<div class="col-sm-3">
 						<ul class="">
 							<li><a href="inicio">¿Como funciona?</a></li>
 							<li><a href="misbeneficios">Mis beneficios</a></li>
 							<li><a href="marcasafiliadas">Marcas afiliadas</a></li>
 							<li><a href="#" data-toggle="modal" data-target="#winRegistro">Registrate gratis</a></li>
 							<li><a href="#" data-toggle="modal" data-target="#winNegocioLogin">Ingresa</a></li>
+						</ul>
+					</div>
+					<div class="col-sm-3">
+						<ul class="">
+							<li><a href="terminoscondiciones">Términos y condiciones</a></li>
+							<li><a href="avisoprivacidad">Aviso legal y de privacidad</a></li>
 						</ul>
 					</div>
 				</div>

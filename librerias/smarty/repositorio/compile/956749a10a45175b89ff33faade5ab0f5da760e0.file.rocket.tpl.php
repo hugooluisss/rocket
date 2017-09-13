@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-12 22:08:06
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-13 12:30:52
          compiled from "templates/plantillas/layout/rocket.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:10575565359a0e9dd645a93-79600797%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '956749a10a45175b89ff33faade5ab0f5da760e0' => 
     array (
       0 => 'templates/plantillas/layout/rocket.tpl',
-      1 => 1505242912,
+      1 => 1505323797,
       2 => 'file',
     ),
   ),
@@ -125,13 +125,19 @@ logo.png" />
 						<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['imagenes'];?>
 logo.png" />
 					</div>
-					<div class="col-sm-6">
+					<div class="col-sm-3">
 						<ul class="">
 							<li><a href="inicio">¿Como funciona?</a></li>
 							<li><a href="misbeneficios">Mis beneficios</a></li>
 							<li><a href="marcasafiliadas">Marcas afiliadas</a></li>
 							<li><a href="#" data-toggle="modal" data-target="#winRegistro">Registrate gratis</a></li>
 							<li><a href="#" data-toggle="modal" data-target="#winNegocioLogin">Ingresa</a></li>
+						</ul>
+					</div>
+					<div class="col-sm-3">
+						<ul class="">
+							<li><a href="terminoscondiciones">Términos y condiciones</a></li>
+							<li><a href="avisoprivacidad">Aviso legal y de privacidad</a></li>
 						</ul>
 					</div>
 				</div>

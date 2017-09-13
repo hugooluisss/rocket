@@ -15,7 +15,7 @@
 					</div>
 					<br />
 					<button type="submit" class="btn btn-danger">INGRESAR</button>
-					<button type="button" class="btn btn-link">Recuperar contraseña</button>
+					<button type="button" class="btn btn-link recuperarPass">Recuperar contraseña</button>
 				</form>
 			</div>
 			<div class="col-sm-4 col-sm-offset-4 col-md-3 col-md-offset-6 text-center">
