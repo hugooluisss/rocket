@@ -12,7 +12,8 @@ $(document).ready(function(){
 				"lengthChange": false,
 				"ordering": true,
 				"info": true,
-				"autoWidth": false
+				"autoWidth": false,
+				"order": [[ 0, "desc" ]]
 			});
 		});
 	}
@@ -34,12 +35,16 @@ $(document).ready(function(){
 		},
 		wrapper: 'span', 
 		submitHandler: function(form){
-			form = $(form);
+			form = $("#frmVenta");
+			var puntos = parseFloat(form.find("#txtPuntos").val());
+			var lPuntos = parseFloat(form.find("#puntos").val());
+			var efectivo = parseFloat(form.find("#txtEfectivo").val());
 			
-			if (form.find("#txtPuntos").val() > form.find("#puntos").val() && form.find("#txtPuntos").val() > 0){
+			console.log(puntos, lPuntos, puntos > lPuntos);
+			if (puntos > lPuntos && puntos > 0){
 				alert("No se puede realizar ya que no tiene los Rocket Puntos suficientes");
 				$("#txtPuntos").select();
-			}else if (parseFloat(form.find("#txtPuntos").val()) + parseFloat(form.find("#txtEfectivo").val()) <= 0){
+			}else if (puntos + efectivo <= 0){
 				alert("Indica el mono de la venta");
 				$("#txtEfectivo").select();
 			}else{
@@ -58,6 +63,7 @@ $(document).ready(function(){
 								$("#winVenta").modal("hide");
 								alert("Registro realizado");
 								getLista();
+								$("#dvSaldo").html(resp.saldo);
 							}else
 								alert("Ocurrió un error al registrar el movimiento");
 						}
@@ -104,7 +110,11 @@ $(document).ready(function(){
 		wrapper: 'span', 
 		submitHandler: function(form){
 			form = $(form);
-			if (form.find("#txtPuntos").val() > form.find("#puntos").val()){
+			var puntos = parseFloat(form.find("#txtPuntos").val());
+			var lPuntos = parseFloat(form.find("#puntos").val());
+			var efectivo = parseFloat(form.find("#txtEfectivo").val());
+			
+			if (puntos > lPuntos){
 				alert("No se puede realizar ya que no tiene los Rocket Puntos suficientes");
 				$("#txtPuntos").select();
 			}else{
@@ -122,6 +132,8 @@ $(document).ready(function(){
 								$("#winCanje").modal("hide");
 								alert("Registro realizado");
 								getLista();
+								
+								$("#dvSaldo").html(resp.saldo);
 							}else
 								alert("Ocurrió un error al registrar el movimiento");
 						}
@@ -129,5 +141,13 @@ $(document).ready(function(){
 				});
 			}
 		}
+	});
+	
+	$("#winVenta").on('show.bs.modal', function(){
+		$("#frmVenta")[0].reset();
+	});
+	
+	$("#winCanje").on('show.bs.modal', function(){
+		$("#frmCanje")[0].reset();
 	});
 });

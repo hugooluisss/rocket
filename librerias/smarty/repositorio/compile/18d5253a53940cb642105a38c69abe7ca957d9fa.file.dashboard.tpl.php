@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-12 12:57:20
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-12 22:08:15
          compiled from "templates/plantillas/modulos/socios/dashboard.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:67473153759b816ba66a818-06426694%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '18d5253a53940cb642105a38c69abe7ca957d9fa' => 
     array (
       0 => 'templates/plantillas/modulos/socios/dashboard.tpl',
-      1 => 1505239038,
+      1 => 1505242912,
       2 => 'file',
     ),
   ),
@@ -46,8 +46,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	</div>
 	<div class="col-xs-6">
 		<div class="box">
-			<div class="box-body">
-				<a href="logout">Salir</a>
+			<div class="box-body text-right">
+				<a href="logout">Salir <i class="fa fa-sign-out" aria-hidden="true"></i></a>
 			</div>
 		</div>
 	</div>

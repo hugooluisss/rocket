@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-12 12:11:13
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-12 22:08:06
          compiled from "templates/plantillas/modulos/front-end/encabezado.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:84480610959b190e0891de0-77559280%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '97e9529d738f03552c7bffed1894a2923ab01b07' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/encabezado.tpl',
-      1 => 1505236272,
+      1 => 1505242912,
       2 => 'file',
     ),
   ),
@@ -36,7 +36,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					<br />
 					<div class="input-group">
 						<span class="input-group-addon">&nbsp;<i class="fa fa-lock fa-inverse" aria-hidden="true"></i>&nbsp;</span>
-						<input type="password" id="txtPassTarjeta" name="txtPassTarjeta" type="text" class="form-control" placeholder="* Contraseña">
+						<input type="password" id="txtPassTarjeta" name="txtPassTarjeta" class="form-control" placeholder="* Contraseña">
 					</div>
 					<br />
 					<button type="submit" class="btn btn-danger">INGRESAR</button>

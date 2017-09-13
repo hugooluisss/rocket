@@ -4,6 +4,7 @@ switch($objModulo->getId()){
 	case 'movimientos':
 		$negocio = new TNegocio($userSesion->getId());
 		$smarty->assign("esPlus", $negocio->getPlus() == 1);
+		$smarty->assign("saldo", $negocio->getSaldo());
 	break;
 	case 'listaMovimientos':
 		$db = TBase::conectaDB();
@@ -36,6 +37,8 @@ switch($objModulo->getId()){
 					$obj->negocio = new TNegocio($userSesion->getId());
 					$obj->setMonto($_POST['puntos']);
 					$band = $obj->guardar();
+					if ($band)
+						$obj->negocio->addSaldo($_POST['puntos'], 2);
 				}
 				
 				if ($band){
@@ -45,14 +48,14 @@ switch($objModulo->getId()){
 					$obj->negocio = new TNegocio($userSesion->getId());
 					$obj->setMonto($_POST['efectivo'] + $_POST['puntos']);
 					$band = $obj->guardar();
+					if ($band)
+						$obj->negocio->addSaldo($_POST['efectivo'] * -0.015, 1);
 				}
 				
-				$smarty->assign("json", array("band" => $band));
+				$smarty->assign("json", array("band" => $band, "saldo" => $obj->negocio->getSaldo()));
 			break;
 			case 'canjearPuntos':
-				$obj = new TMovimiento();
 				$band = true;
-				#primero el canje de puntos
 				$obj = new TMovimiento();
 				
 				$obj->tipo = new TTipoMovimiento(3);
@@ -61,7 +64,10 @@ switch($objModulo->getId()){
 				$obj->setMonto($_POST['puntos']);
 				$band = $obj->guardar();
 				
-				$smarty->assign("json", array("band" => $band));
+				if($band)
+					$obj->negocio->addSaldo($_POST['puntos'], 3);
+				
+				$smarty->assign("json", array("band" => $band, "saldo" => $obj->negocio->getSaldo()));
 			break;
 		}
 	break;

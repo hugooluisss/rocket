@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-07 20:48:30
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-12 23:31:56
          compiled from "templates/plantillas/modulos/movimientos/panel.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:124369857659b09ffbd7b215-00029725%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '093a8f02f421822297f3482e4f6240db763ce416' => 
     array (
       0 => 'templates/plantillas/modulos/movimientos/panel.tpl',
-      1 => 1504811282,
+      1 => 1505277115,
       2 => 'file',
     ),
   ),
@@ -20,6 +20,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'esPlus' => 0,
+    'saldo' => 0,
     'PAGE' => 0,
   ),
   'has_nocache_code' => false,
@@ -29,7 +30,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<h1 class="page-header">Movimientos</h1>
 	</div>
 </div>
-
 <div class="row">
 	<div class="col-xs-6 col-md-3">
 		<button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#winVenta">Registrar venta</button>
@@ -40,7 +40,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	</div>
 	<?php }?>
 </div>
-
+<div class="row">
+	<div class="col-sm-4 col-sm-offset-8">
+		<div class="alert alert-success">
+			Saldo actual <b>$ <span id="dvSaldo"><?php echo $_smarty_tpl->tpl_vars['saldo']->value;?>
+</span></b>
+		</div>
+	</div>
+</div>
 <br />
 
 <div class="box">

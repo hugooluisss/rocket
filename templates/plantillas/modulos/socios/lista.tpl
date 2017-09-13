@@ -6,6 +6,7 @@
 					<th>Tarjeta</th>
 					<th>Nombre completo</th>
 					<th>Correo</th>
+					<th>Puntos</th>
 					<th>&nbsp;</th>
 				</tr>
 			</thead>
@@ -15,6 +16,7 @@
 						<td>{$row.idUsuario|string_format:"%'.016d"}</td>
 						<td><b>{$row.nombre}</b> {$row.apellidos}</td>
 						<td>{$row.correo}</td>
+						<td class="text-right">{$row.puntos}</td>
 						<td style="text-align: right">
 							<div class="btn-group btn-group-xs">
 								<button type="button" class="btn btn-primary" action="modificar" title="Modificar" datos='{$row.json}'><i class="fa fa-edit"></i></button>

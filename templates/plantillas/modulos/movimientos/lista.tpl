@@ -12,8 +12,8 @@
 			<tr title="{$row.nombreTipo}">
 				<td style="border-left: 3px solid {$row.color}">{$row.registro}</td>
 				<td><b>{$row.nombre}</b> {$row.apellidos}</td>
-				<td>{$row.monto}</td>
-				<td>{$row.puntos}</td>
+				<td class="text-right">{$row.monto}</td>
+				<td class="text-right">{$row.puntos}</td>
 			</tr>
 		{/foreach}
 	</tbody>

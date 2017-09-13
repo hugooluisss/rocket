@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-06 18:56:58
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-12 22:36:51
          compiled from "templates/plantillas/modulos/socios/lista.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:206663579059b0291624fe14-16536164%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b5f2e649fef534b321c6e382033484c5530be337' => 
     array (
       0 => 'templates/plantillas/modulos/socios/lista.tpl',
-      1 => 1504724861,
+      1 => 1505273809,
       2 => 'file',
     ),
   ),
@@ -29,8 +29,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<table id="tblDatos" class="table table-bordered table-hover">
 			<thead>
 				<tr>
+					<th>Tarjeta</th>
 					<th>Nombre completo</th>
 					<th>Correo</th>
+					<th>Puntos</th>
 					<th>&nbsp;</th>
 				</tr>
 			</thead>
@@ -41,10 +43,14 @@ foreach ($_from as $_smarty_tpl->tpl_vars["row"]->key => $_smarty_tpl->tpl_vars[
 $_smarty_tpl->tpl_vars["row"]->_loop = true;
 ?>
 					<tr>
+						<td><?php echo sprintf("%'.016d",$_smarty_tpl->tpl_vars['row']->value['idUsuario']);?>
+</td>
 						<td><b><?php echo $_smarty_tpl->tpl_vars['row']->value['nombre'];?>
 </b> <?php echo $_smarty_tpl->tpl_vars['row']->value['apellidos'];?>
 </td>
 						<td><?php echo $_smarty_tpl->tpl_vars['row']->value['correo'];?>
+</td>
+						<td class="text-right"><?php echo $_smarty_tpl->tpl_vars['row']->value['puntos'];?>
 </td>
 						<td style="text-align: right">
 							<div class="btn-group btn-group-xs">

@@ -3,7 +3,6 @@
 		<h1 class="page-header">Movimientos</h1>
 	</div>
 </div>
-
 <div class="row">
 	<div class="col-xs-6 col-md-3">
 		<button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#winVenta">Registrar venta</button>
@@ -14,7 +13,13 @@
 	</div>
 	{/if}
 </div>
-
+<div class="row">
+	<div class="col-sm-4 col-sm-offset-8">
+		<div class="alert alert-success">
+			Saldo actual <b>$ <span id="dvSaldo">{$saldo}</span></b>
+		</div>
+	</div>
+</div>
 <br />
 
 <div class="box">

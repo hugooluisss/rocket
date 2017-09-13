@@ -19,6 +19,7 @@ class TNegocio extends TUsuario{
 	private $entidadfederativa;
 	private $telefono;
 	private $plus;
+	private $saldo;
 	
 	/**
 	* Constructor de la clase
@@ -30,6 +31,7 @@ class TNegocio extends TUsuario{
 	public function TNegocio($id = ''){
 		parent::TUsuario($id);
 		$this->plus = 0;
+		$this->saldo = 0;
 		$this->setId($id);		
 		return true;
 	}
@@ -417,7 +419,8 @@ class TNegocio extends TUsuario{
 				municipio = '".$this->getMunicipio()."',
 				entidadfederativa = '".$this->getEntidadFederativa()."',
 				telefono = '".$this->getTelefono()."',
-				plus = ".$this->getPlus()."
+				plus = ".$this->getPlus().",
+				saldo = ".$this->getSaldo()."
 			WHERE idUsuario = ".$this->getId();
 		$rs = $db->query($sql) or errorMySQL($db, $sql);
 			
@@ -441,6 +444,42 @@ class TNegocio extends TUsuario{
 		$rs = $db->query("INSERT INTO comision(idUsuario, activar, comision) VALUES(".$this->getId().", '".$fecha->format("Y-m-d H:i:s")."', ".$comision.");");
 			
 		return $rs?$fecha->format("Y-m-d H:i:s"):"";
+	}
+	
+	/**
+	* Agrega saldo
+	*
+	* @autor Hugo
+	* @access public
+	* @return string Texto
+	*/
+	
+	public function addSaldo($saldo = 0, $tipo = 0){
+		if ($tipo == 0) return false;
+		if ($tipo == '') return false;
+		if ($saldo == 0) return false;
+		if ($saldo == '') return false;
+		if ($this->getId() == '') return false;
+		$db = TBase::conectaDB();
+		$sql = "insert into regalia (idUsuario, idTipoMovimiento, monto) values (".$this->getId().", ".$tipo.", ".$saldo.")";
+		$rs = $db->query($sql) or errorMySQL($db, $sql);
+		
+		$this->saldo += $saldo;
+		$this->guardar();
+		
+		return true;
+	}
+	
+	/**
+	* Retorna el saldo
+	*
+	* @autor Hugo
+	* @access public
+	* @return string Texto
+	*/
+	
+	public function getSaldo(){
+		return $this->saldo == ''?0:$this->saldo;
 	}
 }
 ?>
