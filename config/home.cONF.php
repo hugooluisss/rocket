@@ -33,4 +33,27 @@ $conf['avisoprivacidad'] = array(
 	'jsTemplate' => array('sociosHome.js', 'negociosHome.js'),
 	'seguridad' => false,
 	'capa' => LAYOUT_ROCKET);
+	
+$conf['contactanos'] = array(
+	'vista' => 'front-end/contactanos.tpl',
+	'descripcion' => 'Plantilla de contacto',
+	'js' => array('socio.class.js', 'usuario.class.js'),
+	'jsTemplate' => array('sociosHome.js', 'negociosHome.js', 'contacto.js'),
+	'seguridad' => false,
+	'capa' => LAYOUT_ROCKET);
+	
+$conf['cfrontend'] = array(
+	'controlador' => 'front-end.php',
+	'descripcion' => 'Controlador del front-end',
+	'seguridad' => false,
+	'capa' => LAYOUT_JSON);
+	
+$conf['negocio'] = array(
+	'controlador' => "front-end.php",
+	'vista' => 'front-end/detalleEmpresa.tpl',
+	'descripcion' => 'Detalle de la empresa',
+	'js' => array('socio.class.js', 'usuario.class.js'),
+	'jsTemplate' => array('sociosHome.js', 'negociosHome.js', "negocioSolo.js"),
+	'seguridad' => false,
+	'capa' => LAYOUT_ROCKET);
 ?>

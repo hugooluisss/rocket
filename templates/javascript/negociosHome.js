@@ -31,4 +31,26 @@ $(document).ready(function(){
         }
 
     });
+    
+    
+    $("#txtBuscarEmpresa").autocomplete({
+		source: "?mod=listaNegociosAutocomplete",
+		minLength: 2, 
+		select: function(event, ui){
+			redireccionarEmpresa(event, ui);
+		}
+	});
+	
+	$("#txtBuscarEmpresa2").autocomplete({
+		source: "?mod=listaNegociosAutocomplete",
+		minLength: 2, 
+		select: function(event, ui){
+			redireccionarEmpresa(event, ui);
+		}
+	});
+	
+	function redireccionarEmpresa(event, ui){
+		console.log("Cliente seleccionado", ui.item.identificador);
+		location.href = "negocio/" + ui.item.identificador + "/";
+	};
 });

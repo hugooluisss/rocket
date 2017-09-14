@@ -14,11 +14,29 @@ switch($objModulo->getId()){
 			$row['comision'] = $obj->getComision();
 			$row['pass'] = '';
 			$row['json'] = json_encode($row);
-			
+			unset($obj);
 			array_push($datos, $row);
 		}
 		
 		$smarty->assign("lista", $datos);
+	break;
+	case 'listaNegociosAutocomplete':
+		$db = TBase::conectaDB();
+		$sql = "select * from usuario a join negocio b using(idUsuario) where a.visible = true and idTipo = 2 and (razonsocial like '%".$_GET['term']."%' or giro like '%".$_GET['term']."%')";
+		
+		$rs = $db->query($sql) or errorMySQL($db, $sql);
+		$datos = array();
+		while($row = $rs->fetch_assoc()){
+			$aux = array();
+			
+			$aux["label"] = $row['razonsocial'].', '.$row['giro'];
+			$aux['identificador'] = $row['idUsuario'];
+			$aux['correo'] = $row['correo'];
+			
+			array_push($datos, $aux);
+		}
+		
+		$smarty->assign("json", $datos);
 	break;
 	case 'datosNegocio':
 		global $sesion;

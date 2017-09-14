@@ -36,11 +36,11 @@
 		<header>
 			<div class="busqueda">
 				<div class="contactanos">
-					CONTÁCTANOS
+					<a href="contactanos">CONTÁCTANOS</a>
 				</div>
 				<div class="buscar hidden-xs">
 					<div class="input-group">
-						<input id="txtTarjeta" name="txtTarjeta" type="text" class="form-control" placeholder="Buscar">
+						<input id="txtBuscarEmpresa" name="txtBuscarEmpresa" type="text" class="form-control" placeholder="Buscar">
 						<span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></span>
 					</div>
 				</div>
@@ -67,6 +67,13 @@
 					<li><a href="marcasafiliadas">Marcas afiliadas</a></li>
 					<li><a href="#" data-toggle="modal" data-target="#winRegistro">Registrate gratis</a></li>
 					<li><a href="#" data-toggle="modal" data-target="#winNegocioLogin">Ingresa</a></li>
+					<br />
+					<li class="visible-xs">
+						<div class="input-group">
+							<input id="txtBuscarEmpresa2" name="txtBuscar2" type="text" class="form-control" placeholder="Buscar negocio">
+							<span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></span>
+						</div>
+					</li>
 				</ul>
 			</div>
 		</nav>

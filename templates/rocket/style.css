@@ -20,6 +20,12 @@ header .busqueda .contactanos {
   padding-top: 20px;
   padding-bottom: 10px;
 }
+header .busqueda .contactanos a {
+  color: white;
+}
+header .busqueda .contactanos a:hover {
+  color: red;
+}
 @media (min-width: 729px) {
   header .busqueda .contactanos {
     border-right: 2px solid white;
@@ -173,7 +179,7 @@ span label.error {
   color: #ff5b5b;
 }
 #winNegocio .imgNegocio {
-  max-width: 300px;
+  max-width: 400px;
   max-height: 150px;
 }
 #winNegocio .dvListaImagenes .itemImagenNegocio {
@@ -195,6 +201,41 @@ footer ul a {
 }
 footer ul a:hover {
   color: red;
+}
+.ui-menu {
+  list-style: none;
+  padding: 2px;
+  margin: 0;
+  display: block;
+  float: left;
+}
+.ui-menu .ui-menu {
+  margin-top: -3px;
+}
+.ui-menu .ui-menu-item {
+  margin: 0;
+  padding: 0;
+  zoom: 1;
+  float: left;
+  clear: left;
+  width: 100%;
+}
+.ui-menu .ui-menu-item a {
+  text-decoration: none;
+  display: block;
+  padding: .2em .4em;
+  line-height: 1.5;
+  zoom: 1;
+}
+.ui-menu .ui-state-focus {
+  background: #FBF8EF !important;
+  color: red;
+}
+.ui-menu .ui-menu-item a.ui-state-hover,
+.ui-menu .ui-menu-item a.ui-state-active {
+  font-weight: normal;
+  margin: -1px;
+  background: red;
 }
 
 /*# sourceMappingURL=style.css.map */

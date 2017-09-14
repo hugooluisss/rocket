@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-13 12:30:52
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-13 22:07:07
          compiled from "templates/plantillas/layout/rocket.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:10575565359a0e9dd645a93-79600797%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '956749a10a45175b89ff33faade5ab0f5da760e0' => 
     array (
       0 => 'templates/plantillas/layout/rocket.tpl',
-      1 => 1505323797,
+      1 => 1505358359,
       2 => 'file',
     ),
   ),
@@ -71,11 +71,11 @@ bootstrap/css/bootstrap.min.css">
 		<header>
 			<div class="busqueda">
 				<div class="contactanos">
-					CONTÁCTANOS
+					<a href="contactanos">CONTÁCTANOS</a>
 				</div>
 				<div class="buscar hidden-xs">
 					<div class="input-group">
-						<input id="txtTarjeta" name="txtTarjeta" type="text" class="form-control" placeholder="Buscar">
+						<input id="txtBuscarEmpresa" name="txtBuscarEmpresa" type="text" class="form-control" placeholder="Buscar">
 						<span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></span>
 					</div>
 				</div>
@@ -103,6 +103,13 @@ logo.png" />
 					<li><a href="marcasafiliadas">Marcas afiliadas</a></li>
 					<li><a href="#" data-toggle="modal" data-target="#winRegistro">Registrate gratis</a></li>
 					<li><a href="#" data-toggle="modal" data-target="#winNegocioLogin">Ingresa</a></li>
+					<br />
+					<li class="visible-xs">
+						<div class="input-group">
+							<input id="txtBuscarEmpresa2" name="txtBuscar2" type="text" class="form-control" placeholder="Buscar negocio">
+							<span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></span>
+						</div>
+					</li>
 				</ul>
 			</div>
 		</nav>

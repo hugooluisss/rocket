@@ -49,4 +49,11 @@ $conf['getListaImagenesGaleria'] = array(
 	'descripcion' => 'Lista de imagenes que corresponden a la galería del negocio',
 	'seguridad' => true,
 	'capa' => LAYOUT_AJAX);
+	
+$conf['listaNegociosAutocomplete'] = array(
+	'controlador' => 'negocios.php',
+	#'vista' => 'negocios/lista.tpl',
+	'descripcion' => 'Lista de negocios',
+	'seguridad' => false,
+	'capa' => LAYOUT_JSON);
 ?>
