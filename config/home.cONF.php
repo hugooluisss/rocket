@@ -2,6 +2,7 @@
 global $conf;
 
 $conf['misbeneficios'] = array(
+	'controlador' => 'panelPrincipal.php',
 	'vista' => 'front-end/misBeneficios.tpl',
 	'descripcion' => 'Mis beneficios',
 	'js' => array('socio.class.js', 'usuario.class.js'),
@@ -10,7 +11,7 @@ $conf['misbeneficios'] = array(
 	'capa' => LAYOUT_ROCKET);
 	
 $conf['marcasafiliadas'] = array(
-	'controlador' => 'negocios.php',
+	'controlador' => 'front-end.php',
 	'vista' => 'front-end/marcasAfiliadas.tpl',
 	'descripcion' => 'Fotografías de las empresas',
 	'js' => array('socio.class.js', 'usuario.class.js'),

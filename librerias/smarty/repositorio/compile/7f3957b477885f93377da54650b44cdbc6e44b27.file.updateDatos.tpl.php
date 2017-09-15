@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-10 22:11:28
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-15 12:53:42
          compiled from "templates/plantillas/modulos/negocios/updateDatos.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:211108157959b171d8b7cbf1-13549681%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7f3957b477885f93377da54650b44cdbc6e44b27' => 
     array (
       0 => 'templates/plantillas/modulos/negocios/updateDatos.tpl',
-      1 => 1504811282,
+      1 => 1505498020,
       2 => 'file',
     ),
   ),
@@ -20,6 +20,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'negocio' => 0,
+    'PAGE' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -28,6 +29,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<h1 class="page-header">Actualizar datos del negocio</h1>
 	</div>
 </div>
+
+<div class="row">
+	<div class="col-xs-12 text-center">
+			<img id="imgLogotipo" name="imgLogotipo" src="repositorio/negocios/<?php echo $_smarty_tpl->tpl_vars['negocio']->value->getId();?>
+.jpg?<?php echo rand();?>
+" onerror="javascript: this.src='repositorio/logo.jpg'" title="Click para cambiar" style="cursor: pointer" data-toggle="modal" data-target="#winLogotipo" identificador="<?php echo $_smarty_tpl->tpl_vars['negocio']->value->getId();?>
+"/>
+	</div>
+</div>
+<br />
 
 <form role="form" id="frmAdd" class="form-horizontal" onsubmit="javascript: return false;">
 	<div class="box">
@@ -129,4 +140,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 "/>
 		</div>
 	</div>
-</form><?php }} ?>
+</form>
+
+<?php echo $_smarty_tpl->getSubTemplate (($_smarty_tpl->tpl_vars['PAGE']->value['rutaModulos']).("modulos/negocios/winLogotipo.tpl"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php }} ?>

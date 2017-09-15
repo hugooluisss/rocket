@@ -78,10 +78,11 @@
 			</div>
 		</nav>
 		
+		<div class="contenido">
 		{if $PAGE.vista neq ''}
 			{include file=$PAGE.vista}
 		{/if}
-		
+		</div>
 		{include file=$PAGE.rutaModulos|cat:"modulos/usuarios/registro.tpl"}
 		{include file=$PAGE.rutaModulos|cat:"modulos/usuarios/loginNegocio.tpl"}
 		

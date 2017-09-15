@@ -40,4 +40,44 @@ switch($objModulo->getId()){
 			break;
 		}
 	break;
+	case 'getListaImagenesGaleria':
+		global $userSesion;
+		$archivos = array();
+		$ruta = "repositorio/galeria/".$userSesion->getId()."/";
+		$directorio = scandir($ruta);
+						
+		foreach($directorio as $file){
+			
+			if (!in_array($file, array("..", ".")))
+				array_push($archivos, $ruta.$file);
+		}
+		
+		$smarty->assign("imagenes", $archivos);
+	break;
+	case 'marcasafiliadas':
+		$db = TBase::conectaDB();
+		$sql = "select * from negocio a join usuario b using(idUsuario) where visible = true";
+		$rs = $db->query($sql) or errorMySQL($db, $sql);
+		$datos = array();
+		while($row = $rs->fetch_assoc()){
+			if (file_exists("repositorio/negocios/".$row['idUsuario'].".jpg")){
+				$row['logotipo'] = "repositorio/negocios/".$row['idUsuario'].".jpg";
+				$ruta = "repositorio/galeria/".$row['idUsuario']."/";
+				$directorio = scandir($ruta);
+				$row['imagenes'] = array();
+				
+				foreach($directorio as $file){
+					if (!in_array($file, array("..", ".")))
+						array_push($row['imagenes'], $ruta.$file);
+				}
+				
+				$row['json'] = json_encode($row);
+				
+				array_push($datos, $row);
+			}
+		}
+		
+		
+		$smarty->assign("negocios", $datos);
+	break;
 }

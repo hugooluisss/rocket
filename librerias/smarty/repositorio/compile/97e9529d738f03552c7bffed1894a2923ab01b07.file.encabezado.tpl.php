@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-13 20:38:39
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-15 13:21:07
          compiled from "templates/plantillas/modulos/front-end/encabezado.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:84480610959b190e0891de0-77559280%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '97e9529d738f03552c7bffed1894a2923ab01b07' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/encabezado.tpl',
-      1 => 1505350297,
+      1 => 1505499665,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_59b190e08e4707_82134997',
   'variables' => 
   array (
-    'PAGE' => 0,
+    'archivosSlider' => 0,
+    'key' => 0,
+    'row' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -46,36 +48,32 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			<div class="col-sm-4 col-sm-offset-4 col-md-3 col-md-offset-6 text-center">
 				<div id="carruselNegocios" class="carousel slide" data-ride="carousel">
 					<ol class="carousel-indicators">
-						<li data-target="#carruselNegocios" data-slide-to="0" class="active"></li>
-						<li data-target="#carruselNegocios" data-slide-to="1"></li>
-						<li data-target="#carruselNegocios" data-slide-to="2"></li>
-						<li data-target="#carruselNegocios" data-slide-to="3"></li>
-						<li data-target="#carruselNegocios" data-slide-to="4"></li>
+						<?php  $_smarty_tpl->tpl_vars["row"] = new Smarty_Variable; $_smarty_tpl->tpl_vars["row"]->_loop = false;
+ $_smarty_tpl->tpl_vars["key"] = new Smarty_Variable;
+ $_from = $_smarty_tpl->tpl_vars['archivosSlider']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars["row"]->key => $_smarty_tpl->tpl_vars["row"]->value){
+$_smarty_tpl->tpl_vars["row"]->_loop = true;
+ $_smarty_tpl->tpl_vars["key"]->value = $_smarty_tpl->tpl_vars["row"]->key;
+?>
+							<li data-target="#carruselNegocios" data-slide-to="<?php echo $_smarty_tpl->tpl_vars['key']->value;?>
+" data-slide-to="<?php echo $_smarty_tpl->tpl_vars['key']->value;?>
+" <?php if ($_smarty_tpl->tpl_vars['key']->value==0){?>class="active"<?php }?>></li>
+						<?php } ?>
 					</ol>
 					
 					<div class="carousel-inner">
-						<div class="item active">
-							<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['imagenes'];?>
-negocios/1.jpg" alt="Los Angeles" style="width:100%;">
-						</div>
-						
-						<div class="item">
-							<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['imagenes'];?>
-negocios/2.jpg" alt="Los Angeles" style="width:100%;">
-						</div>
-						
-						<div class="item">
-							<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['imagenes'];?>
-negocios/3.jpg" alt="Los Angeles" style="width:100%;">
-						</div>
-						<div class="item">
-							<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['imagenes'];?>
-negocios/4.jpg" alt="Los Angeles" style="width:100%;">
-						</div>
-						<div class="item">
-							<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['imagenes'];?>
-negocios/5.jpg" alt="Los Angeles" style="width:100%;">
-						</div>
+						<?php  $_smarty_tpl->tpl_vars["row"] = new Smarty_Variable; $_smarty_tpl->tpl_vars["row"]->_loop = false;
+ $_smarty_tpl->tpl_vars["key"] = new Smarty_Variable;
+ $_from = $_smarty_tpl->tpl_vars['archivosSlider']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars["row"]->key => $_smarty_tpl->tpl_vars["row"]->value){
+$_smarty_tpl->tpl_vars["row"]->_loop = true;
+ $_smarty_tpl->tpl_vars["key"]->value = $_smarty_tpl->tpl_vars["row"]->key;
+?>
+							<div class="item <?php if ($_smarty_tpl->tpl_vars['key']->value==0){?>active<?php }?>">
+								<img src="<?php echo $_smarty_tpl->tpl_vars['row']->value;?>
+" style="width:100%;">
+							</div>
+						<?php } ?>
 					</div>
 				</div>
 			</div>

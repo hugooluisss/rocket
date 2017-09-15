@@ -21,31 +21,17 @@
 			<div class="col-sm-4 col-sm-offset-4 col-md-3 col-md-offset-6 text-center">
 				<div id="carruselNegocios" class="carousel slide" data-ride="carousel">
 					<ol class="carousel-indicators">
-						<li data-target="#carruselNegocios" data-slide-to="0" class="active"></li>
-						<li data-target="#carruselNegocios" data-slide-to="1"></li>
-						<li data-target="#carruselNegocios" data-slide-to="2"></li>
-						<li data-target="#carruselNegocios" data-slide-to="3"></li>
-						<li data-target="#carruselNegocios" data-slide-to="4"></li>
+						{foreach from=$archivosSlider item="row" key="key"}
+							<li data-target="#carruselNegocios" data-slide-to="{$key}" data-slide-to="{$key}" {if $key eq 0}class="active"{/if}></li>
+						{/foreach}
 					</ol>
 					
 					<div class="carousel-inner">
-						<div class="item active">
-							<img src="{$PAGE.imagenes}negocios/1.jpg" alt="Los Angeles" style="width:100%;">
-						</div>
-						
-						<div class="item">
-							<img src="{$PAGE.imagenes}negocios/2.jpg" alt="Los Angeles" style="width:100%;">
-						</div>
-						
-						<div class="item">
-							<img src="{$PAGE.imagenes}negocios/3.jpg" alt="Los Angeles" style="width:100%;">
-						</div>
-						<div class="item">
-							<img src="{$PAGE.imagenes}negocios/4.jpg" alt="Los Angeles" style="width:100%;">
-						</div>
-						<div class="item">
-							<img src="{$PAGE.imagenes}negocios/5.jpg" alt="Los Angeles" style="width:100%;">
-						</div>
+						{foreach from=$archivosSlider item="row" key="key"}
+							<div class="item {if $key eq 0}active{/if}">
+								<img src="{$row}" style="width:100%;">
+							</div>
+						{/foreach}
 					</div>
 				</div>
 			</div>

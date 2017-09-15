@@ -55,3 +55,37 @@ $(document).ready(function(){
 	
 	});
 });
+
+
+$(document).ready(function(){
+	$("#winLogotipo").find("form").fileupload({
+		// This function is called when a file is added to the queue
+		add: function (e, data) {
+	    	
+		
+			// Automatically upload the file once it is added to the queue
+			var jqXHR = data.submit();
+		},
+		progress: function(e, data){
+			var progress = parseInt(data.loaded / data.total * 100, 10);
+			
+			if(progress == 100){
+				//data.context.removeClass('working');
+				//getImagenes($("#winUploadImagen").find("form").find("#dispositivo").val());
+			}
+		},
+		fail: function(){
+			alert("Ocurrió un problema en el servidor, contacta al administrador del sistema");
+			
+			console.log("Error en el servidor al subir el archivo, checa permisos de la carpeta repositorio");
+		}, done: function(e, data){
+			var result = jQuery.parseJSON(data.result);
+			
+			if (result.band){
+				$("#imgLogotipo").attr("src", "repositorio/negocios/" + $("#imgLogotipo").attr("identificador") + ".jpg?" + Math.random());
+				$("#winLogotipo").modal("hide");
+			}else
+				alert("No se pudo subir");
+		}
+	});
+});

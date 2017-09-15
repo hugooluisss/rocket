@@ -7,14 +7,11 @@
 	<div class="row">
 		{foreach from=$negocios item="negocio"}
 			<div class="col-xs-6 col-sm-4 col-md-3">
-				<div class="thumbnail">
-					<a href="#" title="Haz click/tap sobre la imagen para ver la información completa" datos='{$negocio.json}' data-toggle="modal" data-target="#winNegocio">
-						<img src="{$negocio.imagenes[0]}" alt="Lights" style="height:150px">
-						<div class="caption">
-							<p class="text-center text-danger"><b>{$negocio.razonsocial}</b></p>
-							<p>{$negocio.giro}</p>
-						</div>
-					</a>
+				<div class="negocioAfiliado" style="background: url('{$negocio.logotipo}')" title="Haz click/tap sobre la imagen para ver la información completa" datos='{$negocio.json}' data-toggle="modal" data-target="#winNegocio">
+					<div>
+						<p class="text-center titulo"><b>{$negocio.razonsocial}</b></p>
+						<p class="text-center">Haz click para conocer el negocio</p>
+					</div>
 				</div>
 		    </div>
 	    {/foreach}

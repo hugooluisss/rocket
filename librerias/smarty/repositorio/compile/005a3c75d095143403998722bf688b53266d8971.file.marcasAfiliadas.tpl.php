@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-07 22:30:15
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-15 14:14:42
          compiled from "templates/plantillas/modulos/front-end/marcasAfiliadas.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:13295301159b1fb9e9c4b07-53153527%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '005a3c75d095143403998722bf688b53266d8971' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/marcasAfiliadas.tpl',
-      1 => 1504841413,
+      1 => 1505502874,
       2 => 'file',
     ),
   ),
@@ -37,18 +37,14 @@ foreach ($_from as $_smarty_tpl->tpl_vars["negocio"]->key => $_smarty_tpl->tpl_v
 $_smarty_tpl->tpl_vars["negocio"]->_loop = true;
 ?>
 			<div class="col-xs-6 col-sm-4 col-md-3">
-				<div class="thumbnail">
-					<a href="#" title="Haz click/tap sobre la imagen para ver la información completa" datos='<?php echo $_smarty_tpl->tpl_vars['negocio']->value['json'];?>
+				<div class="negocioAfiliado" style="background: url('<?php echo $_smarty_tpl->tpl_vars['negocio']->value['logotipo'];?>
+')" title="Haz click/tap sobre la imagen para ver la información completa" datos='<?php echo $_smarty_tpl->tpl_vars['negocio']->value['json'];?>
 ' data-toggle="modal" data-target="#winNegocio">
-						<img src="<?php echo $_smarty_tpl->tpl_vars['negocio']->value['imagenes'][0];?>
-" alt="Lights" style="height:150px">
-						<div class="caption">
-							<p class="text-center text-danger"><b><?php echo $_smarty_tpl->tpl_vars['negocio']->value['razonsocial'];?>
+					<div>
+						<p class="text-center titulo"><b><?php echo $_smarty_tpl->tpl_vars['negocio']->value['razonsocial'];?>
 </b></p>
-							<p><?php echo $_smarty_tpl->tpl_vars['negocio']->value['giro'];?>
-</p>
-						</div>
-					</a>
+						<p class="text-center">Haz click para conocer el negocio</p>
+					</div>
 				</div>
 		    </div>
 	    <?php } ?>

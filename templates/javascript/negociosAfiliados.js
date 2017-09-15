@@ -13,7 +13,7 @@ $(document).ready(function(){
 		$(".carousel-indicators").html("");
 		$(".carousel-inner").html("");
 		
-		$(".imgNegocio").attr("src", negocio.imagenes[0]);
+		$(".imgNegocio").attr("src", negocio.logotipo);
 		$(".dvListaImagenes").html("");
 		$.each(negocio.imagenes, function(key, img){
 			var imagen = $("<img />", {

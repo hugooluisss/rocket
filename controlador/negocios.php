@@ -44,42 +44,7 @@ switch($objModulo->getId()){
 		
 		$smarty->assign("negocio", new TNegocio($sesion['usuario']));
 	break;
-	case 'getListaImagenesGaleria':
-		global $userSesion;
-		$archivos = array();
-		$ruta = "repositorio/galeria/".$userSesion->getId()."/";
-		$directorio = scandir($ruta);
-						
-		foreach($directorio as $file){
-			
-			if (!in_array($file, array("..", ".")))
-				array_push($archivos, $ruta.$file);
-		}
-		
-		$smarty->assign("imagenes", $archivos);
-	break;
-	case 'marcasafiliadas':
-		$db = TBase::conectaDB();
-		$sql = "select * from negocio a join usuario b using(idUsuario) where visible = true";
-		$rs = $db->query($sql) or errorMySQL($db, $sql);
-		$datos = array();
-		while($row = $rs->fetch_assoc()){
-			$ruta = "repositorio/galeria/".$row['idUsuario']."/";
-			$directorio = scandir($ruta);
-			$row['imagenes'] = array();
-			
-			foreach($directorio as $file){
-				if (!in_array($file, array("..", ".")))
-					array_push($row['imagenes'], $ruta.$file);
-			}
-			
-			$row['json'] = json_encode($row);
-			
-			array_push($datos, $row);
-		}
-		
-		$smarty->assign("negocios", $datos);
-	break;
+	
 	case 'cnegocios':
 		switch($objModulo->getAction()){
 			case 'add':
@@ -147,6 +112,23 @@ switch($objModulo->getId()){
 				
 				$smarty->assign("json", array("band" => $result, "saldo" => sprintf("%0.2f", $obj->getSaldo())));
 			break; 
+			case 'uploadLogotipo':
+				global $userSesion;
+				$result = false;
+				if(isset($_FILES['upl']) && $_FILES['upl']['error'] == 0){
+					$carpeta = "repositorio/negocios/";
+					if (!file_exists($carpeta))
+						mkdir($carpeta, 0755);
+						
+					$archivo = $userSesion->getId().".jpg";
+					if(move_uploaded_file($_FILES['upl']['tmp_name'], $carpeta.$archivo)){
+						chmod($carpeta.$_FILES['upl']['name'], 0755);
+						$result = true;
+					}
+				}
+				
+				$smarty->assign("json", array("band" => $result));
+			break;
 		}
 	break;
 }

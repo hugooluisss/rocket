@@ -4,6 +4,13 @@
 	</div>
 </div>
 
+<div class="row">
+	<div class="col-xs-12 text-center">
+			<img id="imgLogotipo" name="imgLogotipo" src="repositorio/negocios/{$negocio->getId()}.jpg?{rand()}" onerror="javascript: this.src='repositorio/logo.jpg'" title="Click para cambiar" style="cursor: pointer" data-toggle="modal" data-target="#winLogotipo" identificador="{$negocio->getId()}"/>
+	</div>
+</div>
+<br />
+
 <form role="form" id="frmAdd" class="form-horizontal" onsubmit="javascript: return false;">
 	<div class="box">
 		<div class="box-body">
@@ -91,3 +98,5 @@
 		</div>
 	</div>
 </form>
+
+{include file=$PAGE.rutaModulos|cat:"modulos/negocios/winLogotipo.tpl"}

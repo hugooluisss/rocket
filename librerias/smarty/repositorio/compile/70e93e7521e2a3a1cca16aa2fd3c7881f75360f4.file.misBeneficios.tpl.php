@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-07 20:52:12
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-15 13:41:38
          compiled from "templates/plantillas/modulos/front-end/misBeneficios.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:150417869159b1944e00fab9-41899393%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '70e93e7521e2a3a1cca16aa2fd3c7881f75360f4' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/misBeneficios.tpl',
-      1 => 1504835531,
+      1 => 1505136596,
       2 => 'file',
     ),
   ),
