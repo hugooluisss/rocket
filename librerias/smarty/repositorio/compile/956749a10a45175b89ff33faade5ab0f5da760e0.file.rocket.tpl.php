@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-15 13:45:31
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-18 11:38:18
          compiled from "templates/plantillas/layout/rocket.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:10575565359a0e9dd645a93-79600797%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '956749a10a45175b89ff33faade5ab0f5da760e0' => 
     array (
       0 => 'templates/plantillas/layout/rocket.tpl',
-      1 => 1505501131,
+      1 => 1505752684,
       2 => 'file',
     ),
   ),
@@ -59,6 +59,7 @@ bootstrap/css/bootstrap.min.css">
 		
 		<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 		
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -100,7 +101,7 @@ logo.png" />
 				<ul class="nav navbar-nav">
 					<li><a href="inicio">¿Como funciona?</a></li>
 					<li><a href="misbeneficios">Mis beneficios</a></li>
-					<li><a href="marcasafiliadas">Marcas afiliadas</a></li>
+					<li><a href="brands">Marcas afiliadas</a></li>
 					<li><a href="#" data-toggle="modal" data-target="#winRegistro">Registrate gratis</a></li>
 					<li><a href="#" data-toggle="modal" data-target="#winNegocioLogin">Ingresa</a></li>
 					<br />

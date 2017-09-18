@@ -54,7 +54,7 @@ switch($objModulo->getId()){
 		
 		$smarty->assign("imagenes", $archivos);
 	break;
-	case 'marcasafiliadas':
+	case 'brands':
 		$db = TBase::conectaDB();
 		$sql = "select * from negocio a join usuario b using(idUsuario) where visible = true";
 		$rs = $db->query($sql) or errorMySQL($db, $sql);

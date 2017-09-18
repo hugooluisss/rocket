@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-15 14:14:42
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-18 11:43:23
          compiled from "templates/plantillas/modulos/front-end/marcasAfiliadas.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:13295301159b1fb9e9c4b07-53153527%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '005a3c75d095143403998722bf688b53266d8971' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/marcasAfiliadas.tpl',
-      1 => 1505502874,
+      1 => 1505753001,
       2 => 'file',
     ),
   ),
@@ -27,7 +27,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <?php if ($_valid && !is_callable('content_59b1fb9e9c5868_31605300')) {function content_59b1fb9e9c5868_31605300($_smarty_tpl) {?><div class="container">
 	<div class="row">
 		<div class="col-xs-12 text-center">
-			<h2>Beneficios de ser un socio de Rocket Card</h2>
+			<h2>Nuestras marcas</h2>
 		</div>
 	</div>
 	<div class="row">
@@ -43,7 +43,9 @@ $_smarty_tpl->tpl_vars["negocio"]->_loop = true;
 					<div>
 						<p class="text-center titulo"><b><?php echo $_smarty_tpl->tpl_vars['negocio']->value['razonsocial'];?>
 </b></p>
-						<p class="text-center">Haz click para conocer el negocio</p>
+						<p class="text-center">
+							<small>Haz click para conocer el negocio</small>
+						</p>
 					</div>
 				</div>
 		    </div>
@@ -62,7 +64,7 @@ $_smarty_tpl->tpl_vars["negocio"]->_loop = true;
 			</div>
 			<div class="modal-body">
 				<div class="row">
-					<div class="col-xs-12 text-center">
+					<div class="col-xs-12 text-center" style="height: 200px; overflow-y: hidden;">
 						<img class="imgNegocio" />
 					</div>
 				</div>
@@ -70,6 +72,7 @@ $_smarty_tpl->tpl_vars["negocio"]->_loop = true;
 					<div class="col-xs-12 dvListaImagenes">
 					</div>
 				</div>
+				<hr />
 				<div class="row">
 					<div class="col-xs-4 text-danger"><b>Dirección</b></div>
 					<div class="col-xs-8">

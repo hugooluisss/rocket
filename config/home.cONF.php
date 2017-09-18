@@ -10,7 +10,7 @@ $conf['misbeneficios'] = array(
 	'seguridad' => false,
 	'capa' => LAYOUT_ROCKET);
 	
-$conf['marcasafiliadas'] = array(
+$conf['brands'] = array(
 	'controlador' => 'front-end.php',
 	'vista' => 'front-end/marcasAfiliadas.tpl',
 	'descripcion' => 'Fotografías de las empresas',

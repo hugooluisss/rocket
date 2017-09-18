@@ -249,6 +249,7 @@ footer ul a:hover {
   background: no-repeat center center fixed;
   height: 150px;
   padding: 5px 5px 5px 5px;
+  cursor: pointer;
 }
 .negocioAfiliado div {
   display: none;
@@ -256,7 +257,7 @@ footer ul a:hover {
   width: 100%;
 }
 .negocioAfiliado:hover {
-  background: none;
+  background-size: 500px;
 }
 .negocioAfiliado:hover div {
   display: block;
@@ -268,6 +269,15 @@ footer ul a:hover {
 .negocioAfiliado:hover div .titulo {
   color: red;
   font-size: 16px;
+  text-transform: capitalize;
+  font-family: 'Raleway', sans-serif;
+}
+#winNegocio .dvListaImagenes {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+#winNegocio .dvListaImagenes img {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */

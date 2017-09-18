@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12 text-center">
-			<h2>Beneficios de ser un socio de Rocket Card</h2>
+			<h2>Nuestras marcas</h2>
 		</div>
 	</div>
 	<div class="row">
@@ -10,7 +10,9 @@
 				<div class="negocioAfiliado" style="background: url('{$negocio.logotipo}')" title="Haz click/tap sobre la imagen para ver la información completa" datos='{$negocio.json}' data-toggle="modal" data-target="#winNegocio">
 					<div>
 						<p class="text-center titulo"><b>{$negocio.razonsocial}</b></p>
-						<p class="text-center">Haz click para conocer el negocio</p>
+						<p class="text-center">
+							<small>Haz click para conocer el negocio</small>
+						</p>
 					</div>
 				</div>
 		    </div>
@@ -29,7 +31,7 @@
 			</div>
 			<div class="modal-body">
 				<div class="row">
-					<div class="col-xs-12 text-center">
+					<div class="col-xs-12 text-center" style="height: 200px; overflow-y: hidden;">
 						<img class="imgNegocio" />
 					</div>
 				</div>
@@ -37,6 +39,7 @@
 					<div class="col-xs-12 dvListaImagenes">
 					</div>
 				</div>
+				<hr />
 				<div class="row">
 					<div class="col-xs-4 text-danger"><b>Dirección</b></div>
 					<div class="col-xs-8">

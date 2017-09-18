@@ -292,7 +292,7 @@ footer{
 	background:  no-repeat center center fixed;
 	height: 150px;
 	padding: 5px 5px 5px 5px;
-	
+	cursor: pointer;
 	div{
 		display: none;
 		height: 100%;
@@ -300,7 +300,8 @@ footer{
 	}
 	
 	&:hover{
-			background: none;
+		background-size: 500px;
+		
 		div{
 			display: block;
 			background: white;
@@ -310,7 +311,20 @@ footer{
     		.titulo{
     			color: red;
     			font-size: 16px;
+    			text-transform: capitalize;
+    			font-family: 'Raleway', sans-serif;
     		}
+		}
+	}
+}
+
+#winNegocio{
+	.dvListaImagenes{
+		overflow-x:hidden;
+		overflow-y:scroll;
+		
+		img{
+			cursor: pointer;
 		}
 	}
 }

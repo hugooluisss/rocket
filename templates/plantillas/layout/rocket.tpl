@@ -24,6 +24,7 @@
 		
 		<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 		
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -64,7 +65,7 @@
 				<ul class="nav navbar-nav">
 					<li><a href="inicio">¿Como funciona?</a></li>
 					<li><a href="misbeneficios">Mis beneficios</a></li>
-					<li><a href="marcasafiliadas">Marcas afiliadas</a></li>
+					<li><a href="brands">Marcas afiliadas</a></li>
 					<li><a href="#" data-toggle="modal" data-target="#winRegistro">Registrate gratis</a></li>
 					<li><a href="#" data-toggle="modal" data-target="#winNegocioLogin">Ingresa</a></li>
 					<br />
