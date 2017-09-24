@@ -11,7 +11,7 @@
 		<link rel="stylesheet/less" type="text/css" href="{$PAGE.ruta}build/less/AdminLTE.less" />
 		<link rel="stylesheet/less" type="text/css" href="{$PAGE.ruta}build/less/skins/_all-skins.less" />
 		{else}
-		<link rel="stylesheet" href="{$PAGE.ruta}dist/css/AdminLTE.min.css">
+		<link rel="stylesheet" href="{$PAGE.ruta}dist/css/AdminLTE.css">
 		<link rel="stylesheet" type="text/css" href="{$PAGE.ruta}dist/css/skins/_all-skins.css" />
 		{/if}
 
@@ -37,7 +37,7 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 	</head>
-	<body class="hold-transition skin-red-light sidebar-mini">
+	<body class="hold-transition skin-black sidebar-mini">
 	<div class="wrapper">
 		<header class="main-header">
 			<!-- Logo -->
@@ -47,7 +47,7 @@
 					<img src="{$PAGE.ruta}img/logo.png" alt="ROCKET" style="width: 105px;"/>
 				</span>
 				<!-- logo for regular state and mobile devices -->
-				<span class="logo-mini"><b>ROCKET</b></span>
+				<span class="logo-mini"><b><span style="color: white">R</span><span style="color:red">C</span></b></span>
 			</a>
 			<!-- Header Navbar: style can be found in header.less -->
 			<nav class="navbar navbar-static-top" role="navigation">

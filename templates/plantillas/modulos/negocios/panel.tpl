@@ -37,8 +37,13 @@
 						<div class="col-sm-4">
 							<input type="text" class="form-control" id="txtNombre" name="txtNombre" placeholder="Nombre">
 						</div>
-						<div class="col-sm-5">
-							<input type="text" class="form-control" id="txtApellidos" name="txtApellidos" placeholder="Apellidos">
+					</div>
+					<div class="form-group">
+						<div class="col-sm-4 col-sm-offset-3">
+							<input type="text" class="form-control" id="txtApp" name="txtApp" placeholder="Apellido paterno">
+						</div>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" id="txtApm" name="txtApm" placeholder="Apellido materno">
 						</div>
 					</div>
 					<hr />
@@ -50,8 +55,11 @@
 					</div>
 					<div class="form-group">
 						<label class="col-sm-3 control-label" for="txtCalle">Calle y número</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="txtCalle" name="txtCalle">
+						<div class="col-sm-7">
+							<input type="text" class="form-control" id="txtCalle" name="txtCalle" placeholder="Calle">
+						</div>
+						<div class="col-sm-2">
+							<input type="text" class="form-control" id="txtNumero" name="txtNumero" placeholder="Número">
 						</div>
 					</div>
 					<div class="form-group">

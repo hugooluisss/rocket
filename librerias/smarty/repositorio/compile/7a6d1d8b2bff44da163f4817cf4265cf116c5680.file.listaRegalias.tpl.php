@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-13 11:38:46
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-21 20:11:45
          compiled from "templates/plantillas/modulos/reportes/admin/listaRegalias.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:168141611059b95a147497d1-56070670%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7a6d1d8b2bff44da163f4817cf4265cf116c5680' => 
     array (
       0 => 'templates/plantillas/modulos/reportes/admin/listaRegalias.tpl',
-      1 => 1505320720,
+      1 => 1505350297,
       2 => 'file',
     ),
   ),

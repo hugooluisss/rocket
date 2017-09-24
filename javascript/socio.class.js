@@ -7,11 +7,13 @@ TSocio = function(){
 		$.post('csocios', {
 				"id": datos.id,
 				"nombre": datos.nombre,
-				"apellidos": datos.apellidos,
+				"app": datos.app,
+				"apm": datos.apm,
 				"correo": datos.correo, 
 				"pass": datos.pass,
 				"municipio": datos.municipio,
 				"entidadfederativa": datos.entidadFederativa,
+				"whatsapp": datos.whatsapp,
 				"action": "add"
 			}, function(data){
 				if (data.band == 'false')

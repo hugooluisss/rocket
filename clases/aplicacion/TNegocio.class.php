@@ -12,6 +12,7 @@ class TNegocio extends TUsuario{
 	private $giro;
 	private $rfc;
 	private $calle;
+	private $numero;
 	private $colonia;
 	private $codigopostal;
 	private $localidad;
@@ -178,6 +179,32 @@ class TNegocio extends TUsuario{
 	
 	public function getCalle(){
 		return $this->calle;
+	}
+	
+	/**
+	* Establece el número
+	*
+	* @autor Hugo
+	* @access public
+	* @param string $val Valor a asignar
+	* @return boolean True si se realizó sin problemas
+	*/
+	
+	public function setNumero($val = ''){
+		$this->numero = $val;
+		return true;
+	}
+	
+	/**
+	* Retorna el numero
+	*
+	* @autor Hugo
+	* @access public
+	* @return string Texto
+	*/
+	
+	public function getNumero(){
+		return $this->numero;
 	}
 	
 	/**
@@ -374,7 +401,7 @@ class TNegocio extends TUsuario{
 		if ($this->getId() == '') return 0;
 		
 		$db = TBase::conectaDB();
-		$sql = "select comision from comision where activar <= now() and idUsuario = ".$this->getId()." order by activar desc limit 1";
+		$sql = "select comision from negocio where idUsuario = ".$this->getId();
 		
 		$rs = $db->query($sql) or errorMySQL($db, $sql);
 		$row = $rs->fetch_assoc();
@@ -413,6 +440,7 @@ class TNegocio extends TUsuario{
 				giro = '".$this->getGiro()."',
 				rfc = '".$this->getRFC()."',
 				calle = '".$this->getCalle()."',
+				numero = '".$this->getNumero()."',
 				colonia = '".$this->getColonia()."',
 				codigopostal = '".$this->getCodigoPostal()."',
 				localidad = '".$this->getLocalidad()."',
@@ -435,15 +463,16 @@ class TNegocio extends TUsuario{
 	* @return boolean True si se realizó sin problemas
 	*/
 	
-	public function addComision($comision = 0){
+	public function setComision($comision = 0){
 		if ($this->getId() == '') return false;
 		
 		$fecha = new DateTime();
 		$fecha->add(new DateInterval('PT24H'));
 		$db = TBase::conectaDB();
-		$rs = $db->query("INSERT INTO comision(idUsuario, activar, comision) VALUES(".$this->getId().", '".$fecha->format("Y-m-d H:i:s")."', ".$comision.");");
-			
-		return $rs?$fecha->format("Y-m-d H:i:s"):"";
+		$sql = "update negocio set comision = ".$comision.", setComision = '".$fecha->format("Y-m-d H:i:s")."' where idUsuario = ".$this->getId();
+		$db->query($sql) or errorMySQL($db, $sql);
+		
+		return true;
 	}
 	
 	/**

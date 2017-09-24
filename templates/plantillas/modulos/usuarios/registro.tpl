@@ -17,26 +17,37 @@
 					</div>
 					<div class="form-group">
 						<label class="col-sm-4 control-label" for="txtApellidos">Apellidos</label>
-						<div class="col-sm-8">
-							<input type="text" class="form-control" id="txtApellidos" name="txtApellidos">
+						<div class="col-sm-4">
+							<input type="text" class="form-control" id="txtApp" name="txtApp" placeholder="Paterno">
 						</div>
-					</div>
-					<div class="form-group">
-						<label class="col-sm-4 control-label" for="txtMunicipio">Municipio</label>
-						<div class="col-sm-8">
-							<input type="text" class="form-control" id="txtMunicipio" name="txtMunicipio">
+						<div class="col-sm-4">
+							<input type="text" class="form-control" id="txtApm" name="txtApm" placeholder="Materno">
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-sm-4 control-label" for="txtEntidadFederativa">Entidad federativa</label>
 						<div class="col-sm-8">
-							<input type="text" class="form-control" id="txtEntidadFederativa" name="txtEntidadFederativa">
+							<select class="form-control" id="txtEntidadFederativa" name="txtEntidadFederativa">
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label" for="txtMunicipio">Municipio</label>
+						<div class="col-sm-8">
+							<select class="form-control" id="txtMunicipio" name="txtMunicipio">
+							</select>
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-sm-4 control-label" for="txtCorreo">Correo electrónico</label>
 						<div class="col-sm-8">
 							<input type="email" class="form-control" id="txtCorreo" name="txtCorreo">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label" for="txtWhatsapp">Whatsapp</label>
+						<div class="col-sm-8">
+							<input type="tel" class="form-control" id="txtWhatsapp" name="txtWhatsapp">
 						</div>
 					</div>
 					<div class="form-group">

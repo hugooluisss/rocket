@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-08 11:14:09
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-23 12:47:36
          compiled from "templates/plantillas/modulos/usuarios/panel.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:181242953559aed533ba2fe1-35612437%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '75fca16c9665563fbe115b9d9483a90d1409c54e' => 
     array (
       0 => 'templates/plantillas/modulos/usuarios/panel.tpl',
-      1 => 1504637813,
+      1 => 1506188855,
       2 => 'file',
     ),
   ),
@@ -46,8 +46,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 						<div class="col-lg-5">
 							<input class="form-control" id="txtNombre" name="txtNombre" placeholder="Nombre">
 						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-lg-5 col-lg-offset-2">
+							<input class="form-control" id="txtApp" name="txtApp" placeholder="Apellido paterno">
+						</div>
 						<div class="col-lg-5">
-							<input class="form-control" id="txtApellidos" name="txtApellidos" placeholder="Apellidos">
+							<input class="form-control" id="txtApm" name="txtApm" placeholder="Apellido materno">
 						</div>
 					</div>
 					<div class="form-group">

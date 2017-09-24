@@ -53,6 +53,12 @@ header{
 }
 
 nav{
+    &.affix{
+        top: 0px;
+        width: 100%;
+        z-index: 300;
+    }
+    
 	&.navbar{
 		border-radius: 0px;
 	}
@@ -74,8 +80,12 @@ nav{
 		margin-top: 8px;
 		
 		li{
-			&:hover{
+			&:hover, &.active{
 				background: red;
+				
+				& > a{
+				    background: red !important;
+			    }
 			}
 			
 			& > a{
@@ -88,6 +98,34 @@ nav{
 	margin-bottom: 0px !important;
 }
 
+.frmLogin{
+	@media (max-width: @mq-xs-max){
+		background: white;
+		padding: 5px 5px 5px 5px;
+	}
+	
+	margin-top: 60px;
+	
+	.titulo{
+		font-size: 22px;
+		font-weight: bold;
+	}
+	span.input-group-addon{
+		background: black;
+	}
+	
+	button[type=button]{
+		color: black;
+		font-weight: bold;
+	}
+}
+
+#frmRegistroSocio{
+    input{
+        text-transform:uppercase;
+    }
+}
+
 .headPrincipal{
 	background: url("../img/rocketBGHead.jpg");
 	background-position-x: center;
@@ -98,28 +136,6 @@ nav{
 	
 	@media (max-width: @mq-xs-max){
 		min-height: 500px;
-	}
-	
-	#frmLoginSocio{
-		@media (max-width: @mq-xs-max){
-			background: white;
-			padding: 5px 5px 5px 5px;
-		}
-		
-		margin-top: 60px;
-		
-		.titulo{
-			font-size: 22px;
-			font-weight: bold;
-		}
-		span.input-group-addon{
-			background: black;
-		}
-		
-		button[type=button]{
-			color: black;
-			font-weight: bold;
-		}
 	}
 	
 	#carruselNegocios{
@@ -160,7 +176,11 @@ h2{
 	color: black;
 }
 
+.contenido{
+}
+
 .beneficios{
+    padding-top: 140px;
 	.item{
 		height: 300px;
 		cursor: pointer;
@@ -289,19 +309,85 @@ footer{
 }
 
 .negocioAfiliado{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    height: 300px;
+    
+    img.logotipo{
+        height: 300px;
+        cursor: pointer;
+        width: 100%;
+        position: absolute;
+        
+        @media (max-width: @mq-xs-max){
+            height: 300px;
+            width: 90%;
+        }
+    }
+    
+    .negocioPlus{
+        position: absolute;
+        top: 0px;
+        color: white;
+        background: red;
+        opacity: 0.8;
+        filter: alpha(opacity=80);
+        left: 90%;
+        width: 40px;
+        
+        .texto{
+            display: block;
+        }
+        
+        @media (max-width: @mq-xs-max){
+            left: 80%;
+            width: 40px;
+            
+            .texto{
+                display: none;
+            }
+        }
+        
+        padding: 10px 10px 10px 10px;
+        border: 2px solid;
+        border-radius: 0px 0px 20px 20px;
+        
+        text-align: center;
+    }
+    
+    &:hover{
+        .negocioPlus{
+            display: none;
+        }
+    }
+    
+    /*
 	background:  no-repeat center center fixed;
 	height: 150px;
 	padding: 5px 5px 5px 5px;
 	cursor: pointer;
+	border: 1px solid red;
+	
 	div{
 		display: none;
 		height: 100%;
 		width: 100%;
 	}
 	
+	.plus{
+	    font-size: 16px;
+	    color: red;
+	    background: white;
+	    width: 100%;
+	    display: block;
+	}
+	
 	&:hover{
 		background-size: 500px;
-		
+		.plus{
+		    display:none;
+		}
 		div{
 			display: block;
 			background: white;
@@ -316,6 +402,19 @@ footer{
     		}
 		}
 	}
+	
+	*/
+}
+
+.popover{
+    @media (max-width: @mq-xs-max){
+        width: 200px;
+    }
+    
+    .popover-title{
+        background: red;
+        color: white;
+    }
 }
 
 #winNegocio{

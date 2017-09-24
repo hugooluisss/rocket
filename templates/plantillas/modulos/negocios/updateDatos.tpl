@@ -31,8 +31,13 @@
 				<div class="col-sm-4">
 					<input type="text" class="form-control" id="txtNombre" name="txtNombre" placeholder="Nombre" value="{$negocio->getNombre()}">
 				</div>
-				<div class="col-sm-5">
-					<input type="text" class="form-control" id="txtApellidos" name="txtApellidos" placeholder="Apellidos" value="{$negocio->getApellidos()}">
+			</div>
+			<div class="form-group">
+				<div class="col-sm-4 col-sm-offset-3">
+					<input type="text" class="form-control" id="txtApp" name="txtApp" placeholder="Apellido paterno" value="{$negocio->getApp()}">
+				</div>
+				<div class="col-sm-4">
+					<input type="text" class="form-control" id="txtApm" name="txtApm" placeholder="Apellido materno" value="{$negocio->getApm()}">
 				</div>
 			</div>
 			<hr />
@@ -44,8 +49,11 @@
 			</div>
 			<div class="form-group">
 				<label class="col-sm-3 control-label" for="txtCalle">Calle y número</label>
-				<div class="col-sm-9">
-					<input type="text" class="form-control" id="txtCalle" name="txtCalle" value="{$negocio->getCalle()}">
+				<div class="col-sm-7">
+					<input type="text" class="form-control" id="txtCalle" name="txtCalle" value="{$negocio->getCalle()}" placeholder="Calle">
+				</div>
+				<div class="col-sm-2">
+					<input type="text" class="form-control" id="txtNumero" name="txtNumero" value="{$negocio->getNumero()}" placeholder="Número">
 				</div>
 			</div>
 			<div class="form-group">
@@ -95,6 +103,7 @@
 		<div class="box-footer">
 			<button type="submit" class="btn btn-info pull-right">Guardar</button>
 			<input type="hidden" id="id" value="{$negocio->getId()}"/>
+			<input type="hidden" id="plus" value="{$negocio->getPlus()}"/>
 		</div>
 	</div>
 </form>

@@ -28,8 +28,17 @@
 					</div>
 					<div class="form-group">
 						<label class="col-sm-3 control-label" for="txtApellidos">Apellidos</label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" id="txtApp" name="txtApp" placeholder="Paterno">
+						</div>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" id="txtApm" name="txtApm" placeholder="Materno">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="txtEntidadFederativa">Entidad federativa</label>
 						<div class="col-sm-9">
-							<input type="text" class="form-control" id="txtApellidos" name="txtApellidos">
+							<input type="text" class="form-control" id="txtEntidadFederativa" name="txtEntidadFederativa">
 						</div>
 					</div>
 					<div class="form-group">
@@ -39,9 +48,9 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="col-sm-3 control-label" for="txtEntidadFederativa">Entidad federativa</label>
+						<label class="col-sm-3 control-label" for="txtWhatsapp">Whatsapp</label>
 						<div class="col-sm-9">
-							<input type="text" class="form-control" id="txtEntidadFederativa" name="txtEntidadFederativa">
+							<input type="tel" class="form-control" id="txtWhatsapp" name="txtWhatsapp">
 						</div>
 					</div>
 					<div class="form-group">

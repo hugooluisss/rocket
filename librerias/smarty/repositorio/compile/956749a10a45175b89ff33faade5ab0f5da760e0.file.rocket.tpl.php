@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-18 11:38:18
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-23 10:39:26
          compiled from "templates/plantillas/layout/rocket.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:10575565359a0e9dd645a93-79600797%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '956749a10a45175b89ff33faade5ab0f5da760e0' => 
     array (
       0 => 'templates/plantillas/layout/rocket.tpl',
-      1 => 1505752684,
+      1 => 1506181165,
       2 => 'file',
     ),
   ),
@@ -68,21 +68,21 @@ bootstrap/css/bootstrap.min.css">
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 	</head>
-	<body>
+	<body data-spy="scroll" data-target=".navbar" data-offset="50">
 		<header>
-			<div class="busqueda">
-				<div class="contactanos">
-					<a href="contactanos">CONTÁCTANOS</a>
-				</div>
-				<div class="buscar hidden-xs">
-					<div class="input-group">
-						<input id="txtBuscarEmpresa" name="txtBuscarEmpresa" type="text" class="form-control" placeholder="Buscar">
-						<span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></span>
+				<div class="busqueda">
+					<div class="contactanos">
+						<a href="contactanos">CONTÁCTANOS</a>
+					</div>
+					<div class="buscar hidden-xs">
+						<div class="input-group">
+							<input id="txtBuscarEmpresa" name="txtBuscarEmpresa" type="text" class="form-control" placeholder="Buscar">
+							<span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></span>
+						</div>
 					</div>
 				</div>
-			</div>
-		</header>
-		<nav class="navbar navbar-default">
+			</header>
+		<nav class="navbar navbar-default" data-spy="affix" data-offset-top="70">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
 				
@@ -99,9 +99,9 @@ logo.png" />
 			
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="inicio">¿Como funciona?</a></li>
-					<li><a href="misbeneficios">Mis beneficios</a></li>
-					<li><a href="brands">Marcas afiliadas</a></li>
+					<li><a href="#dvComoFunciona">¿Como funciona?</a></li>
+					<li><a href="#dvMisBeneficios">Mis beneficios</a></li>
+					<li class="<?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=="brands"){?>active<?php }?>"><a href="brands">Marcas afiliadas</a></li>
 					<li><a href="#" data-toggle="modal" data-target="#winRegistro">Registrate gratis</a></li>
 					<li><a href="#" data-toggle="modal" data-target="#winNegocioLogin">Ingresa</a></li>
 					<br />

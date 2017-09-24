@@ -6,15 +6,13 @@
 	</div>
 	<div class="row">
 		{foreach from=$negocios item="negocio"}
-			<div class="col-xs-6 col-sm-4 col-md-3">
-				<div class="negocioAfiliado" style="background: url('{$negocio.logotipo}')" title="Haz click/tap sobre la imagen para ver la información completa" datos='{$negocio.json}' data-toggle="modal" data-target="#winNegocio">
-					<div>
-						<p class="text-center titulo"><b>{$negocio.razonsocial}</b></p>
-						<p class="text-center">
-							<small>Haz click para conocer el negocio</small>
-						</p>
+			<div class="col-xs-12 col-sm-4 negocioAfiliado" data-toggle="popover" data-placement="top" {if $negocio.plus eq 1}title="Este es un negocio plus" data-content="En {$negocio.razonsocial} puedes cambiar tus Rocket Points por dinero en efectivo" {/if}>
+				<img class="logotipo" src="{$negocio.logotipo}" datos='{$negocio.json}' data-toggle="modal" data-target="#winNegocio" />
+				{if $negocio.plus eq 1}
+					<div class="negocioPlus">
+						<i class="fa fa-star" aria-hidden="true"></i>
 					</div>
-				</div>
+				{/if}
 		    </div>
 	    {/foreach}
 	</div>
@@ -43,12 +41,12 @@
 				<div class="row">
 					<div class="col-xs-4 text-danger"><b>Dirección</b></div>
 					<div class="col-xs-8">
-						<div campo="calle"></div>
-						<div campo="colonia"></div>
-						<div campo="codigopostal"></div>
-						<div campo="localidad"></div>
-						<div campo="municipio"></div>
-						<div campo="entidadfederativa"></div>
+						<span campo="calle"></span>
+						<span campo="colonia"></span>
+						<span campo="codigopostal"></span>
+						<span campo="localidad"></span>
+						<span campo="municipio"></span>
+						<span campo="entidadfederativa"></span>
 					</div>
 				</div>
 				<div class="row">

@@ -36,16 +36,13 @@
 	<![endif]-->
 	</head>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
-	<body class="hold-transition skin-red-light layout-top-nav">
+	<body class="hold-transition skin-black layout-top-nav">
 		<div class="wrapper">
 			<header class="main-header">
 				<nav class="navbar navbar-static-top">
 					<div class="container">
 						<div class="navbar-header">
 							<img src="{$PAGE.ruta}img/logo.png" alt="ROCKET" style="width: 105px; margin-top: 7px;"/>
-							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
-								<i class="fa fa-bars"></i>
-							</button>
 						</div>
 					</div>
 				</nav>

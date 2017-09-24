@@ -28,7 +28,7 @@ $(document).ready(function(){
 				}
 			},
 			txtNombre: "required",
-			txtApellidos: "required",
+			txtApp: "required",
 		},
 		wrapper: 'span', 
 		submitHandler: function(form){
@@ -37,7 +37,8 @@ $(document).ready(function(){
 			obj.add({
 				id: $("#id").val(), 
 				nombre: $("#txtNombre").val(), 
-				apellidos: $("#txtApellidos").val(), 
+				app: $("#txtApp").val(), 
+				apm: $("#txtApm").val(), 
 				correo: $("#txtCorreo").val(),
 				pass: $("#txtPass").val(),
 				fn: {
@@ -79,7 +80,8 @@ $(document).ready(function(){
 				
 				$("#id").val(el.idUsuario);
 				$("#txtNombre").val(el.nombre);
-				$("#txtApellidos").val(el.apellidos);
+				$("#txtApp").val(el.app);
+				$("#txtApm").val(el.apm);
 				$("#txtCorreo").val(el.correo);
 				$('#panelTabs a[href="#add"]').tab('show');
 			});

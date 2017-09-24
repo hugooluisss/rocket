@@ -51,14 +51,32 @@ switch($objModulo->getId()){
 				$obj->setId($_POST['id']);
 				$obj->setTipo(3);
 				$obj->setNombre($_POST['nombre']);
-				$obj->setApellidos($_POST['apellidos']);
+				$obj->setApp($_POST['app']);
+				$obj->setApm($_POST['apm']);
 				$obj->setCorreo($_POST['correo']);
 				if ($_POST['pass'] <> '')
 					$obj->setPass($_POST['pass']);
 				$obj->setMunicipio($_POST['municipio']);
 				$obj->setEntidadFederativa($_POST['entidadfederativa']);
+				$obj->setWhatsapp($_POST['whatsapp']);
 				
 				$band = $obj->guardar();
+				
+				if ($band and $_POST['id'] == ''){
+					$datos = array();
+					$datos['cliente.nombre'] = $obj->getNombre().' '.$obj->getApp()." ".$obj->getApm();
+					$datos['sitio.url'] = $ini["sistema"]["url"];
+					$datos['cliente.pass'] = $_POST['pass'];
+					$datos['cliente.email'] = $_POST['correo'];
+					$datos['cliente.idUsuario'] = $obj->getId();
+					
+					$email = new TMail2();
+					$email->setTema("Recuperación de contraseña");
+					$email->addDestino($obj->getCorreo(), utf8_decode($obj->getNombre().' '.$obj->getApp()." ".$obj->getApm()));
+					$email->setBodyHTML(utf8_decode($email->construyeMail(file_get_contents("repositorio/mail/registroSocio.html"), $datos)));
+					
+					echo json_encode(array("band" => $email->send()));
+				}
 				
 				$smarty->assign("json", array("band" => $band));
 			break;

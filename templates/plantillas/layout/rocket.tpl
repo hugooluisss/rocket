@@ -33,21 +33,21 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 	</head>
-	<body>
+	<body data-spy="scroll" data-target=".navbar" data-offset="50">
 		<header>
-			<div class="busqueda">
-				<div class="contactanos">
-					<a href="contactanos">CONTÁCTANOS</a>
-				</div>
-				<div class="buscar hidden-xs">
-					<div class="input-group">
-						<input id="txtBuscarEmpresa" name="txtBuscarEmpresa" type="text" class="form-control" placeholder="Buscar">
-						<span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></span>
+				<div class="busqueda">
+					<div class="contactanos">
+						<a href="contactanos">CONTÁCTANOS</a>
+					</div>
+					<div class="buscar hidden-xs">
+						<div class="input-group">
+							<input id="txtBuscarEmpresa" name="txtBuscarEmpresa" type="text" class="form-control" placeholder="Buscar">
+							<span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></span>
+						</div>
 					</div>
 				</div>
-			</div>
-		</header>
-		<nav class="navbar navbar-default">
+			</header>
+		<nav class="navbar navbar-default" data-spy="affix" data-offset-top="70">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
 				
@@ -63,9 +63,9 @@
 			
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="inicio">¿Como funciona?</a></li>
-					<li><a href="misbeneficios">Mis beneficios</a></li>
-					<li><a href="brands">Marcas afiliadas</a></li>
+					<li><a href="#dvComoFunciona">¿Como funciona?</a></li>
+					<li><a href="#dvMisBeneficios">Mis beneficios</a></li>
+					<li class="{if $PAGE.modulo eq "brands"}active{/if}"><a href="brands">Marcas afiliadas</a></li>
 					<li><a href="#" data-toggle="modal" data-target="#winRegistro">Registrate gratis</a></li>
 					<li><a href="#" data-toggle="modal" data-target="#winNegocioLogin">Ingresa</a></li>
 					<br />

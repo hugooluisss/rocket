@@ -15,10 +15,14 @@
 				{foreach from=$lista item="row"}
 					<tr title="{if $row.plus eq 1}Es una empresa plus{/if}">
 						<td style="border-left: 3px solid {if $row.plus eq 1}green{else}blue{/if}">{$row.razonsocial}</td>
-						<td><b>{$row.nombre}</b> {$row.apellidos}</td>
+						<td><b>{$row.nombre}</b> {$row.app} {$row.apm}</td>
 						<td>{$row.correo}</td>
 						<td class="text-center">
-							<button type="button" class="btn btn-primary btn-block btn-xs" action="comision" title="Comisiones" identificador='{$row.idUsuario}' data-toggle="modal" data-target="#winComisiones">{$row.comision} %</button>
+							{if $row.canSetComision eq 1}
+								<button type="button" class="btn btn-primary btn-block btn-xs" action="comision" title="Comisiones" identificador='{$row.idUsuario}' data-toggle="modal" data-target="#winComisiones">{$row.comision} %</button>
+							{else}
+								{$row.comision} %
+							{/if}
 						</td>
 						<td class="text-right dvSaldo">{$row.saldo}</td>
 						<td class="text-right">

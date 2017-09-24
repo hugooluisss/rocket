@@ -8,7 +8,7 @@ switch($objModulo->getId()){
 	break;
 	case 'listaMovimientos':
 		$db = TBase::conectaDB();
-		$sql = "select a.*, c.nombre, c.apellidos, d.color, d.nombre as nombreTipo from movimiento a join socio b on a.idSocio = b.idUsuario join usuario c using(idUsuario) join tipomovimiento d using(idTipoMovimiento) where idNegocio = ".$userSesion->getId()." order by a.registro";
+		$sql = "select a.*, c.nombre, c.app, c.apm, concat(app, ' ', apm) as apellidos, d.color, d.nombre as nombreTipo from movimiento a join socio b on a.idSocio = b.idUsuario join usuario c using(idUsuario) join tipomovimiento d using(idTipoMovimiento) where idNegocio = ".$userSesion->getId()." order by a.registro";
 		
 		$rs = $db->query($sql) or errorMySQL($db, $sql);
 		$datos = array();

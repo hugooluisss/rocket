@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-13 10:54:45
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-23 01:26:41
          compiled from "templates/plantillas/layout/default.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:89763678259a0e9dcbf89c9-13752529%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '88f47345f87357691db158f81dd14f424f0cd759' => 
     array (
       0 => 'templates/plantillas/layout/default.tpl',
-      1 => 1505318084,
+      1 => 1506147998,
       2 => 'file',
     ),
   ),
@@ -42,7 +42,7 @@ build/less/AdminLTE.less" />
 build/less/skins/_all-skins.less" />
 		<?php }else{ ?>
 		<link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
-dist/css/AdminLTE.min.css">
+dist/css/AdminLTE.css">
 		<link rel="stylesheet" type="text/css" href="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
 dist/css/skins/_all-skins.css" />
 		<?php }?>
@@ -81,7 +81,7 @@ plugins/upload/css/jquery.fileupload.css">
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 	</head>
-	<body class="hold-transition skin-red-light sidebar-mini">
+	<body class="hold-transition skin-black sidebar-mini">
 	<div class="wrapper">
 		<header class="main-header">
 			<!-- Logo -->
@@ -92,7 +92,7 @@ plugins/upload/css/jquery.fileupload.css">
 img/logo.png" alt="ROCKET" style="width: 105px;"/>
 				</span>
 				<!-- logo for regular state and mobile devices -->
-				<span class="logo-mini"><b>ROCKET</b></span>
+				<span class="logo-mini"><b><span style="color: white">R</span><span style="color:red">C</span></b></span>
 			</a>
 			<!-- Header Navbar: style can be found in header.less -->
 			<nav class="navbar navbar-static-top" role="navigation">

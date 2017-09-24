@@ -1,17 +1,17 @@
 <div class="container">
 		<div class="row">
 			<div class="col-sm-4 col-md-3 text-center">
-				<form id="frmLoginSocio" onsubmit="javascript: return false;" method="post">
+				<form id="frmLogin1" class="frmLogin" onsubmit="javascript: return false;" method="post">
 					<div class="titulo">INGRESA A TU CUENTA</div>
 					<br />
 					<div class="input-group">
 						<span class="input-group-addon"><i class="fa fa-credit-card fa-inverse" aria-hidden="true"></i></span>
-						<input id="txtTarjetaUser" name="txtTarjetaUser" type="text" class="form-control" placeholder="* Número de tarjeta">
+						<input id="txtCorreo" name="txtCorreo" type="text" class="form-control" placeholder="* Número de socio o correo electrónico">
 					</div>
 					<br />
 					<div class="input-group">
 						<span class="input-group-addon">&nbsp;<i class="fa fa-lock fa-inverse" aria-hidden="true"></i>&nbsp;</span>
-						<input type="password" id="txtPassTarjeta" name="txtPassTarjeta" class="form-control" placeholder="* Contraseña">
+						<input type="password" id="txtPass" name="txtPass" class="form-control" placeholder="* Contraseña">
 					</div>
 					<br />
 					<button type="submit" class="btn btn-danger">INGRESAR</button>

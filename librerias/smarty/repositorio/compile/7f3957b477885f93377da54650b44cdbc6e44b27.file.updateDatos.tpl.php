@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-15 12:53:42
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-23 22:49:12
          compiled from "templates/plantillas/modulos/negocios/updateDatos.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:211108157959b171d8b7cbf1-13549681%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7f3957b477885f93377da54650b44cdbc6e44b27' => 
     array (
       0 => 'templates/plantillas/modulos/negocios/updateDatos.tpl',
-      1 => 1505498020,
+      1 => 1506224940,
       2 => 'file',
     ),
   ),
@@ -63,8 +63,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					<input type="text" class="form-control" id="txtNombre" name="txtNombre" placeholder="Nombre" value="<?php echo $_smarty_tpl->tpl_vars['negocio']->value->getNombre();?>
 ">
 				</div>
-				<div class="col-sm-5">
-					<input type="text" class="form-control" id="txtApellidos" name="txtApellidos" placeholder="Apellidos" value="<?php echo $_smarty_tpl->tpl_vars['negocio']->value->getApellidos();?>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-4 col-sm-offset-3">
+					<input type="text" class="form-control" id="txtApp" name="txtApp" placeholder="Apellido paterno" value="<?php echo $_smarty_tpl->tpl_vars['negocio']->value->getApp();?>
+">
+				</div>
+				<div class="col-sm-4">
+					<input type="text" class="form-control" id="txtApm" name="txtApm" placeholder="Apellido materno" value="<?php echo $_smarty_tpl->tpl_vars['negocio']->value->getApm();?>
 ">
 				</div>
 			</div>
@@ -78,9 +84,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			</div>
 			<div class="form-group">
 				<label class="col-sm-3 control-label" for="txtCalle">Calle y número</label>
-				<div class="col-sm-9">
+				<div class="col-sm-7">
 					<input type="text" class="form-control" id="txtCalle" name="txtCalle" value="<?php echo $_smarty_tpl->tpl_vars['negocio']->value->getCalle();?>
-">
+" placeholder="Calle">
+				</div>
+				<div class="col-sm-2">
+					<input type="text" class="form-control" id="txtNumero" name="txtNumero" value="<?php echo $_smarty_tpl->tpl_vars['negocio']->value->getNumero();?>
+" placeholder="Número">
 				</div>
 			</div>
 			<div class="form-group">
@@ -137,6 +147,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<div class="box-footer">
 			<button type="submit" class="btn btn-info pull-right">Guardar</button>
 			<input type="hidden" id="id" value="<?php echo $_smarty_tpl->tpl_vars['negocio']->value->getId();?>
+"/>
+			<input type="hidden" id="plus" value="<?php echo $_smarty_tpl->tpl_vars['negocio']->value->getPlus();?>
 "/>
 		</div>
 	</div>

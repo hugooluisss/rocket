@@ -10,6 +10,7 @@ class TSocio extends TUsuario{
 	private $idUsuario;
 	private $municipio;
 	private $entidadfederativa;
+	private $whatsapp;
 	private $puntos;
 	
 	/**
@@ -117,6 +118,32 @@ class TSocio extends TUsuario{
 	}
 	
 	/**
+	* Establece whatsapp
+	*
+	* @autor Hugo
+	* @access public
+	* @param string $val Valor a asignar
+	* @return boolean True si se realizó sin problemas
+	*/
+	
+	public function setWhatsapp($val = ''){
+		$this->whatsapp = $val;
+		return true;
+	}
+	
+	/**
+	* Retorna whatsapp
+	*
+	* @autor Hugo
+	* @access public
+	* @return string Texto
+	*/
+	
+	public function getWhatsapp(){
+		return $this->whatsapp;
+	}
+	
+	/**
 	* Guarda los datos en la base de datos, si no existe un identificador entonces crea el objeto
 	*
 	* @autor Hugo
@@ -144,7 +171,8 @@ class TSocio extends TUsuario{
 			SET
 				municipio = '".$this->getMunicipio()."',
 				entidadfederativa = '".$this->getEntidadFederativa()."',
-				puntos = ".$this->getPuntos()."
+				puntos = ".$this->getPuntos().",
+				whatsapp = '".$this->getWhatsapp()."'
 			WHERE idUsuario = ".$this->getId();
 		$rs = $db->query($sql) or errorMySQL($db, $sql);
 			

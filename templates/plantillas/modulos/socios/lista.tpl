@@ -3,7 +3,7 @@
 		<table id="tblDatos" class="table table-bordered table-hover">
 			<thead>
 				<tr>
-					<th>Tarjeta</th>
+					<th>No de socio</th>
 					<th>Nombre completo</th>
 					<th>Correo</th>
 					<th>Puntos</th>
@@ -13,8 +13,8 @@
 			<tbody>
 				{foreach from=$lista item="row"}
 					<tr>
-						<td>{$row.idUsuario|string_format:"%'.016d"}</td>
-						<td><b>{$row.nombre}</b> {$row.apellidos}</td>
+						<td>{$row.idUsuario}</td>
+						<td><b>{$row.nombre}</b> {$row.app} {$row.apm}</td>
 						<td>{$row.correo}</td>
 						<td class="text-right">{$row.puntos}</td>
 						<td style="text-align: right">

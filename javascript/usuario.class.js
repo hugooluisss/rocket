@@ -24,7 +24,8 @@ TUsuario = function(){
 		$.post('cusuarios', {
 				"id": datos.id,
 				"nombre": datos.nombre,
-				"apellidos": datos.apellidos,
+				"app": datos.app,
+				"apm": datos.apm,
 				"correo": datos.correo, 
 				"pass": datos.pass,
 				"action": "add"

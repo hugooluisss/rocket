@@ -25,8 +25,13 @@
 						<div class="col-lg-5">
 							<input class="form-control" id="txtNombre" name="txtNombre" placeholder="Nombre">
 						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-lg-5 col-lg-offset-2">
+							<input class="form-control" id="txtApp" name="txtApp" placeholder="Apellido paterno">
+						</div>
 						<div class="col-lg-5">
-							<input class="form-control" id="txtApellidos" name="txtApellidos" placeholder="Apellidos">
+							<input class="form-control" id="txtApm" name="txtApm" placeholder="Apellido materno">
 						</div>
 					</div>
 					<div class="form-group">

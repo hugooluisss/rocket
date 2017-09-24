@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-07 09:50:24
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-23 19:37:24
          compiled from "templates/plantillas/modulos/usuarios/registro.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:65686298459adfea34b6398-12215798%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '44aef2f9887dfb115ffa8db20a4f38d37d014834' => 
     array (
       0 => 'templates/plantillas/modulos/usuarios/registro.tpl',
-      1 => 1504716964,
+      1 => 1506213438,
       2 => 'file',
     ),
   ),
@@ -38,26 +38,37 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					</div>
 					<div class="form-group">
 						<label class="col-sm-4 control-label" for="txtApellidos">Apellidos</label>
-						<div class="col-sm-8">
-							<input type="text" class="form-control" id="txtApellidos" name="txtApellidos">
+						<div class="col-sm-4">
+							<input type="text" class="form-control" id="txtApp" name="txtApp" placeholder="Paterno">
 						</div>
-					</div>
-					<div class="form-group">
-						<label class="col-sm-4 control-label" for="txtMunicipio">Municipio</label>
-						<div class="col-sm-8">
-							<input type="text" class="form-control" id="txtMunicipio" name="txtMunicipio">
+						<div class="col-sm-4">
+							<input type="text" class="form-control" id="txtApm" name="txtApm" placeholder="Materno">
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-sm-4 control-label" for="txtEntidadFederativa">Entidad federativa</label>
 						<div class="col-sm-8">
-							<input type="text" class="form-control" id="txtEntidadFederativa" name="txtEntidadFederativa">
+							<select class="form-control" id="txtEntidadFederativa" name="txtEntidadFederativa">
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label" for="txtMunicipio">Municipio</label>
+						<div class="col-sm-8">
+							<select class="form-control" id="txtMunicipio" name="txtMunicipio">
+							</select>
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-sm-4 control-label" for="txtCorreo">Correo electrónico</label>
 						<div class="col-sm-8">
 							<input type="email" class="form-control" id="txtCorreo" name="txtCorreo">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label" for="txtWhatsapp">Whatsapp</label>
+						<div class="col-sm-8">
+							<input type="tel" class="form-control" id="txtWhatsapp" name="txtWhatsapp">
 						</div>
 					</div>
 					<div class="form-group">

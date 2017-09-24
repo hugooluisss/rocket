@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-15 13:41:38
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-23 12:19:09
          compiled from "templates/plantillas/modulos/front-end/misBeneficios.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:150417869159b1944e00fab9-41899393%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '70e93e7521e2a3a1cca16aa2fd3c7881f75360f4' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/misBeneficios.tpl',
-      1 => 1505136596,
+      1 => 1506187147,
       2 => 'file',
     ),
   ),
@@ -23,21 +23,21 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_59b1944e0b2b80_66308539')) {function content_59b1944e0b2b80_66308539($_smarty_tpl) {?><div class="headPrincipal">
-	<?php echo $_smarty_tpl->getSubTemplate (($_smarty_tpl->tpl_vars['PAGE']->value['rutaModulos']).("modulos/front-end/encabezado.tpl"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
-
+<?php if ($_valid && !is_callable('content_59b1944e0b2b80_66308539')) {function content_59b1944e0b2b80_66308539($_smarty_tpl) {?><div id="dvMisBeneficios">
+	<!--<?php echo $_smarty_tpl->getSubTemplate (($_smarty_tpl->tpl_vars['PAGE']->value['rutaModulos']).("modulos/front-end/encabezado.tpl"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+-->
 	<div class="container">
 		<div class="beneficios">
 			<div class="row">
 				<div class="col-xs-12 text-center">
-					<h2>Beneficios de ser un socio de Rocket Card</h2>
+					<h2>BENEFICIOS DE SER UN SOCIO DE ROCKET CARD</h2>
 				</div>
 			</div>
 			<br />
 			<div class="row">
 				<div class="col-xs-6 col-md-3 text-center item">
 					<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['imagenes'];?>
-ahorro.png" data-toggle="modal" data-target="#winAhorra"/>
+compras.png" data-toggle="modal" data-target="#winAhorra"/>
 					<p class="descripcion"><span class="text-danger">Ahorra</span> realizando tus compras cotidianas</p>
 				</div>
 				<div class="col-xs-6 col-md-3 text-center item">
@@ -52,7 +52,7 @@ premios.png" data-toggle="modal" data-target="#winParticipa"/>
 				</div>
 				<div class="col-xs-6 col-md-3 text-center item">
 					<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['imagenes'];?>
-compras.png" data-toggle="modal" data-target="#winCompras"/>
+ahorro.png" data-toggle="modal" data-target="#winCompras"/>
 					<p class="descripcion"><span class="text-danger">Utiliza</span> Rocket Card como cuenta de ahorro</p>
 				</div>
 			</div>
@@ -73,7 +73,7 @@ compras.png" data-toggle="modal" data-target="#winCompras"/>
 				<div class="row">
 					<div class="col-xs-12 col-sm-6 text-center item">
 						<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['imagenes'];?>
-ahorro.png"/>
+compras.png"/>
 					</div>
 					<div class="col-xs-12 col-sm-6">
 						<h3><span class="text-danger">Ahorra</span> realizando tus compras cotidianas</h3>
@@ -128,7 +128,7 @@ premios.png"/>
 					<div class="col-xs-12 col-sm-6">
 						<h3><span class="text-danger">Participa</span> para obtener premios</h3>
 						<br />
-						<p>Podrás participar para ganar premios que se otorgarán a la comunidad de socios Rocket Card totalmente gratis</p>
+						<p>Podrás participar <b>totalmente gratis</b> para ganar premios que se otorgan a la comunidad de socios Rocket Card</p>
 					</div>
 				</div>
 			</div>
@@ -148,12 +148,12 @@ premios.png"/>
 				<div class="row">
 					<div class="col-xs-12 col-sm-6 text-center item">
 						<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['imagenes'];?>
-compras.png"/>
+ahorro.png"/>
 					</div>
 					<div class="col-xs-12 col-sm-6">
 						<h3><span class="text-danger">Utiliza</span> Rocket Card como cuenta de ahorro</h3>
 						<br />
-						<p>Podrás participar para ganar premios que se otorgarán a la comunidad de socios Rocket Card totalmente gratis</p>
+						<p>Tú dispones en todo momento de tus Rocket Points, aunque te invitamos a que implementes la cultura del ahorro y dejes que tus puntos se acumulen</p>
 					</div>
 				</div>
 			</div>

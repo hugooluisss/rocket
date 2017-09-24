@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-13 10:06:38
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-23 20:53:17
          compiled from "templates/plantillas/modulos/negocios/lista.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:105764173159aee0e7e7c324-95197605%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'dbb76b85ffc3ee5e89095865b7b39970477f116c' => 
     array (
       0 => 'templates/plantillas/modulos/negocios/lista.tpl',
-      1 => 1505315189,
+      1 => 1506217980,
       2 => 'file',
     ),
   ),
@@ -47,14 +47,20 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 						<td style="border-left: 3px solid <?php if ($_smarty_tpl->tpl_vars['row']->value['plus']==1){?>green<?php }else{ ?>blue<?php }?>"><?php echo $_smarty_tpl->tpl_vars['row']->value['razonsocial'];?>
 </td>
 						<td><b><?php echo $_smarty_tpl->tpl_vars['row']->value['nombre'];?>
-</b> <?php echo $_smarty_tpl->tpl_vars['row']->value['apellidos'];?>
+</b> <?php echo $_smarty_tpl->tpl_vars['row']->value['app'];?>
+ <?php echo $_smarty_tpl->tpl_vars['row']->value['apm'];?>
 </td>
 						<td><?php echo $_smarty_tpl->tpl_vars['row']->value['correo'];?>
 </td>
 						<td class="text-center">
-							<button type="button" class="btn btn-primary btn-block btn-xs" action="comision" title="Comisiones" identificador='<?php echo $_smarty_tpl->tpl_vars['row']->value['idUsuario'];?>
+							<?php if ($_smarty_tpl->tpl_vars['row']->value['canSetComision']==1){?>
+								<button type="button" class="btn btn-primary btn-block btn-xs" action="comision" title="Comisiones" identificador='<?php echo $_smarty_tpl->tpl_vars['row']->value['idUsuario'];?>
 ' data-toggle="modal" data-target="#winComisiones"><?php echo $_smarty_tpl->tpl_vars['row']->value['comision'];?>
  %</button>
+							<?php }else{ ?>
+								<?php echo $_smarty_tpl->tpl_vars['row']->value['comision'];?>
+ %
+							<?php }?>
 						</td>
 						<td class="text-right dvSaldo"><?php echo $_smarty_tpl->tpl_vars['row']->value['saldo'];?>
 </td>

@@ -82,7 +82,7 @@ $(document).ready(function(){
 				"action": "getData"
 			}, function(socio){
 				if (socio.idUsuario != ""){
-					form.find("#txtNombre").val(socio.nombre + " " + socio.apellidos);
+					form.find("#txtNombre").val(socio.nombre + " " + socio.app + " " + socio.apm);
 					form.find("#socio").val(socio.idUsuario);
 					form.find("#puntos").val(socio.puntos);
 				}else{

@@ -28,4 +28,6 @@ $(document).ready(function(){
 			$(".dvListaImagenes").append(imagen);
 		});
 	});
+	
+	$('[data-toggle="popover"]').popover({trigger: 'hover'});
 });

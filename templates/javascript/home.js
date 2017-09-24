@@ -1,25 +1,23 @@
 $(document).ready(function(){
-	$("#frmLoginNegocio").validate({
+	$("#frmLogin1").validate({
 		debug: true,
 		rules: {
-			txtCorreo: {
-				"required": true,
-				"email": true
-			},
+			txtCorreo: "required",
 			txtPass: "required"
 		},
 		wrapper: 'span', 
 		submitHandler: function(form){
+			form = $(form);
 			var obj = new TUsuario;
 			obj.login({
-				usuario: $("#frmLoginNegocio").find("#txtCorreo").val(), 
-				pass: $("#frmLoginNegocio").find("#txtPass").val(), 
+				usuario: form.find("#txtCorreo").val(), 
+				pass: form.find("#txtPass").val(), 
 				fn: {
 					before: function(){
-						$("#frmLoginNegocio").find("[type=submit]").prop("disabled", true);	
+						form.find("[type=submit]").prop("disabled", true);	
 					},
 					after: function(datos){
-						$("#frmLoginNegocio").find("[type=submit]").prop("disabled", false);
+						form.find("[type=submit]").prop("disabled", false);
 						
 						if (!datos.band)
 							alert("Correo electrónico y/o contraseña no válidos");

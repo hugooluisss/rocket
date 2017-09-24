@@ -12,7 +12,8 @@ switch($objModulo->getId()){
 		switch($objModulo->getAction()){
 			case 'login':
 				$db = TBase::conectaDB();
-				$rs = $db->query("select idUsuario, pass from usuario where upper(correo) = upper('".$_POST['usuario']."') and visible = true and idTipo in (1, 2)");
+				$rs = $db->query("select idUsuario, pass from usuario where (upper(correo) = upper('".$_POST['usuario']."') or idUsuario = '".ltrim($_POST['usuario'], '0')."') and visible = true");
+				
 				$result = array('band' => false, 'mensaje' => 'Error al consultar los datos');
 				
 				$row = $rs->fetch_assoc();

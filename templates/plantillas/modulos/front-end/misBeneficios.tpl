@@ -1,16 +1,16 @@
-<div class="headPrincipal">
-	{include file=$PAGE.rutaModulos|cat:"modulos/front-end/encabezado.tpl"}
+<div id="dvMisBeneficios">
+	<!--{include file=$PAGE.rutaModulos|cat:"modulos/front-end/encabezado.tpl"}-->
 	<div class="container">
 		<div class="beneficios">
 			<div class="row">
 				<div class="col-xs-12 text-center">
-					<h2>Beneficios de ser un socio de Rocket Card</h2>
+					<h2>BENEFICIOS DE SER UN SOCIO DE ROCKET CARD</h2>
 				</div>
 			</div>
 			<br />
 			<div class="row">
 				<div class="col-xs-6 col-md-3 text-center item">
-					<img src="{$PAGE.imagenes}ahorro.png" data-toggle="modal" data-target="#winAhorra"/>
+					<img src="{$PAGE.imagenes}compras.png" data-toggle="modal" data-target="#winAhorra"/>
 					<p class="descripcion"><span class="text-danger">Ahorra</span> realizando tus compras cotidianas</p>
 				</div>
 				<div class="col-xs-6 col-md-3 text-center item">
@@ -22,7 +22,7 @@
 					<p class="descripcion"><span class="text-danger">Participa</span> para obtener premios</p>
 				</div>
 				<div class="col-xs-6 col-md-3 text-center item">
-					<img src="{$PAGE.imagenes}compras.png" data-toggle="modal" data-target="#winCompras"/>
+					<img src="{$PAGE.imagenes}ahorro.png" data-toggle="modal" data-target="#winCompras"/>
 					<p class="descripcion"><span class="text-danger">Utiliza</span> Rocket Card como cuenta de ahorro</p>
 				</div>
 			</div>
@@ -42,7 +42,7 @@
 			<div class="modal-body">
 				<div class="row">
 					<div class="col-xs-12 col-sm-6 text-center item">
-						<img src="{$PAGE.imagenes}ahorro.png"/>
+						<img src="{$PAGE.imagenes}compras.png"/>
 					</div>
 					<div class="col-xs-12 col-sm-6">
 						<h3><span class="text-danger">Ahorra</span> realizando tus compras cotidianas</h3>
@@ -95,7 +95,7 @@
 					<div class="col-xs-12 col-sm-6">
 						<h3><span class="text-danger">Participa</span> para obtener premios</h3>
 						<br />
-						<p>Podrás participar para ganar premios que se otorgarán a la comunidad de socios Rocket Card totalmente gratis</p>
+						<p>Podrás participar <b>totalmente gratis</b> para ganar premios que se otorgan a la comunidad de socios Rocket Card</p>
 					</div>
 				</div>
 			</div>
@@ -114,12 +114,12 @@
 			<div class="modal-body">
 				<div class="row">
 					<div class="col-xs-12 col-sm-6 text-center item">
-						<img src="{$PAGE.imagenes}compras.png"/>
+						<img src="{$PAGE.imagenes}ahorro.png"/>
 					</div>
 					<div class="col-xs-12 col-sm-6">
 						<h3><span class="text-danger">Utiliza</span> Rocket Card como cuenta de ahorro</h3>
 						<br />
-						<p>Podrás participar para ganar premios que se otorgarán a la comunidad de socios Rocket Card totalmente gratis</p>
+						<p>Tú dispones en todo momento de tus Rocket Points, aunque te invitamos a que implementes la cultura del ahorro y dejes que tus puntos se acumulen</p>
 					</div>
 				</div>
 			</div>

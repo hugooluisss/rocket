@@ -19,7 +19,7 @@ $conf['inicio'] = array(
 	'controlador' => 'panelPrincipal.php',
 	'descripcion' => '',
 	'js' => array('socio.class.js', 'usuario.class.js'),
-	'jsTemplate' => array('sociosHome.js', 'negociosHome.js'),
+	'jsTemplate' => array('home.js', 'sociosHome.js'),
 	'seguridad' => false,
 	'capa' => LAYOUT_ROCKET);
 

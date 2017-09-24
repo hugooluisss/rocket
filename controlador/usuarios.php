@@ -30,7 +30,8 @@ switch($objModulo->getId()){
 				$obj->setId($_POST['id']);
 				$obj->setTipo(1);
 				$obj->setNombre($_POST['nombre']);
-				$obj->setApellidos($_POST['apellidos']);
+				$obj->setApp($_POST['app']);
+				$obj->setApm($_POST['apm']);
 				$obj->setCorreo($_POST['correo']);
 				
 				if ($_POST['pass'] <> '')
@@ -62,14 +63,14 @@ switch($objModulo->getId()){
 					$cliente = new TUsuario($row['idUsuario']);
 					
 					$datos = array();
-					$datos['cliente.nombre'] = $cliente->getNombre().' '.$cliente->getApellidos();
+					$datos['cliente.nombre'] = $cliente->getNombre().' '.$cliente->getApp()." ".$cliente->getApm();
 					$datos['cliente.pass'] = $row['pass'];
 					$datos['cliente.email'] = $row['correo'];
 					$datos['sitio.url'] = $ini["sistema"]["url"];
 					
 					$email = new TMail2();
 					$email->setTema("Recuperación de contraseña");
-					$email->addDestino($cliente->getCorreo(), utf8_decode($cliente->getNombre().' '.$cliente->getApellidos()));
+					$email->addDestino($cliente->getCorreo(), utf8_decode($cliente->getNombre().' '.$cliente->getApp()." ".$cliente->getApm()));
 					$email->setBodyHTML(utf8_decode($email->construyeMail(file_get_contents("repositorio/mail/recuperarPass.html"), $datos)));
 					
 					echo json_encode(array("band" => $email->send()));

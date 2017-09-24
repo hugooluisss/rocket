@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-15 13:21:07
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-23 00:31:18
          compiled from "templates/plantillas/modulos/front-end/encabezado.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:84480610959b190e0891de0-77559280%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '97e9529d738f03552c7bffed1894a2923ab01b07' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/encabezado.tpl',
-      1 => 1505499665,
+      1 => 1506144670,
       2 => 'file',
     ),
   ),
@@ -28,17 +28,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <?php if ($_valid && !is_callable('content_59b190e08e4707_82134997')) {function content_59b190e08e4707_82134997($_smarty_tpl) {?><div class="container">
 		<div class="row">
 			<div class="col-sm-4 col-md-3 text-center">
-				<form id="frmLoginSocio" onsubmit="javascript: return false;" method="post">
+				<form id="frmLogin1" class="frmLogin" onsubmit="javascript: return false;" method="post">
 					<div class="titulo">INGRESA A TU CUENTA</div>
 					<br />
 					<div class="input-group">
 						<span class="input-group-addon"><i class="fa fa-credit-card fa-inverse" aria-hidden="true"></i></span>
-						<input id="txtTarjetaUser" name="txtTarjetaUser" type="text" class="form-control" placeholder="* Número de tarjeta">
+						<input id="txtCorreo" name="txtCorreo" type="text" class="form-control" placeholder="* Número de socio o correo electrónico">
 					</div>
 					<br />
 					<div class="input-group">
 						<span class="input-group-addon">&nbsp;<i class="fa fa-lock fa-inverse" aria-hidden="true"></i>&nbsp;</span>
-						<input type="password" id="txtPassTarjeta" name="txtPassTarjeta" class="form-control" placeholder="* Contraseña">
+						<input type="password" id="txtPass" name="txtPass" class="form-control" placeholder="* Contraseña">
 					</div>
 					<br />
 					<button type="submit" class="btn btn-danger">INGRESAR</button>

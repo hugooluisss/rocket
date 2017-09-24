@@ -1,71 +1,115 @@
 $(document).ready(function(){
+	$.get("repositorio/entidadesestados.json", function(entidades){
+		$("#txtEntidadFederativa").html("");
+		$.each(entidades, function(entidad, municipios){
+			var option = $("<option />", {
+				value: entidad,
+				text: entidad,
+				json: JSON.stringify(municipios)
+			});
+			
+			$("#txtEntidadFederativa").append(option);
+		});
+		
+		$("#txtEntidadFederativa").change(function(){
+			setEstados();
+		});
+
+		setEstados();
+		
+		function setEstados(){
+			$("#txtMunicipio").html("");
+			var municipios = jQuery.parseJSON($("#txtEntidadFederativa option:selected").attr("json"));
+			
+			$.each(municipios, function(i, municipio){
+				var option = $("<option />", {
+					value: municipio,
+					text: municipio,
+				});
+				
+				$("#txtMunicipio").append(option);
+			});
+		}
+	}, "json");
+
 	$("#frmRegistroSocio").validate({
 		debug: true,
 		rules: {
 			txtNombre: "required",
-			txtApellidos: "required",
+			txtApp: "required",
 			txtCorreo: {
 				"required": true,
-				"email": {
-					"required": true,
-					"remote": {
-						url: "cusuarios",
-						type: "post",
-						data: {
-							"action": "validarEmail",
-						}
+				"email": true,
+				remote: {
+					url: "cusuarios",
+					type: "post",
+					data: {
+						"action": "validarEmail",
 					}
 				}
 			},
 			txtPass: "required",
 			txtPass2: {
-				required: true,
-				equalTo: "#txtPass"
+				required: true
 			}
 		},
 		wrapper: 'span', 
+		messages: {
+			txtCorreo: {
+				remote: "Existe un socio registrado con este correo, intenta con otro"
+			}
+		},
 		submitHandler: function(form){
-			var obj = new TSocio;
-			obj.add({
-				nombre: $("#txtNombre").val(), 
-				apellidos: $("#txtApellidos").val(), 
-				municipio: $("#txtMunicipio").val(), 
-				entidadFederativa: $("#txtEntidadFederativa").val(), 
-				correo: $("#txtCorreo").val(), 
-				pass: $("#txtPass").val(), 
-				fn: {
-					after: function(datos){
-						if (datos.band){
-							$("#frmRegistroSocio").get(0).reset();
-							alert("¡¡¡ Felicidades !!! ya eres nuestro socio");
-						}else{
-							alert("No se pudo guardar el registro");
+			if ($(form).find("#txtPass2").val() != $(form).find("#txtPass").val())
+				alert("Las contraseñas no son iguales");
+			else{
+				var obj = new TSocio;
+				obj.add({
+					nombre: $(form).find("#txtNombre").val(), 
+					app: $(form).find("#txtApp").val(), 
+					apm: $(form).find("#txtApm").val(), 
+					municipio: $(form).find("#txtMunicipio").val(), 
+					entidadFederativa: $(form).find("#txtEntidadFederativa").val(), 
+					correo: $(form).find("#txtCorreo").val(), 
+					pass: $(form).find("#txtPass").val(), 
+					whatsapp: $(form).find("#txtWhatsapp").val(), 
+					fn: {
+						after: function(datos){
+							if (datos.band){
+								$("#frmRegistroSocio").get(0).reset();
+								$("#winRegistro").modal("hide");
+								
+								alert("¡¡¡ Felicidades !!! ya eres nuestro socio");
+							}else{
+								alert("No se pudo guardar el registro");
+							}
 						}
 					}
-				}
-			});
+				});
+			}
         }
 
     });
     
-    
-    $("#frmLoginSocio").validate({
+    $("#frmLogin2").validate({
 		debug: true,
 		rules: {
-			txtTarjetaUser: "required",
-			txtPassTarjeta: "required"
+			txtCorreo: "required",
+			txtPass: "required"
 		},
 		wrapper: 'span', 
 		submitHandler: function(form){
-			var obj = new TSocio;
+			var form = $(form);
+			
+			var obj = new TUsuario;
 			obj.login({
-				usuario: $("#txtTarjetaUser").val(), 
-				pass: $("#txtPassTarjeta").val(), 
+				usuario: form.find("#txtCorreo").val(), 
+				pass: form.find("#txtPass").val(), 
 				fn: {
 					after: function(datos){
 						if (datos.band){
-							$("#frmLoginSocio").get(0).reset();
-							location.href = "sociopanel";
+							$("#frmLogin2").get(0).reset();
+							location.href = "panelPrincipal";
 						}else{
 							alert("Tus datos no son correctos, intenta corrigiendolos");
 						}

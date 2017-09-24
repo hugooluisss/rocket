@@ -11,19 +11,22 @@
 .skin-black {
   //Navbar & Logo
   .main-header {
+    background: black;
     .box-shadow(0px 1px 1px rgba(0, 0, 0, 0.05));
     .navbar-toggle {
       color: #333;
     }
     .navbar-brand {
       color: #333;
-      border-right: 1px solid #eee;
+      //border-right: 1px solid #eee;
     }
     > .navbar {
-      .navbar-variant(#fff; #333; #999; #fff);
+        
+      .navbar-variant(black; #333; #999; black);
       > .sidebar-toggle {
-        color: #333;
-        border-right: 1px solid #eee;
+        color: white;
+       // border-right: 1px solid #eee;
+        background: black;
       }
       .navbar-nav {
         > li > a {
@@ -32,25 +35,29 @@
       }
       .navbar-custom-menu .navbar-nav,
       .navbar-right {
+          background: black;
+          color: white;
         > li {
           > a {
-            border-left: 1px solid #eee;
+            color: white;
+            //border-left: 1px solid #eee;
             border-right-width: 0;
           }
         }
       }
     }
     > .logo {
-      .logo-variant(#fff; #333);
-      border-right: 1px solid #eee;
+      .logo-variant(black; #333);
+      background: black;
+     // border-right: 1px solid #eee;
       @media (max-width: @screen-header-collapse) {
-        .logo-variant(#222; #fff);
+        .logo-variant(#222; black);
         border-right: none;
       }
     }
 
     li.user-header {
-      background-color: #222;
+      background-color: black;
     }
   }
 

@@ -26,8 +26,13 @@
 						<div class="col-sm-4">
 							<input type="text" class="form-control" id="txtNombre" name="txtNombre" placeholder="Nombre" value="{$negocio->getNombre()}">
 						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-5 col-sm-offset-3">
+							<input type="text" class="form-control" id="txtApp" name="txtApp" placeholder="Apellido Paterno" value="{$negocio->getApp()}">
+						</div>
 						<div class="col-sm-5">
-							<input type="text" class="form-control" id="txtApellidos" name="txtApellidos" placeholder="Apellidos" value="{$negocio->getApellidos()}">
+							<input type="text" class="form-control" id="txtApp" name="txtApp" placeholder="Apellido Paterno" value="{$negocio->getApm()}">
 						</div>
 					</div>
 					<hr />

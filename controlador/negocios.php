@@ -5,13 +5,12 @@ switch($objModulo->getId()){
 		$db = TBase::conectaDB();
 		#global $sesion;
 		#$usuario = new TUsuario($sesion['usuario']);
-		$sql = "select * from usuario a join negocio b using(idUsuario) where a.visible = true and idTipo = 2";
+		$sql = "select *, if(setcomision > now(), 0, 1) as canSetComision from usuario a join negocio b using(idUsuario) where a.visible = true and idTipo = 2";
 		
 		$rs = $db->query($sql) or errorMySQL($db, $sql);
 		$datos = array();
 		while($row = $rs->fetch_assoc()){
-			$obj = new TNegocio($row['idUsuario']);
-			$row['comision'] = $obj->getComision();
+			//$obj = new TNegocio($row['idUsuario']);
 			$row['pass'] = '';
 			$row['json'] = json_encode($row);
 			unset($obj);
@@ -52,12 +51,14 @@ switch($objModulo->getId()){
 				$obj->setId($_POST['id']);
 				$obj->setTipo(2);
 				$obj->setNombre($_POST['nombre']);
-				$obj->setApellidos($_POST['apellidos']);
+				$obj->setApp($_POST['app']);
+				$obj->setApm($_POST['apm']);
 				$obj->setCorreo($_POST['correo']);
 				$obj->setRazonSocial($_POST['razonsocial']);
 				$obj->setGiro($_POST['giro']);
 				$obj->setRFC($_POST['rfc']);
 				$obj->setCalle($_POST['calle']);
+				$obj->setNumero($_POST['numero']);
 				$obj->setColonia($_POST['colonia']);
 				$obj->setCodigoPostal($_POST['codigopostal']);
 				$obj->setLocalidad($_POST['localidad']);
@@ -79,9 +80,9 @@ switch($objModulo->getId()){
 			break;
 			case 'addComision':
 				$obj = new TNegocio($_POST['id']);
-				$result = $obj->addComision($_POST['comision']);
+				$result = $obj->setComision($_POST['comision']);
 				
-				$smarty->assign("json", array("band" => $result <> '', "fecha" => $result));
+				$smarty->assign("json", array("band" => $result));
 			break;
 			case 'uploadGaleria':
 				global $userSesion;

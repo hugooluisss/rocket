@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-18 11:43:23
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-23 12:13:58
          compiled from "templates/plantillas/modulos/front-end/marcasAfiliadas.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:13295301159b1fb9e9c4b07-53153527%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '005a3c75d095143403998722bf688b53266d8971' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/marcasAfiliadas.tpl',
-      1 => 1505753001,
+      1 => 1506186834,
       2 => 'file',
     ),
   ),
@@ -36,18 +36,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 foreach ($_from as $_smarty_tpl->tpl_vars["negocio"]->key => $_smarty_tpl->tpl_vars["negocio"]->value){
 $_smarty_tpl->tpl_vars["negocio"]->_loop = true;
 ?>
-			<div class="col-xs-6 col-sm-4 col-md-3">
-				<div class="negocioAfiliado" style="background: url('<?php echo $_smarty_tpl->tpl_vars['negocio']->value['logotipo'];?>
-')" title="Haz click/tap sobre la imagen para ver la información completa" datos='<?php echo $_smarty_tpl->tpl_vars['negocio']->value['json'];?>
-' data-toggle="modal" data-target="#winNegocio">
-					<div>
-						<p class="text-center titulo"><b><?php echo $_smarty_tpl->tpl_vars['negocio']->value['razonsocial'];?>
-</b></p>
-						<p class="text-center">
-							<small>Haz click para conocer el negocio</small>
-						</p>
+			<div class="col-xs-12 col-sm-4 negocioAfiliado" data-toggle="popover" data-placement="top" <?php if ($_smarty_tpl->tpl_vars['negocio']->value['plus']==1){?>title="Este es un negocio plus" data-content="En <?php echo $_smarty_tpl->tpl_vars['negocio']->value['razonsocial'];?>
+ puedes cambiar tus Rocket Points por dinero en efectivo" <?php }?>>
+				<img class="logotipo" src="<?php echo $_smarty_tpl->tpl_vars['negocio']->value['logotipo'];?>
+" datos='<?php echo $_smarty_tpl->tpl_vars['negocio']->value['json'];?>
+' data-toggle="modal" data-target="#winNegocio" />
+				<?php if ($_smarty_tpl->tpl_vars['negocio']->value['plus']==1){?>
+					<div class="negocioPlus">
+						<i class="fa fa-star" aria-hidden="true"></i>
 					</div>
-				</div>
+				<?php }?>
 		    </div>
 	    <?php } ?>
 	</div>
@@ -76,12 +74,12 @@ $_smarty_tpl->tpl_vars["negocio"]->_loop = true;
 				<div class="row">
 					<div class="col-xs-4 text-danger"><b>Dirección</b></div>
 					<div class="col-xs-8">
-						<div campo="calle"></div>
-						<div campo="colonia"></div>
-						<div campo="codigopostal"></div>
-						<div campo="localidad"></div>
-						<div campo="municipio"></div>
-						<div campo="entidadfederativa"></div>
+						<span campo="calle"></span>
+						<span campo="colonia"></span>
+						<span campo="codigopostal"></span>
+						<span campo="localidad"></span>
+						<span campo="municipio"></span>
+						<span campo="entidadfederativa"></span>
 					</div>
 				</div>
 				<div class="row">

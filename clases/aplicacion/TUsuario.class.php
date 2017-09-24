@@ -10,7 +10,8 @@ class TUsuario{
 	private $idUsuario;
 	private $idTipo;
 	private $nombre;
-	private $apellidos;
+	private $app;
+	private $apm;
 	private $correo;
 	private $pass;
 	private $visible;
@@ -146,7 +147,7 @@ class TUsuario{
 	}
 	
 	/**
-	* Establece el apellido
+	* Establece el apellido paterno
 	*
 	* @autor Hugo
 	* @access public
@@ -154,21 +155,47 @@ class TUsuario{
 	* @return boolean True si se realizó sin problemas
 	*/
 	
-	public function setApellidos($val = ''){
-		$this->apellidos = $val;
+	public function setApp($val = ''){
+		$this->app = $val;
 		return true;
 	}
 	
 	/**
-	* Retorna el apellido
+	* Retorna el apellido paterno
 	*
 	* @autor Hugo
 	* @access public
 	* @return string Texto
 	*/
 	
-	public function getApellidos(){
-		return $this->apellidos;
+	public function getApp(){
+		return $this->app;
+	}
+	
+	/**
+	* Establece el apellido materno
+	*
+	* @autor Hugo
+	* @access public
+	* @param string $val Valor a asignar
+	* @return boolean True si se realizó sin problemas
+	*/
+	
+	public function setApm($val = ''){
+		$this->apm = $val;
+		return true;
+	}
+	
+	/**
+	* Retorna el apellido materno
+	*
+	* @autor Hugo
+	* @access public
+	* @return string Texto
+	*/
+	
+	public function getApm(){
+		return $this->apm;
 	}
 	
 	/**
@@ -249,7 +276,8 @@ class TUsuario{
 		$sql = "UPDATE usuario
 			SET
 				nombre = '".$this->getNombre()."',
-				apellidos = '".$this->getApellidos()."',
+				app = '".$this->getApp()."',
+				apm = '".$this->getApm()."',
 				correo = '".$this->getCorreo()."',
 				pass = '".$this->getPass()."'
 			WHERE idUsuario = ".$this->idUsuario;
