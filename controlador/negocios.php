@@ -108,10 +108,18 @@ switch($objModulo->getId()){
 				$smarty->assign("json", array("band" => true));
 			break;
 			case 'cobrarRegalias':
-				$obj = new TNegocio($_POST['id']);
-				$result = $obj->addSaldo($_POST['monto'], 4);
+				$band = true;
+				$obj = new TMovimiento();
 				
-				$smarty->assign("json", array("band" => $result, "saldo" => sprintf("%0.2f", $obj->getSaldo())));
+				$obj->tipo = new TTipoMovimiento(4);
+				$obj->negocio = new TNegocio($_POST['id']);
+				$obj->setEfectivo($_POST['monto']);
+				$band = $obj->guardar();
+				
+				if($band)
+					$obj->negocio->addSaldo($_POST['monto'], 4, $obj->getId());
+				
+				$smarty->assign("json", array("band" => $band, "saldo" => sprintf("%0.2f", $obj->negocio->getSaldo())));
 			break; 
 			case 'uploadLogotipo':
 				global $userSesion;

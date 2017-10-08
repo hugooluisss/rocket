@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-23 12:50:29
+<?php /* Smarty version Smarty-3.1.11, created on 2017-10-05 19:34:38
          compiled from "templates/plantillas/modulos/negocios/panel.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:56730445759aede7ba4f772-24284208%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '48918c57ef0f09974563ee45d4bca1d9f4a2b77b' => 
     array (
       0 => 'templates/plantillas/modulos/negocios/panel.tpl',
-      1 => 1506189028,
+      1 => 1507127434,
       2 => 'file',
     ),
   ),
@@ -80,8 +80,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					</div>
 					<div class="form-group">
 						<label class="col-sm-3 control-label" for="txtCalle">Calle y número</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="txtCalle" name="txtCalle">
+						<div class="col-sm-7">
+							<input type="text" class="form-control" id="txtCalle" name="txtCalle" placeholder="Calle">
+						</div>
+						<div class="col-sm-2">
+							<input type="text" class="form-control" id="txtNumero" name="txtNumero" placeholder="Número">
 						</div>
 					</div>
 					<div class="form-group">
@@ -95,19 +98,22 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="col-sm-3 control-label" for="txtLocalidad">Localidad</label>
+						<label class="col-sm-3 control-label" for="txtEntidadFederativa">Entidad</label>
 						<div class="col-sm-3">
-							<input type="text" class="form-control" id="txtLocalidad" name="txtLocalidad">
+							<select class="form-control" id="txtEntidadFederativa" name="txtEntidadFederativa">
+							</select>
 						</div>
 						<label class="col-sm-3 control-label" for="txtMunicipio">Municipio</label>
 						<div class="col-sm-3">
-							<input type="text" class="form-control" id="txtMunicipio" name="txtMunicipio">
+							<select class="form-control" id="txtMunicipio" name="txtMunicipio">
+							</select>
 						</div>
 					</div>
+					
 					<div class="form-group">
-						<label class="col-sm-3 control-label" for="txtEntidadFederativa">Entidad Federativa</label>
+						<label class="col-sm-3 control-label" for="txtLocalidad">Localidad</label>
 						<div class="col-sm-3">
-							<input type="text" class="form-control" id="txtEntidadFederativa" name="txtEntidadFederativa">
+							<input type="text" class="form-control" id="txtLocalidad" name="txtLocalidad">
 						</div>
 					</div>
 					<div class="form-group">
@@ -147,4 +153,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 </div>
 
 <?php echo $_smarty_tpl->getSubTemplate (($_smarty_tpl->tpl_vars['PAGE']->value['rutaModulos']).("modulos/negocios/winComision.tpl"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
+<?php echo $_smarty_tpl->getSubTemplate (($_smarty_tpl->tpl_vars['PAGE']->value['rutaModulos']).("modulos/negocios/winMovimientos.tpl"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
+<?php echo $_smarty_tpl->getSubTemplate (($_smarty_tpl->tpl_vars['PAGE']->value['rutaModulos']).("modulos/negocios/winDetalleMovimiento.tpl"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 <?php }} ?>

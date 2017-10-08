@@ -36,15 +36,15 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="col-sm-3 control-label" for="txtEntidadFederativa">Entidad federativa</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="txtEntidadFederativa" name="txtEntidadFederativa">
+						<label class="col-sm-3 control-label" for="txtEntidadFederativa">Entidad</label>
+						<div class="col-sm-3">
+							<select class="form-control" id="txtEntidadFederativa" name="txtEntidadFederativa">
+							</select>
 						</div>
-					</div>
-					<div class="form-group">
 						<label class="col-sm-3 control-label" for="txtMunicipio">Municipio</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="txtMunicipio" name="txtMunicipio">
+						<div class="col-sm-3">
+							<select class="form-control" id="txtMunicipio" name="txtMunicipio">
+							</select>
 						</div>
 					</div>
 					<div class="form-group">
@@ -75,3 +75,6 @@
 		</form>
 	</div>
 </div>
+
+{include file=$PAGE.rutaModulos|cat:"modulos/negocios/winMovimientos.tpl"}
+{include file=$PAGE.rutaModulos|cat:"modulos/socios/winDetalleMovimiento.tpl"}

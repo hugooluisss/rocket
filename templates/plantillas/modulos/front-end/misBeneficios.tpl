@@ -120,6 +120,7 @@
 						<h3><span class="text-danger">Utiliza</span> Rocket Card como cuenta de ahorro</h3>
 						<br />
 						<p>Tú dispones en todo momento de tus Rocket Points, aunque te invitamos a que implementes la cultura del ahorro y dejes que tus puntos se acumulen</p>
+						<p class="text-center"><a href="brands" class="btn btn-primary">Mira nuestros negocios afiliados</a></p>
 					</div>
 				</div>
 			</div>

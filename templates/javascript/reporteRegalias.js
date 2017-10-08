@@ -23,7 +23,7 @@ $(document).ready(function(){
 				"responsive": true,
 				"language": espaniol,
 				"lengthChange": false,
-				"ordering": false,
+				"ordering": true,
 				"info": true,
 				"autoWidth": false,
 				"paging": false

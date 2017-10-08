@@ -2,7 +2,7 @@ $(document).ready(function(){
 	getLista();	
 			
 	function getLista(){
-		$.get("listaMovimientos", function( data ) {
+		$.get("listaMovimientos", function(data) {
 			$("#dvLista").html(data);
 			
 			$("#tblDatos").DataTable({

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-23 19:37:24
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-27 23:48:33
          compiled from "templates/plantillas/modulos/usuarios/registro.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:65686298459adfea34b6398-12215798%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '44aef2f9887dfb115ffa8db20a4f38d37d014834' => 
     array (
       0 => 'templates/plantillas/modulos/usuarios/registro.tpl',
-      1 => 1506213438,
+      1 => 1506574111,
       2 => 'file',
     ),
   ),
@@ -62,7 +62,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					<div class="form-group">
 						<label class="col-sm-4 control-label" for="txtCorreo">Correo electrónico</label>
 						<div class="col-sm-8">
-							<input type="email" class="form-control" id="txtCorreo" name="txtCorreo">
+							<input type="email" class="form-control" id="txtCorreo" name="txtCorreo" style="text-transform: none;">
 						</div>
 					</div>
 					<div class="form-group">

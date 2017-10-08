@@ -73,19 +73,22 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="col-sm-3 control-label" for="txtLocalidad">Localidad</label>
+						<label class="col-sm-3 control-label" for="txtEntidadFederativa">Entidad</label>
 						<div class="col-sm-3">
-							<input type="text" class="form-control" id="txtLocalidad" name="txtLocalidad">
+							<select class="form-control" id="txtEntidadFederativa" name="txtEntidadFederativa">
+							</select>
 						</div>
 						<label class="col-sm-3 control-label" for="txtMunicipio">Municipio</label>
 						<div class="col-sm-3">
-							<input type="text" class="form-control" id="txtMunicipio" name="txtMunicipio">
+							<select class="form-control" id="txtMunicipio" name="txtMunicipio">
+							</select>
 						</div>
 					</div>
+					
 					<div class="form-group">
-						<label class="col-sm-3 control-label" for="txtEntidadFederativa">Entidad Federativa</label>
+						<label class="col-sm-3 control-label" for="txtLocalidad">Localidad</label>
 						<div class="col-sm-3">
-							<input type="text" class="form-control" id="txtEntidadFederativa" name="txtEntidadFederativa">
+							<input type="text" class="form-control" id="txtLocalidad" name="txtLocalidad">
 						</div>
 					</div>
 					<div class="form-group">
@@ -125,3 +128,5 @@
 </div>
 
 {include file=$PAGE.rutaModulos|cat:"modulos/negocios/winComision.tpl"}
+{include file=$PAGE.rutaModulos|cat:"modulos/negocios/winMovimientos.tpl"}
+{include file=$PAGE.rutaModulos|cat:"modulos/negocios/winDetalleMovimiento.tpl"}

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-23 20:53:17
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-27 22:15:01
          compiled from "templates/plantillas/modulos/negocios/lista.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:105764173159aee0e7e7c324-95197605%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'dbb76b85ffc3ee5e89095865b7b39970477f116c' => 
     array (
       0 => 'templates/plantillas/modulos/negocios/lista.tpl',
-      1 => 1506217980,
+      1 => 1506568199,
       2 => 'file',
     ),
   ),
@@ -29,6 +29,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<table id="tblDatos" class="table table-bordered table-hover">
 			<thead>
 				<tr>
+					<th>ID</th>
 					<th>Razón Social</th>
 					<th>Contacto</th>
 					<th>Correo</th>
@@ -44,7 +45,9 @@ foreach ($_from as $_smarty_tpl->tpl_vars["row"]->key => $_smarty_tpl->tpl_vars[
 $_smarty_tpl->tpl_vars["row"]->_loop = true;
 ?>
 					<tr title="<?php if ($_smarty_tpl->tpl_vars['row']->value['plus']==1){?>Es una empresa plus<?php }?>">
-						<td style="border-left: 3px solid <?php if ($_smarty_tpl->tpl_vars['row']->value['plus']==1){?>green<?php }else{ ?>blue<?php }?>"><?php echo $_smarty_tpl->tpl_vars['row']->value['razonsocial'];?>
+						<td style="border-left: 3px solid <?php if ($_smarty_tpl->tpl_vars['row']->value['plus']==1){?>green<?php }else{ ?>blue<?php }?>"><?php echo $_smarty_tpl->tpl_vars['row']->value['idUsuario'];?>
+</td>
+						<td><?php echo $_smarty_tpl->tpl_vars['row']->value['razonsocial'];?>
 </td>
 						<td><b><?php echo $_smarty_tpl->tpl_vars['row']->value['nombre'];?>
 </b> <?php echo $_smarty_tpl->tpl_vars['row']->value['app'];?>
@@ -66,6 +69,8 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 </td>
 						<td class="text-right">
 							<div class="btn-group btn-group-xs">
+								<button type="button" class="btn btn-primary" action="movimientos" title="Detalle de regalias y movimientos" datos='<?php echo $_smarty_tpl->tpl_vars['row']->value['json'];?>
+' data-toggle="modal" data-target="#winMovimientos"><i class="fa fa-list-ul"></i></button>
 								<button type="button" class="btn btn-warning" action="abonar" title="Abonar a cuenta" datos='<?php echo $_smarty_tpl->tpl_vars['row']->value['json'];?>
 '><i class="fa fa-money"></i></button>
 								<button type="button" class="btn btn-primary" action="modificar" title="Modificar" datos='<?php echo $_smarty_tpl->tpl_vars['row']->value['json'];?>

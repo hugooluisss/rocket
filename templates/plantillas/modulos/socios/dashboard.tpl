@@ -34,7 +34,8 @@
 							<th>Fecha</th>
 							<th>Tipo</th>
 							<th>Negocio</th>
-							<th>Pago</th>
+							<th>Efectivo</th>
+							<th>Rocket Points</th>
 							<th>Puntos obtenidos</th>
 						</tr>
 					</thead>
@@ -44,7 +45,8 @@
 								<td style="border-left: 5px solid {$row.color}">{$row.registro}</td>
 								<td>{$row.tipo}</td>
 								<td>{$row.negocio}</td>
-								<td class="text-right">{$row.monto}</td>
+								<td class="text-right">{$row.efectivo}</td>
+								<td class="text-right">{$row.rocketpoints}</td>
 								<td class="text-right">{$row.puntos}</td>
 							</tr>
 						{/foreach}

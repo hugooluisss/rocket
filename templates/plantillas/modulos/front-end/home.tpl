@@ -94,8 +94,8 @@
 						<div class="col-xs-12 col-sm-6">
 							<h3><span class="text-danger">Canjealo</span> por dinero en efectivo</h3>
 							<br />
-							<p>En el momento que tengas <b>500 ROCKET POINTS</b> o más acumulado en tu cuenta puedes canjearlo por dinero en efectivo en los Negocios Plus.</p>
-							<p class="text-center"><a href="brands" class="btn btn-primary">Mira nuestros negocios afiliados</a></p>
+							<p>En el momento que tengas <b>500 ROCKET POINTS</b> o más acumulados en tu cuenta puedes canjearlos por dinero en efectivo en los Negocios Plus.</p>
+							<p class="text-center"><a href="brands" class="btn btn-primary">Mira nuestros negocios plus</a></p>
 						</div>
 					</div>
 				</div>

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-23 10:10:27
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-27 23:47:47
          compiled from "templates/plantillas/modulos/front-end/home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:77081072459b190e0813987-16629338%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a93447ac533b99f938dd8edea4d5ed76ef9d099d' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/home.tpl',
-      1 => 1506179426,
+      1 => 1506573944,
       2 => 'file',
     ),
   ),
@@ -127,8 +127,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 						<div class="col-xs-12 col-sm-6">
 							<h3><span class="text-danger">Canjealo</span> por dinero en efectivo</h3>
 							<br />
-							<p>En el momento que tengas <b>500 ROCKET POINTS</b> o más acumulado en tu cuenta puedes canjearlo por dinero en efectivo en los Negocios Plus.</p>
-							<p class="text-center"><a href="brands" class="btn btn-primary">Mira nuestros negocios afiliados</a></p>
+							<p>En el momento que tengas <b>500 ROCKET POINTS</b> o más acumulados en tu cuenta puedes canjearlos por dinero en efectivo en los Negocios Plus.</p>
+							<p class="text-center"><a href="brands" class="btn btn-primary">Mira nuestros negocios plus</a></p>
 						</div>
 					</div>
 				</div>

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-23 12:19:09
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-27 23:47:47
          compiled from "templates/plantillas/modulos/front-end/misBeneficios.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:150417869159b1944e00fab9-41899393%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '70e93e7521e2a3a1cca16aa2fd3c7881f75360f4' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/misBeneficios.tpl',
-      1 => 1506187147,
+      1 => 1506573933,
       2 => 'file',
     ),
   ),
@@ -154,6 +154,7 @@ ahorro.png"/>
 						<h3><span class="text-danger">Utiliza</span> Rocket Card como cuenta de ahorro</h3>
 						<br />
 						<p>Tú dispones en todo momento de tus Rocket Points, aunque te invitamos a que implementes la cultura del ahorro y dejes que tus puntos se acumulen</p>
+						<p class="text-center"><a href="brands" class="btn btn-primary">Mira nuestros negocios afiliados</a></p>
 					</div>
 				</div>
 			</div>

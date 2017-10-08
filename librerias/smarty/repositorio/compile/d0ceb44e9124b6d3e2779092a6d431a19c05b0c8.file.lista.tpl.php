@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-13 11:41:35
+<?php /* Smarty version Smarty-3.1.11, created on 2017-10-08 14:01:59
          compiled from "templates/plantillas/modulos/movimientos/lista.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:133051028559b0af8232f9c0-67832294%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd0ceb44e9124b6d3e2779092a6d431a19c05b0c8' => 
     array (
       0 => 'templates/plantillas/modulos/movimientos/lista.tpl',
-      1 => 1505312706,
+      1 => 1507489315,
       2 => 'file',
     ),
   ),
@@ -29,8 +29,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<tr>
 			<th>Fecha</th>
 			<th>Socio</th>
-			<th>Monto</th>
-			<th>Puntos acumulados</th>
+			<th>Tipo</th>
+			<th>Efectivo</th>
+			<th>Rocket Points</th>
+			<th>Acumulados</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -44,10 +46,13 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 				<td style="border-left: 3px solid <?php echo $_smarty_tpl->tpl_vars['row']->value['color'];?>
 "><?php echo $_smarty_tpl->tpl_vars['row']->value['registro'];?>
 </td>
-				<td><b><?php echo $_smarty_tpl->tpl_vars['row']->value['nombre'];?>
-</b> <?php echo $_smarty_tpl->tpl_vars['row']->value['apellidos'];?>
+				<td><?php echo $_smarty_tpl->tpl_vars['row']->value['socio'];?>
 </td>
-				<td class="text-right"><?php echo $_smarty_tpl->tpl_vars['row']->value['monto'];?>
+				<td><?php echo $_smarty_tpl->tpl_vars['row']->value['nombreTipo'];?>
+</td>
+				<td class="text-right"><?php echo $_smarty_tpl->tpl_vars['row']->value['efectivo'];?>
+</td>
+				<td class="text-right"><?php echo $_smarty_tpl->tpl_vars['row']->value['rocketpoints'];?>
 </td>
 				<td class="text-right"><?php echo $_smarty_tpl->tpl_vars['row']->value['puntos'];?>
 </td>

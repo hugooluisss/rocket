@@ -41,7 +41,7 @@
 					<div class="form-group">
 						<label class="col-sm-4 control-label" for="txtCorreo">Correo electrónico</label>
 						<div class="col-sm-8">
-							<input type="email" class="form-control" id="txtCorreo" name="txtCorreo">
+							<input type="email" class="form-control" id="txtCorreo" name="txtCorreo" style="text-transform: none;">
 						</div>
 					</div>
 					<div class="form-group">

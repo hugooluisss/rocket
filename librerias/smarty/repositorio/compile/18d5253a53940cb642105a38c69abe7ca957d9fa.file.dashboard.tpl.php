@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-23 23:23:30
+<?php /* Smarty version Smarty-3.1.11, created on 2017-10-08 17:24:04
          compiled from "templates/plantillas/modulos/socios/dashboard.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:67473153759b816ba66a818-06426694%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '18d5253a53940cb642105a38c69abe7ca957d9fa' => 
     array (
       0 => 'templates/plantillas/modulos/socios/dashboard.tpl',
-      1 => 1506226975,
+      1 => 1507501441,
       2 => 'file',
     ),
   ),
@@ -66,7 +66,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 							<th>Fecha</th>
 							<th>Tipo</th>
 							<th>Negocio</th>
-							<th>Pago</th>
+							<th>Efectivo</th>
+							<th>Rocket Points</th>
 							<th>Puntos obtenidos</th>
 						</tr>
 					</thead>
@@ -84,7 +85,9 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 </td>
 								<td><?php echo $_smarty_tpl->tpl_vars['row']->value['negocio'];?>
 </td>
-								<td class="text-right"><?php echo $_smarty_tpl->tpl_vars['row']->value['monto'];?>
+								<td class="text-right"><?php echo $_smarty_tpl->tpl_vars['row']->value['efectivo'];?>
+</td>
+								<td class="text-right"><?php echo $_smarty_tpl->tpl_vars['row']->value['rocketpoints'];?>
 </td>
 								<td class="text-right"><?php echo $_smarty_tpl->tpl_vars['row']->value['puntos'];?>
 </td>

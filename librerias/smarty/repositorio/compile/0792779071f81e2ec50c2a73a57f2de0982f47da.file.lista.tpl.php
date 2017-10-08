@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-08 11:14:10
+<?php /* Smarty version Smarty-3.1.11, created on 2017-10-04 09:06:23
          compiled from "templates/plantillas/modulos/usuarios/lista.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:158052033559aed647ed4777-39979019%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0792779071f81e2ec50c2a73a57f2de0982f47da' => 
     array (
       0 => 'templates/plantillas/modulos/usuarios/lista.tpl',
-      1 => 1504724861,
+      1 => 1506563229,
       2 => 'file',
     ),
   ),
@@ -29,6 +29,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<table id="tblUsuarios" class="table table-bordered table-hover">
 			<thead>
 				<tr>
+					<th>ID</th>
 					<th>Nombre</th>
 					<th>Correo</th>
 					<th>&nbsp;</th>
@@ -41,6 +42,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars["row"]->key => $_smarty_tpl->tpl_vars[
 $_smarty_tpl->tpl_vars["row"]->_loop = true;
 ?>
 					<tr>
+						<td><?php echo $_smarty_tpl->tpl_vars['row']->value['idUsuario'];?>
+</td>
 						<td><b><?php echo $_smarty_tpl->tpl_vars['row']->value['nombre'];?>
 </b> <?php echo $_smarty_tpl->tpl_vars['row']->value['apellidos'];?>
 </td>

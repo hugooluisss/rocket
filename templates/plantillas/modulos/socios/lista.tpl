@@ -3,7 +3,7 @@
 		<table id="tblDatos" class="table table-bordered table-hover">
 			<thead>
 				<tr>
-					<th>No de socio</th>
+					<th>ID</th>
 					<th>Nombre completo</th>
 					<th>Correo</th>
 					<th>Puntos</th>
@@ -19,6 +19,7 @@
 						<td class="text-right">{$row.puntos}</td>
 						<td style="text-align: right">
 							<div class="btn-group btn-group-xs">
+								<button type="button" class="btn btn-primary" action="movimientos" title="Detalle de movimientos" datos='{$row.json}' data-toggle="modal" data-target="#winMovimientos"><i class="fa fa-list-ul"></i></button>
 								<button type="button" class="btn btn-primary" action="modificar" title="Modificar" datos='{$row.json}'><i class="fa fa-edit"></i></button>
 								<button type="button" class="btn btn-danger" action="eliminar" title="Eliminar" usuario="{$row.idUsuario}"><i class="fa fa-times"></i></button>
 							</div>

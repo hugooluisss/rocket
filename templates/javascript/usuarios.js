@@ -31,6 +31,11 @@ $(document).ready(function(){
 			txtApp: "required",
 		},
 		wrapper: 'span', 
+		messages: {
+			txtCorreo: {
+				remote: "El correo ya existe para otro, escoge otro"
+			}
+		},
 		submitHandler: function(form){
 		
 			var obj = new TUsuario;

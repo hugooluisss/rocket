@@ -10,9 +10,12 @@ class TMovimiento{
 	public $socio;
 	public $negocio;
 	public $tipo;
-	private $monto;
+	private $efectivo;
+	private $rocketpoints;
+	
 	private $puntos;
 	private $registro;
+	private $comision;
 	
 	/**
 	* Constructor de la clase
@@ -79,7 +82,7 @@ class TMovimiento{
 	}
 	
 	/**
-	* Establece el monto
+	* Establece el efectivo
 	*
 	* @autor Hugo
 	* @access public
@@ -87,15 +90,8 @@ class TMovimiento{
 	* @return boolean True si se realizó sin problemas
 	*/
 	
-	public function setMonto($val = 0){
-		$this->monto = $val;
-		$puntos = $this->getMonto() * $this->tipo->getOperador();
-		
-		if ($this->tipo->aplicaComision())
-			$this->setPuntos($puntos * $this->negocio->getComision() / 100);
-		else
-			$this->setPuntos($puntos);
-			
+	public function setEfectivo($val = 0){
+		$this->efectivo = $val;
 		return true;
 	}
 	
@@ -107,8 +103,85 @@ class TMovimiento{
 	* @return string decimal
 	*/
 	
-	public function getMonto(){
-		return $this->monto == ''?0:$this->monto;
+	public function getEfectivo(){
+		return $this->efectivo == ''?0:$this->efectivo;
+	}
+	
+	/**
+	* Establece los rocketpoints
+	*
+	* @autor Hugo
+	* @access public
+	* @param decimal $val Valor a asignar
+	* @return boolean True si se realizó sin problemas
+	*/
+	
+	public function setRocketPoints($val = 0){
+		$this->rocketpoints = $val;
+		return true;
+	}
+	
+	/**
+	* Retorna el monto
+	*
+	* @autor Hugo
+	* @access public
+	* @return string decimal
+	*/
+	
+	public function getRocketPoints(){
+		return $this->rocketpoints == ''?0:$this->rocketpoints;
+	}
+	
+	/**
+	* Establece la comisión para la empresa
+	*
+	* @autor Hugo
+	* @access public
+	* @param decimal $val Valor a asignar
+	* @return boolean True si se realizó sin problemas
+	*/
+	
+	public function setComision($val = 0){
+		$this->comision = $val;
+		return true;
+	}
+	
+	/**
+	* Retorna la comisión cobrada a la empresa
+	*
+	* @autor Hugo
+	* @access public
+	* @return string decimal
+	*/
+	
+	public function getComision(){
+		return $this->comision == ''?0:$this->comision;
+	}
+	
+	/**
+	* Calcula los puntos y regalías obtenidas
+	*
+	* @autor Hugo
+	* @access public
+	* @param decimal $val Valor a asignar
+	* @return boolean True si se realizó sin problemas
+	*/
+	
+	public function calculaComisiones(){
+		$puntos = ($this->getEfectivo() + $this->getRocketPoints())  * $this->tipo->getOperador();
+		
+		if ($this->tipo->aplicaComision()){
+			$this->setPuntos(($puntos * ($this->negocio->getComision() - 1.5) / 100) - $this->getRocketPoints());
+			$this->setRegalias($puntos * 1.5 / 100);
+			$this->setComision($puntos * $this->negocio->getComision() / 100 * -1);
+		}else{
+			$this->setPuntos($puntos);
+			$this->setRegalias(0);
+			$this->setComision($puntos * -1);
+		}
+			
+		return true;
 	}
 	
 	/**
@@ -126,7 +199,7 @@ class TMovimiento{
 	}
 	
 	/**
-	* Retorna el monto
+	* Retorna los puntos
 	*
 	* @autor Hugo
 	* @access public
@@ -135,6 +208,32 @@ class TMovimiento{
 	
 	public function getPuntos(){
 		return $this->puntos == ''?0:$this->puntos;
+	}
+	
+	/**
+	* Establece las regalias
+	*
+	* @autor Hugo
+	* @access public
+	* @param decimal $val Valor a asignar
+	* @return boolean True si se realizó sin problemas
+	*/
+	
+	public function setRegalias($val = 0){
+		$this->regalias = $val;
+		return true;
+	}
+	
+	/**
+	* Retorna las regalias
+	*
+	* @autor Hugo
+	* @access public
+	* @return string decimal
+	*/
+	
+	public function getRegalias(){
+		return $this->regalias == ''?0:$this->regalias;
 	}
 	
 	/**
@@ -148,15 +247,24 @@ class TMovimiento{
 	public function guardar(){
 		if ($this->tipo->getId() == '') return false;
 		if ($this->negocio->getId() == '') return false;
-		if ($this->socio->getId() == '') return false;
+		$this->calculaComisiones();
+		
+		#if ($this->socio->getId() == '') return false;
 		
 		$db = TBase::conectaDB();
-		$rs = $db->query("INSERT INTO movimiento(idTipoMovimiento, idSocio, idNegocio, monto, puntos) VALUES(".$this->tipo->getId().", ".$this->socio->getId().", ".$this->negocio->getId().", ".$this->getMonto().", ".$this->getPuntos().");");
+		$sql = "INSERT INTO movimiento(idTipoMovimiento, idNegocio, efectivo, rocketpoints, puntos, regalias, comision) VALUES(".$this->tipo->getId().", ".$this->negocio->getId().", ".($this->getEfectivo() * $this->tipo->getOperador()).", ".$this->getRocketPoints().", ".$this->getPuntos().", ".($this->getRegalias()).", ".$this->getComision().");";
+		$rs = $db->query($sql) or errorMySQL($db, $sql);
 		
-		if($rs){
+		$this->idMovimiento = $db->insert_id;
+		
+		if($rs and $this->socio->getId() <> ''){
+			$sql = "INSERT INTO sociomovimiento(idMovimiento, idusuario) VALUES(".$this->getId().", ".$this->socio->getId().");";
+			$rs = $db->query($sql) or errorMySQL($db, $sql);
+			
 			$this->socio->addPuntos($this->getPuntos());
 			$this->socio->guardar();
 		}
+		
 		return $rs?true:false;
 	}
 	

@@ -427,7 +427,7 @@ class TNegocio extends TUsuario{
 		
 		if ($rs->num_rows == 0){
 			$rs = $db->query("INSERT INTO negocio(idUsuario) VALUES(".$this->getId().");");
-			$rs = $db->query("INSERT INTO comision(idUsuario, activar, comision) VALUES(".$this->getId().", now(), ".($ini['sistema']['comision'] == ''?5:$ini['sistema']['comision']).");");
+			
 			if (!$rs) return false;
 		}		
 		
@@ -483,15 +483,11 @@ class TNegocio extends TUsuario{
 	* @return string Texto
 	*/
 	
-	public function addSaldo($saldo = 0, $tipo = 0){
-		if ($tipo == 0) return false;
-		if ($tipo == '') return false;
+	public function addSaldo($saldo = 0){
 		if ($saldo == 0) return false;
 		if ($saldo == '') return false;
+		
 		if ($this->getId() == '') return false;
-		$db = TBase::conectaDB();
-		$sql = "insert into regalia (idUsuario, idTipoMovimiento, monto) values (".$this->getId().", ".$tipo.", ".$saldo.")";
-		$rs = $db->query($sql) or errorMySQL($db, $sql);
 		
 		$this->saldo += $saldo;
 		$this->guardar();

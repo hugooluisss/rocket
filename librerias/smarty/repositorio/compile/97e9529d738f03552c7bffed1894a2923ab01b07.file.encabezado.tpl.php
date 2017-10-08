@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2017-09-23 00:31:18
+<?php /* Smarty version Smarty-3.1.11, created on 2017-09-27 23:47:47
          compiled from "templates/plantillas/modulos/front-end/encabezado.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:84480610959b190e0891de0-77559280%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '97e9529d738f03552c7bffed1894a2923ab01b07' => 
     array (
       0 => 'templates/plantillas/modulos/front-end/encabezado.tpl',
-      1 => 1506144670,
+      1 => 1506573287,
       2 => 'file',
     ),
   ),
@@ -75,6 +75,15 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 							</div>
 						<?php } ?>
 					</div>
+					
+					<a class="left carousel-control" href="#carruselNegocios" data-slide="prev">
+						<span class="glyphicon glyphicon-chevron-left"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="right carousel-control" href="#carruselNegocios" data-slide="next">
+						<span class="glyphicon glyphicon-chevron-right"></span>
+						<span class="sr-only">Next</span>
+					<p></p></a>
 				</div>
 			</div>
 		</div>

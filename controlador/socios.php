@@ -25,7 +25,7 @@ switch($objModulo->getId()){
 		global $sesion;
 		$socio = new TSocio($sesion['usuario']);
 		
-		$sql = "select a.*, b.nombre as tipo, b.color from movimiento a join tipomovimiento b using(idTipoMovimiento) where idSocio = ".$pageSesion->getId()." order by registro desc";
+		$sql = "select a.*, b.nombre as tipo, b.color from sociomovimiento aa join movimiento a using(idMovimiento) join tipomovimiento b using(idTipoMovimiento) where idUsuario = ".$pageSesion->getId()." order by registro desc";
 		
 		$rs = $db->query($sql) or errorMySQL($db, $sql);
 		$datos = array();
@@ -66,16 +66,17 @@ switch($objModulo->getId()){
 					$datos = array();
 					$datos['cliente.nombre'] = $obj->getNombre().' '.$obj->getApp()." ".$obj->getApm();
 					$datos['sitio.url'] = $ini["sistema"]["url"];
-					$datos['cliente.pass'] = $_POST['pass'];
+					$datos['cliente.pass'] = $obj->getPass();
 					$datos['cliente.email'] = $_POST['correo'];
 					$datos['cliente.idUsuario'] = $obj->getId();
 					
 					$email = new TMail2();
-					$email->setTema("Recuperación de contraseña");
+					$email->setTema("Bienvenido a Rocket Card");
 					$email->addDestino($obj->getCorreo(), utf8_decode($obj->getNombre().' '.$obj->getApp()." ".$obj->getApm()));
+					//$email->addDestino("hugooluisss@gmail.com", utf8_decode($obj->getNombre().' '.$obj->getApp()." ".$obj->getApm()));
 					$email->setBodyHTML(utf8_decode($email->construyeMail(file_get_contents("repositorio/mail/registroSocio.html"), $datos)));
-					
-					echo json_encode(array("band" => $email->send()));
+					$email->send();
+					//echo json_encode(array("band" => $email->send()));
 				}
 				
 				$smarty->assign("json", array("band" => $band));

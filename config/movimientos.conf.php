@@ -23,6 +23,22 @@ $conf['cmovimientos'] = array(
 	'controlador' => 'movimientos.php',
 	'descripcion' => 'Controlador de movimientos',
 	'seguridad' => true,
-	'perfiles' => array(2),
+	'perfiles' => array(2, 1),
 	'capa' => LAYOUT_JSON);
+	
+$conf['listaMovimientosNegocio'] = array(
+	'controlador' => 'movimientos.php',
+	'vista' => 'movimientos/listaNegocios.tpl',
+	'descripcion' => 'Lista de movimientos del negocio',
+	'seguridad' => true,
+	'perfiles' => array(1),
+	'capa' => LAYOUT_AJAX);
+	
+$conf['listaMovimientosSocio'] = array(
+	'controlador' => 'movimientos.php',
+	'vista' => 'movimientos/listaSocios.tpl',
+	'descripcion' => 'Lista de movimientos del socio',
+	'seguridad' => true,
+	'perfiles' => array(1),
+	'capa' => LAYOUT_AJAX);
 ?>

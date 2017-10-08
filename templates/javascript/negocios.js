@@ -1,4 +1,6 @@
 $(document).ready(function(){
+	$("#txtInicio").datepicker({ dateFormat: 'yy-mm-dd' });
+	$("#txtFin").datepicker({ dateFormat: 'yy-mm-dd' });
 	getLista();
 	
 	$("#panelTabs li a[href=#add]").click(function(){
@@ -31,6 +33,11 @@ $(document).ready(function(){
 			txtApp: "required",
 		},
 		wrapper: 'span', 
+		messages: {
+			txtCorreo: {
+				remote: "El correo ya existe para otro, escoge otro"
+			}
+		},
 		submitHandler: function(form){
 			var band = true;
 			if ($("#selPlus").val() == 1)
@@ -112,7 +119,10 @@ $(document).ready(function(){
 				$("#txtLocalidad").val(el.localidad);
 				$("#txtEntidadFederativa").val(el.entidadfederativa);
 				$("#txtTelefono").val(el.telefono);
-				$("#txtMunicipio").val(el.municipio);
+				
+				setEstados(function(){
+					$("#txtMunicipio").val(el.municipio);
+				});
 				$("#selPlus").val(el.plus);
 				
 				$('#panelTabs a[href="#add"]').tab('show');
@@ -148,6 +158,13 @@ $(document).ready(function(){
 						}
 					});
 				}
+			});
+			
+			$("[action=movimientos]").click(function(){
+				var btn = $(this);
+				var el = jQuery.parseJSON($(this).attr("datos"));
+				
+				$("#winMovimientos").attr("negocio", el.idUsuario);
 			});
 			
 			$("#tblDatos").DataTable({
@@ -197,4 +214,100 @@ $(document).ready(function(){
 			});
 		}
 	});
+	
+	
+	
+	$('#winMovimientos').on('show.bs.modal', function(){
+		getMovimientos();
+	});
+	
+	$(".setFechas").change(function(){
+		getMovimientos();
+	});
+	
+	function getMovimientos(){
+		$.post("listaMovimientosNegocio", {
+			negocio: $("#winMovimientos").attr("negocio"),
+			inicio: $("#txtInicio").val(),
+			fin: $("#txtFin").val()
+		},function(data) {
+			$(".dvMovimientos").html(data);
+			
+			$(".dvMovimientos").find("#tblDatos").find("tr").click(function(){
+				var el = jQuery.parseJSON($(this).attr("json"));
+				
+				$.each(el, function(key, valor){
+					$("#winDetalleMovimiento").find("[campo=" + key + "]").text(valor);
+				});
+				
+				$("#winDetalleMovimiento").modal();
+			});
+			
+			$(".dvMovimientos").find("#tblDatos").DataTable({
+				"responsive": true,
+				"language": espaniol,
+				"paging": true,
+				"lengthChange": false,
+				"ordering": true,
+				"info": true,
+				"autoWidth": false,
+				"order": [[ 0, "desc" ]]
+			});
+		});
+	}
+	
+	
+	$.get("repositorio/entidadesestados.json", function(entidades){
+		$("#txtEntidadFederativa").html("");
+		$.each(entidades, function(entidad, municipios){
+			var option = $("<option />", {
+				value: entidad,
+				text: entidad,
+				json: JSON.stringify(municipios)
+			});
+			
+			$("#txtEntidadFederativa").append(option);
+		});
+		
+		$("#txtEntidadFederativa").change(function(){
+			setEstados();
+		});
+
+		setEstados();
+	}, "json");
+	
+	function setEstados(after){
+		$("#txtMunicipio").html("");
+		try{
+			var municipios = jQuery.parseJSON($("#txtEntidadFederativa option:selected").attr("json"));
+			
+			$.each(municipios, function(i, municipio){
+				var option = $("<option />", {
+					value: municipio,
+					text: municipio,
+				});
+				
+				$("#txtMunicipio").append(option);
+			});
+			
+			
+			if (after != undefined)
+				after();
+		}catch(e){
+			console.log("La entidad federativa no se encuentra en la lista o su json está mal construido");
+		}
+	}
+	
+	$("#btnEstadoCuenta").click(function(){
+		$.post("cmovimientos", {
+			"negocio": $("#winMovimientos").attr("negocio"),
+			inicio: $("#txtInicio").val(),
+			fin: $("#txtFin").val(),
+			"action": "estadoCuentaEmpresa"
+		}, function(resp){
+			if (resp.band)
+				window.open(resp.uri, "Estado de cuenta");
+		}, "json");
+	});
+
 });
